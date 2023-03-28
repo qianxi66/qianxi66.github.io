@@ -174,6 +174,236 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://qianxi77-4g2i14dm510072c2-1317352669.ap-shanghai.app.tcloudbase.com/2023/03/22/easyx/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="起岸希">
+      <meta itemprop="description" content="不要圆滑，要变成星星，有棱角，还会发光">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="起岸希's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/03/22/easyx/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-03-22 21:11:00" itemprop="dateCreated datePublished" datetime="2023-03-22T21:11:00+08:00">2023-03-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-03-27 20:31:50" itemprop="dateModified" datetime="2023-03-27T20:31:50+08:00">2023-03-27</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="基于c和easyx的游戏开发"><a href="#基于c和easyx的游戏开发" class="headerlink" title="基于c和easyx的游戏开发"></a>基于c和easyx的游戏开发</h1><hr>
+<h2 id="一开始起岸希本来想开发一个像橙光一样的翻页阅读样式的小游戏，带剧情那种……结果，发现easyx的性能对这种游戏模式支持的并不好"><a href="#一开始起岸希本来想开发一个像橙光一样的翻页阅读样式的小游戏，带剧情那种……结果，发现easyx的性能对这种游戏模式支持的并不好" class="headerlink" title="一开始起岸希本来想开发一个像橙光一样的翻页阅读样式的小游戏，带剧情那种……结果，发现easyx的性能对这种游戏模式支持的并不好"></a>一开始起岸希本来想开发一个像橙光一样的翻页阅读样式的小游戏，带剧情那种……结果，发现easyx的性能对这种游戏模式支持的并不好</h2><p>所以我最后向前人低头（不是），还是改作马里奥那种技巧交互式游戏吧……<br>但是！！！马里奥没有教程啊！b站上搜不到一个完整的教程……也没有一个完整的代码包可以自己拿来运行看看实现……不是缺这个头文件就是缺那个素材，导致起岸希只能自造轮子（悲）<br>b站上一个视频只讲到怎么解析jSON文件，代码在我的机器上还跑不了（别问，问就是访问权限冲突），至于到底是怎么从jSON文件的一堆数字变成一块块的能运行出来的地图我也不知道啊！！<br>制作过程中遇到了很多问题，以下列了一个清单：  </p>
+<ol>
+<li>easyx的字符集问题  </li>
+<li>如何实现链表文件存储  </li>
+<li>如何实现链表排序（排行榜）  </li>
+<li>单击实现翻页  </li>
+<li>透明贴图</li>
+</ol>
+<hr>
+<p>以上都是简单问题，下面是真正难题  </p>
+<ol start="5">
+<li>马里奥如何判定碰到东西  </li>
+<li>jSON文件如何实现到自己的程序上变成地图</li>
+<li>如何让马里奥动起来</li>
+<li>镜头跟随</li>
+<li>除了主角外地图上其他东西怎么动起来（如金币）</li>
+<li>马里奥如何在地面上走动</li>
+<li>如何判断哪里能站哪里不能站</li>
+<li>最大的问题是<strong>怎么平衡写代码的时间和学课内知识的时间啊啊啊啊啊！</strong></li>
+</ol>
+<hr>
+<p>好崩溃（划掉）<br>##3.马里奥如何动起来<br>目前的办法是循环贴图贴背景，belike：  </p>
+<pre><code>    while (1) &#123;
+        putimage(mpx, 0, res.img_homeSubPage);//贴背景
+        drawImg(x, y,108*n,0, 108,0,&amp;img);//贴人物，每次贴一个动态
+        n++;
+        if (n &gt;= 24)n = 0;//一共24个动态
+        Sleep(20);
+    &#125;
+</code></pre>
+<p>drawimg函数可以直接贴png格式图片，不用掩码图！！！！这个函数是同学网上找的，被我改了改，七个参数方便贴动态图。强烈推荐这个函数，贴出来的图比掩码图清晰，掩码图p不好的话贴出来有黑边（悲）    </p>
+<pre><code>typedef struct _ARGB &#123;
+byte a;
+byte r;
+byte g;
+byte b;
+&#125;ARGB;
+ARGB color2Argb(DWORD c) &#123;
+ARGB res;
+res.r = (byte)c;
+res.g = (byte)(c &gt;&gt; 8);
+res.b = (byte)(c &gt;&gt; 16);
+res.a = (byte)(c &gt;&gt; 24);
+return res;
+&#125;
+DWORD argb2Color(ARGB c) &#123;
+DWORD t = RGB(c.r, c.g, c.b);
+return ((DWORD)c.a) &lt;&lt; 24 | t;
+&#125;
+void toGray(IMAGE* src) &#123;
+DWORD* psrc = GetImageBuffer(src);
+for (int i = 0; i &lt; src-&gt;getwidth() * src-&gt;getheight(); i++) &#123;
+    ARGB t = color2Argb(psrc[i]);
+    byte arv = (t.r + t.g + t.b) / 3;
+    ARGB res = &#123; t.a,arv,arv,arv &#125;;
+    psrc[i] = argb2Color(res);
+&#125;
+&#125;
+</code></pre>
+<p>前面都是结构体，下面是输出函数，到时候直接调用函数就好  </p>
+<pre><code>void drawImg(int x, int y,int u,int m,int k,int d, IMAGE* src) &#123;
+//从背景坐标x,y开始打印，打印图上u，m开始，宽k高d的部分
+DWORD* pwin = GetImageBuffer();
+DWORD* psrc = GetImageBuffer(src);
+int win_w = getwidth();
+int win_h = getheight();
+int src_w = src-&gt;getwidth();
+
+//int src_h = src-&gt;getheight();
+int real_w = (k-u&gt; win_w) ? win_w - x : k;
+int real_h = (d-m &gt; win_h) ? win_h - y : d;
+if (x &lt; 0) &#123;
+    psrc += -x; real_w -= -x; x = 0;
+&#125;
+if (y &lt; 0) &#123;
+    psrc += (d * -y); real_h -= -y; y = 0;
+&#125;
+pwin += (win_w * y + x);
+psrc += (src_w * m + u);
+for (int iy = 0; iy &lt; real_h; iy++) &#123;
+    for (int ix = 0; ix &lt; real_w; ix++) &#123;
+        byte a = (byte)(psrc[ix] &gt;&gt; 24);
+        if (a &gt; 100) &#123;
+            pwin[ix] = psrc[ix];
+        &#125;
+    &#125;
+    pwin += win_w;
+    psrc += src_w;
+&#125;
+&#125;
+</code></pre>
+<p>实现效果：<img src="/../someimage/321.png"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://qianxi77-4g2i14dm510072c2-1317352669.ap-shanghai.app.tcloudbase.com/2023/03/21/second/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="起岸希">
+      <meta itemprop="description" content="不要圆滑，要变成星星，有棱角，还会发光">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="起岸希's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/03/21/second/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-03-21 20:07:42" itemprop="dateCreated datePublished" datetime="2023-03-21T20:07:42+08:00">2023-03-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-03-23 15:31:11" itemprop="dateModified" datetime="2023-03-23T15:31:11+08:00">2023-03-23</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="关于ST表"><a href="#关于ST表" class="headerlink" title="关于ST表"></a>关于ST表</h2><h3 id="定义：用于求可重复性贡献问题的解。（即重复计算结果不变）对于一个一维数组，采用分治的方法，用一个二维数组储存每个区间内的最大最小值。f-a-b-表示从a开始2的b次方个数的最大值"><a href="#定义：用于求可重复性贡献问题的解。（即重复计算结果不变）对于一个一维数组，采用分治的方法，用一个二维数组储存每个区间内的最大最小值。f-a-b-表示从a开始2的b次方个数的最大值" class="headerlink" title="定义：用于求可重复性贡献问题的解。（即重复计算结果不变）对于一个一维数组，采用分治的方法，用一个二维数组储存每个区间内的最大最小值。f[a][b]表示从a开始2的b次方个数的最大值"></a>定义：用于求可重复性贡献问题的解。（即重复计算结果不变）对于一个一维数组，采用分治的方法，用一个二维数组储存每个区间内的最大最小值。<code>f[a][b]</code>表示从a开始2的b次方个数的最大值</h3><p>状态转移方程：f ( i , j ) &#x3D; m a x ( f ( i , j − 1 ) ,   f ( i + 2^(j − 1) , j − 1 ) )<br>将原区间分成两个大小相等子区间（因为长度是2的j次方，所以不存在不能等分的情况）<br>代码如下</p>
+<pre><code>int f[MAXN][21]; // 第二维的大小根据数据范围决定，不小于log(MAXN)
+    for (int i = 1; i &lt;= n; ++i)
+           f[i][0] = read(); //读入数据
+for (int j = 1; j &lt;= 20; ++j)//枚举倍数
+    for (int i = 1; i + (1 &lt;&lt; j) - 1 &lt;= n; ++i)//枚举起点,i到i+2^j-1刚好2^j个数
+        f[i][j] = max(f[i][j - 1], f[i + (1 &lt;&lt; (j- 1))][j- 1]);
+</code></pre>
+<p>内部存储像这样 <img src="/../someimage/02.jpg" alt="picture"><br>对于询问(l,r)，寻找两个分别以l开头和以s结尾的区间，两区间的最大值即总最大值。我们需要使第一个子区间的右端点尽可能的接近r​，那么不妨直接令l + 2^s − 1 &#x3D; r即s&#x3D;lg[ r-l+1]向下取整。则区间[l,r]被分为：f[ l ][ l + 2^s - 1]和f[r-( 2^s -1)][ r ]  <strong>从l开始2^s个，从r往前2^s个</strong><br>对log进行预处理：<code>lg[i]=lg[i/2]+1;</code>,<code>lg[0]=-1;</code><strong>千万别忘！</strong>  </p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://qianxi77-4g2i14dm510072c2-1317352669.ap-shanghai.app.tcloudbase.com/2023/03/21/first/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -222,83 +452,6 @@
             </div>
           <!--/noindex-->
         
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://qianxi77-4g2i14dm510072c2-1317352669.ap-shanghai.app.tcloudbase.com/2023/03/17/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="起岸希">
-      <meta itemprop="description" content="不要圆滑，要变成星星，有棱角，还会发光">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="起岸希's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/03/17/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-03-17 21:07:34" itemprop="dateCreated datePublished" datetime="2023-03-17T21:07:34+08:00">2023-03-17</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-03-21 12:52:36" itemprop="dateModified" datetime="2023-03-21T12:52:36+08:00">2023-03-21</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
       
     </div>
 
@@ -381,7 +534,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
