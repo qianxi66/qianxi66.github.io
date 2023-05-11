@@ -22,19 +22,20 @@
     var CONFIG = {"hostname":"qianxi77-4g2i14dm510072c2-1317352669.ap-shanghai.app.tcloudbase.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="一开始起岸希本来想开发一个像橙光一样的翻页阅读样式的小游戏，带剧情那种……结果，发现easyx的性能对这种游戏模式支持的并不好所以我最后向前人低头（不是），还是改作马里奥那种技巧交互式游戏吧……但是！！！马里奥没有教程啊！b站上搜不到一个完整的教程……也没有一个完整的代码包可以自己拿来运行看看实现……不是缺这个头文件就是缺那个素材，导致起岸希只能自造轮子（悲）b站上一个视频只讲到怎么解析jSON文">
+  <meta name="description" content="一开始我本来想开发一个像橙光一样的翻页阅读样式的小游戏，带剧情那种……结果，发现easyx的性能对这种游戏模式支持的并不好所以我最后向前人低头（不是），还是改作马里奥那种技巧交互式游戏吧……但是！！！马里奥没有教程啊！b站上搜不到一个完整的教程……也没有一个完整的代码包可以自己拿来运行看看实现……不是缺这个头文件就是缺那个素材，导致我只能自造轮子（悲）我的地图是用tiled做的，需要解析json文">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基于c和easyx的游戏开发">
 <meta property="og:url" content="https://qianxi77-4g2i14dm510072c2-1317352669.ap-shanghai.app.tcloudbase.com/2023/03/22/easyx/index.html">
 <meta property="og:site_name" content="起岸希&#39;s Blog">
-<meta property="og:description" content="一开始起岸希本来想开发一个像橙光一样的翻页阅读样式的小游戏，带剧情那种……结果，发现easyx的性能对这种游戏模式支持的并不好所以我最后向前人低头（不是），还是改作马里奥那种技巧交互式游戏吧……但是！！！马里奥没有教程啊！b站上搜不到一个完整的教程……也没有一个完整的代码包可以自己拿来运行看看实现……不是缺这个头文件就是缺那个素材，导致起岸希只能自造轮子（悲）b站上一个视频只讲到怎么解析jSON文">
+<meta property="og:description" content="一开始我本来想开发一个像橙光一样的翻页阅读样式的小游戏，带剧情那种……结果，发现easyx的性能对这种游戏模式支持的并不好所以我最后向前人低头（不是），还是改作马里奥那种技巧交互式游戏吧……但是！！！马里奥没有教程啊！b站上搜不到一个完整的教程……也没有一个完整的代码包可以自己拿来运行看看实现……不是缺这个头文件就是缺那个素材，导致我只能自造轮子（悲）我的地图是用tiled做的，需要解析json文">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://qianxi77-4g2i14dm510072c2-1317352669.ap-shanghai.app.tcloudbase.com/someimage/wew.png">
 <meta property="og:image" content="https://qianxi77-4g2i14dm510072c2-1317352669.ap-shanghai.app.tcloudbase.com/someimage/321.png">
 <meta property="article:published_time" content="2023-03-22T13:11:00.243Z">
-<meta property="article:modified_time" content="2023-03-29T14:19:21.650Z">
+<meta property="article:modified_time" content="2023-05-11T09:29:32.834Z">
 <meta property="article:author" content="起岸希">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://qianxi77-4g2i14dm510072c2-1317352669.ap-shanghai.app.tcloudbase.com/someimage/321.png">
+<meta name="twitter:image" content="https://qianxi77-4g2i14dm510072c2-1317352669.ap-shanghai.app.tcloudbase.com/someimage/wew.png">
 
 <link rel="canonical" href="https://qianxi77-4g2i14dm510072c2-1317352669.ap-shanghai.app.tcloudbase.com/2023/03/22/easyx/">
 
@@ -209,7 +210,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-03-29 22:19:21" itemprop="dateModified" datetime="2023-03-29T22:19:21+08:00">2023-03-29</time>
+                <time title="修改时间：2023-05-11 17:29:32" itemprop="dateModified" datetime="2023-05-11T17:29:32+08:00">2023-05-11</time>
               </span>
 
           
@@ -230,7 +231,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="一开始起岸希本来想开发一个像橙光一样的翻页阅读样式的小游戏，带剧情那种……结果，发现easyx的性能对这种游戏模式支持的并不好"><a href="#一开始起岸希本来想开发一个像橙光一样的翻页阅读样式的小游戏，带剧情那种……结果，发现easyx的性能对这种游戏模式支持的并不好" class="headerlink" title="一开始起岸希本来想开发一个像橙光一样的翻页阅读样式的小游戏，带剧情那种……结果，发现easyx的性能对这种游戏模式支持的并不好"></a>一开始起岸希本来想开发一个像橙光一样的翻页阅读样式的小游戏，带剧情那种……结果，发现easyx的性能对这种游戏模式支持的并不好</h2><p>所以我最后向前人低头（不是），还是改作马里奥那种技巧交互式游戏吧……<br>但是！！！马里奥没有教程啊！b站上搜不到一个完整的教程……也没有一个完整的代码包可以自己拿来运行看看实现……不是缺这个头文件就是缺那个素材，导致起岸希只能自造轮子（悲）<br>b站上一个视频只讲到怎么解析jSON文件，代码在我的机器上还跑不了（别问，问就是访问权限冲突），至于到底是怎么从jSON文件的一堆数字变成一块块的能运行出来的地图我也不知道啊！！<br>制作过程中遇到了很多问题，以下列了一个清单：  </p>
+        <h2 id="一开始我本来想开发一个像橙光一样的翻页阅读样式的小游戏，带剧情那种……结果，发现easyx的性能对这种游戏模式支持的并不好"><a href="#一开始我本来想开发一个像橙光一样的翻页阅读样式的小游戏，带剧情那种……结果，发现easyx的性能对这种游戏模式支持的并不好" class="headerlink" title="一开始我本来想开发一个像橙光一样的翻页阅读样式的小游戏，带剧情那种……结果，发现easyx的性能对这种游戏模式支持的并不好"></a>一开始我本来想开发一个像橙光一样的翻页阅读样式的小游戏，带剧情那种……结果，发现easyx的性能对这种游戏模式支持的并不好</h2><p>所以我最后向前人低头（不是），还是改作马里奥那种技巧交互式游戏吧……<br>但是！！！马里奥没有教程啊！b站上搜不到一个完整的教程……也没有一个完整的代码包可以自己拿来运行看看实现……不是缺这个头文件就是缺那个素材，导致我只能自造轮子（悲）<br>我的地图是用tiled做的，需要解析json文件，但是相关讲解视频b站上只找到一个，而且代码在我的机器上还跑不了（别问，问就是访问权限冲突），至于到底是怎么从jSON文件的一堆数字变成一块块的能运行出来的地图我也不知道啊！！<br>制作过程中遇到了很多问题，以下列了一个清单：  </p>
 <span id="more"></span>
 
 <ol>
@@ -238,24 +239,25 @@
 <li>如何实现链表文件存储  </li>
 <li>如何实现链表排序（排行榜）  </li>
 <li>单击实现翻页  </li>
-<li>透明贴图</li>
 <li>让messagebox显示在图形界面上层</li>
 </ol>
 <hr>
-<p>以上都是简单问题，下面是真正难题  </p>
-<ol start="5">
+<p>好崩溃（划掉） </p>
+<h2 id="1-有关字符集"><a href="#1-有关字符集" class="headerlink" title="1.有关字符集"></a>1.有关字符集</h2><p>据我了解，程序默认unicode字符集。“使用多字节字符集”和“使用Unicode字符集”的直接区别就是：编译器是否增加了宏定义——UNICODE。当选择“使用Unicode字符集”时，编译器会增加宏定义——UNICODE。而是否增加了宏定义UNICODE，则影响了一些Windows API的使用。例如：<br><code>MessageBox(NULL, L&quot;这是一个测试程序!&quot;, L&quot;Title&quot;, MB_OK);</code>这些api接受tchar类型的字符串，如果有unicode定义tchar就相当于LPCWSTR，否则tchar等同于char。所以如果使用Unicode，为了让api读懂char，我们使用_T””，或者L””转义。<br>##2.链表文件读写<br>主要是链表里的东西怎么进入文件，函数如下：  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">saveStuInfo</span><span class="params">(link*lin)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="keyword">if</span> (!lin-&gt;length)</span><br><span class="line">   &#123;</span><br><span class="line">       <span class="built_in">printf</span>(<span class="string">&quot;链表里没得东西\n&quot;</span>);</span><br><span class="line">       <span class="keyword">return</span>;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">else</span></span><br><span class="line">   &#123;</span><br><span class="line">       FILE* fp = <span class="built_in">fopen</span>(<span class="string">&quot;stu.txt&quot;</span>, <span class="string">&quot;a&quot;</span>);</span><br><span class="line">       <span class="keyword">if</span> (fp == <span class="literal">NULL</span>)</span><br><span class="line">       &#123;</span><br><span class="line">           <span class="built_in">printf</span>(<span class="string">&quot;打不开文件\n&quot;</span>);</span><br><span class="line">           <span class="keyword">return</span>;</span><br><span class="line">       &#125;</span><br><span class="line">       node* a = lin-&gt;head;</span><br><span class="line">       <span class="keyword">do</span> &#123;</span><br><span class="line">           <span class="built_in">fprintf</span>(fp, <span class="string">&quot;%s %s %d\n&quot;</span>, a-&gt;name, a-&gt;passw, a-&gt;grade);</span><br><span class="line">           a = a-&gt;next;</span><br><span class="line">       &#125; <span class="keyword">while</span> (a != <span class="literal">NULL</span>); </span><br><span class="line">       <span class="built_in">fclose</span>(fp);</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>##3.链表排序<br>偷懒了，用的map，老师轻点扣分，毕竟这也说明我十分勤奋的学习了c++不是吗（）<br>##4.单击翻页<br>将图片一张张存到结构体，每次识别到鼠标左键按下打印下一张，可以使用batchdraw清屏打印</p>
+<p>##5.messagebox显示<br>一开始我发现我的提示box老被游戏界面挡住，也就是说显示在游戏下层，后来多方搜索我发现是这个参数<br><code>MessageBox(hnd, &quot;\t登录成功&quot;, &quot;提示&quot;, MB_OKCANCEL);</code>注意那个<strong>hnd</strong>！！<code>HWND hnd = GetHWnd();</code>一定要写窗口句柄，一开始我那里写的null，就被盖住了。。。。</p>
+<hr>
+<p>#以上都是简单问题，下面是真正难题  </p>
+<ol start="7">
 <li>马里奥如何判定碰到东西  </li>
 <li>jSON文件如何实现到自己的程序上变成地图</li>
 <li>如何让马里奥动起来</li>
 <li>镜头跟随</li>
 <li>除了主角外地图上其他东西怎么动起来（如金币）</li>
-<li>马里奥如何在地面上走动</li>
-<li>如何判断哪里能站哪里不能站</li>
 <li>最大的问题是<strong>怎么平衡写代码的时间和学课内知识的时间啊啊啊啊啊！</strong></li>
 </ol>
-<hr>
-<p>好崩溃（划掉） </p>
-<h2 id="3-马里奥如何动起来"><a href="#3-马里奥如何动起来" class="headerlink" title="3.马里奥如何动起来"></a>3.马里奥如何动起来</h2><p>目前的办法是循环贴图贴背景，belike：  </p>
+<p>##1.马里奥碰撞判定<br>一开始本来想着解析json文件，后来实在不会于是开了个巨大的二维数组记录地图信息，哪个格子有东西哪个没有，数字内容代表东西是什么。。。像这样<img src="/../someimage/wew.png"><br>然后就检测人的上下左右有没有撞到有东西的格子，这个判定我当时想了两天，晚上睡觉闭上眼睛也在想。。。<br>##2.json-&gt;地图<br>说实话偷懒了，直接将做出来的地图导出成png了哈哈哈哈哈<br>##3.马里奥如何动起来<br>目前的办法是循环贴图贴背景，belike：  </p>
 <pre><code>    while (1) &#123;
         putimage(mpx, 0, res.img_homeSubPage);//贴背景
         drawImg(x, y,108*n,0, 108,0,&amp;img);//贴人物，每次贴一个动态
@@ -325,7 +327,7 @@ for (int iy = 0; iy &lt; real_h; iy++) &#123;
 &#125;
 &#125;
 </code></pre>
-<p>实现效果：<img src="/../someimage/321.png"></p>
+<p>实现效果：<img src="/../someimage/321.png"><br>##4.镜头跟随<br>判定人物坐标，比如画面中央时500，500前不向后撤地图，500后人物不往前走，改为向后撤地图，map.x-&#x3D;step;<br>##5.金币动态<br>方法时逐帧绘制，就是人动和金币动在一个计时循环里，金币四张图存成数组，用i控制播放哪张<br>##6.无解</p>
 
     </div>
 
@@ -423,7 +425,7 @@ for (int iy = 0; iy &lt; real_h; iy++) &#123;
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E5%BC%80%E5%A7%8B%E8%B5%B7%E5%B2%B8%E5%B8%8C%E6%9C%AC%E6%9D%A5%E6%83%B3%E5%BC%80%E5%8F%91%E4%B8%80%E4%B8%AA%E5%83%8F%E6%A9%99%E5%85%89%E4%B8%80%E6%A0%B7%E7%9A%84%E7%BF%BB%E9%A1%B5%E9%98%85%E8%AF%BB%E6%A0%B7%E5%BC%8F%E7%9A%84%E5%B0%8F%E6%B8%B8%E6%88%8F%EF%BC%8C%E5%B8%A6%E5%89%A7%E6%83%85%E9%82%A3%E7%A7%8D%E2%80%A6%E2%80%A6%E7%BB%93%E6%9E%9C%EF%BC%8C%E5%8F%91%E7%8E%B0easyx%E7%9A%84%E6%80%A7%E8%83%BD%E5%AF%B9%E8%BF%99%E7%A7%8D%E6%B8%B8%E6%88%8F%E6%A8%A1%E5%BC%8F%E6%94%AF%E6%8C%81%E7%9A%84%E5%B9%B6%E4%B8%8D%E5%A5%BD"><span class="nav-number">1.</span> <span class="nav-text">一开始起岸希本来想开发一个像橙光一样的翻页阅读样式的小游戏，带剧情那种……结果，发现easyx的性能对这种游戏模式支持的并不好</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E9%A9%AC%E9%87%8C%E5%A5%A5%E5%A6%82%E4%BD%95%E5%8A%A8%E8%B5%B7%E6%9D%A5"><span class="nav-number">2.</span> <span class="nav-text">3.马里奥如何动起来</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E5%BC%80%E5%A7%8B%E6%88%91%E6%9C%AC%E6%9D%A5%E6%83%B3%E5%BC%80%E5%8F%91%E4%B8%80%E4%B8%AA%E5%83%8F%E6%A9%99%E5%85%89%E4%B8%80%E6%A0%B7%E7%9A%84%E7%BF%BB%E9%A1%B5%E9%98%85%E8%AF%BB%E6%A0%B7%E5%BC%8F%E7%9A%84%E5%B0%8F%E6%B8%B8%E6%88%8F%EF%BC%8C%E5%B8%A6%E5%89%A7%E6%83%85%E9%82%A3%E7%A7%8D%E2%80%A6%E2%80%A6%E7%BB%93%E6%9E%9C%EF%BC%8C%E5%8F%91%E7%8E%B0easyx%E7%9A%84%E6%80%A7%E8%83%BD%E5%AF%B9%E8%BF%99%E7%A7%8D%E6%B8%B8%E6%88%8F%E6%A8%A1%E5%BC%8F%E6%94%AF%E6%8C%81%E7%9A%84%E5%B9%B6%E4%B8%8D%E5%A5%BD"><span class="nav-number">1.</span> <span class="nav-text">一开始我本来想开发一个像橙光一样的翻页阅读样式的小游戏，带剧情那种……结果，发现easyx的性能对这种游戏模式支持的并不好</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E6%9C%89%E5%85%B3%E5%AD%97%E7%AC%A6%E9%9B%86"><span class="nav-number">2.</span> <span class="nav-text">1.有关字符集</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
