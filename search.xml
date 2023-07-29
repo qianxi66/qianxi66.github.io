@@ -63,6 +63,25 @@ int main() &#123;
 ]]></content>
   </entry>
   <entry>
+    <title>关于起岸希的书单</title>
+    <url>/2023/07/20/book/</url>
+    <content><![CDATA[<p>众所周知，起岸希还是很爱读书的，她把她从大学一年级起读过的书整理了一下，有的没有读完，不过会努力更新进度  </p>
+<h2 id="关于计算机"><a href="#关于计算机" class="headerlink" title="关于计算机"></a>关于计算机</h2><h3 id="c-primer-plus"><a href="#c-primer-plus" class="headerlink" title="c primer plus"></a>c primer plus</h3><span id="more"></span>    
+<p><img src="/../someimage/cp.jpg"><br>我的c语言入门经典书~学校讲的稀烂，所有的计算机语言特性和c语言基础都是跟他学的，很厚，讲的很细致，很适合入门啃。我当时啃了两个月，期间的每一天都很快乐。  </p>
+<h3 id="计组"><a href="#计组" class="headerlink" title="计组"></a>计组</h3><p><img src="/../someimage/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86.jpg"><br>看了前2章，对整个计算机架构有个基本的了解，第三章数学比较多，含枯燥的公式论证</p>
+<h3 id="算法竞赛入门经典"><a href="#算法竞赛入门经典" class="headerlink" title="算法竞赛入门经典"></a>算法竞赛入门经典</h3><p><img src="/../someimage/%E7%AE%97%E6%B3%95.jpg"><br>人称紫书，看了一半很有收获，感觉里面的oi类型较为古早，但是有很棒的思路，希望他能带我打进区域赛（  </p>
+<h3 id="算法笔记"><a href="#算法笔记" class="headerlink" title="算法笔记"></a>算法笔记</h3><p><img src="/../someimage/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0.jpg"><br>我看完的第一本算法书，也是我的算法入门书，全书小500页，讲的通俗易懂，知识点覆盖不全  </p>
+<h3 id="网络是怎样连的"><a href="#网络是怎样连的" class="headerlink" title="网络是怎样连的"></a>网络是怎样连的</h3><p><img src="/../someimage/%E7%BD%91%E7%BB%9C.jpg"><br>我的互联网入门书，算是我看过的最容易懂的网络书了。推荐给大家入门  </p>
+<h3 id="图解TCP-x2F-IP"><a href="#图解TCP-x2F-IP" class="headerlink" title="图解TCP&#x2F;IP"></a>图解TCP&#x2F;IP</h3><p><img src="/../someimage/%E5%9B%BE%E8%A7%A3.jpg"><br>薄书，比上一本难且枯燥一些，推荐有一些基础再看，目前看了20%左右吧  </p>
+<h3 id="挑战程序设计竞赛"><a href="#挑战程序设计竞赛" class="headerlink" title="挑战程序设计竞赛"></a>挑战程序设计竞赛</h3><p><img src="/../someimage/%E6%8C%91%E6%88%98.jpg"><br>人称白书，和紫书一起看的，大家说这本比紫书简单但是我不觉得。有些难点的算法和数据结构，比如状压dp，st表这种。跳着看的  </p>
+<h3 id="深入理解计算机系统"><a href="#深入理解计算机系统" class="headerlink" title="深入理解计算机系统"></a>深入理解计算机系统</h3><p><img src="/../someimage/%E6%B7%B1%E5%85%A5.jpg"><br>计算机界有名的大厚书，并且是大二要上的一门课，对各种现象解释的非常底层和详尽。由于有对大书的畏惧，目前看了10%吧   </p>
+<h3 id="面向对象程序设计"><a href="#面向对象程序设计" class="headerlink" title="面向对象程序设计"></a>面向对象程序设计</h3><p><img src="/../someimage/%E9%9D%A2%E5%90%91.jpg"><br>我大一上特爱这本书，带我入门了面向对象编程，写的巨好，把我看同类型的书觉得很难的东西春风化雨，写的特别好理解。是我看过的教c++面向对象里最好的书了，看了1.5遍…（ps但是依旧没有拯救我的java……  </p>
+<h2 id="关于人生-x2F-生活"><a href="#关于人生-x2F-生活" class="headerlink" title="关于人生&#x2F;生活"></a>关于人生&#x2F;生活</h2><h3 id="影响力"><a href="#影响力" class="headerlink" title="影响力"></a>影响力</h3><p><img src="/../someimage/%E5%BD%B1%E5%93%8D.jpg"><br>会学到一些小技巧，比如目的是7就开口要10这种</p>
+<h3 id="亲密关系"><a href="#亲密关系" class="headerlink" title="亲密关系"></a>亲密关系</h3><p>有很多有意思的调查  </p>
+<h3 id="你不可不知的人性"><a href="#你不可不知的人性" class="headerlink" title="你不可不知的人性"></a>你不可不知的人性</h3><p><img src="/../someimage/%E4%BD%A0%E4%B8%8D.jpg"><br>刘庸的处事系列我都很喜欢，尤其是那本《我不是教你诈》，讲了好多令我叹为观止的人间套路……感觉看完这个系列后情商提高了  </p>
+]]></content>
+  </entry>
+  <entry>
     <title>基于B树的图书管理系统</title>
     <url>/2023/05/26/btree/</url>
     <content><![CDATA[<h2 id="程序构思"><a href="#程序构思" class="headerlink" title="程序构思"></a>程序构思</h2><p>分为三个头文件：类头文件，函数实现头文件，源文件。源文件实现和用户的交互。<br>分为三个类：book btnode btree<br>分别存储  书对象  树节点  b树接口<br>一共六个操作：  </p>
@@ -100,36 +119,6 @@ void travel(BTNodePosi a, int k)
 &#125;
 </code></pre>
 <h2 id="写后感"><a href="#写后感" class="headerlink" title="写后感"></a>写后感</h2><p>这个程序最怪的是主函数中定义了一棵树，然后树类内部的操作函数还需要传树根的参，很诡异，也不知道哪里出了问题。因为借鉴的是c语言版，也不知道这个树实例化后怎么通过自己的函数直接改内部特性，好像可以this指针？<br>下了个大数据，4k本书调了一下，树没有问题，不过2-3树感觉没有用到b树过多的特性，速度方面应该还是挺慢的吧……</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>关于起岸希的书单</title>
-    <url>/2023/07/20/book/</url>
-    <content><![CDATA[<p>众所周知，起岸希还是很爱读书的，她把她从大学一年级起读过的书整理了一下，有的没有读完，不过会努力更新进度  </p>
-<h2 id="关于计算机"><a href="#关于计算机" class="headerlink" title="关于计算机"></a>关于计算机</h2><h3 id="c-primer-plus"><a href="#c-primer-plus" class="headerlink" title="c primer plus"></a>c primer plus</h3><span id="more"></span>    
-<p><img src="/../someimage/cp.jpg"><br>我的c语言入门经典书~学校讲的稀烂，所有的计算机语言特性和c语言基础都是跟他学的，很厚，讲的很细致，很适合入门啃。我当时啃了两个月，期间的每一天都很快乐。  </p>
-<h3 id="计组"><a href="#计组" class="headerlink" title="计组"></a>计组</h3><p><img src="/../someimage/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86.jpg"><br>看了前2章，对整个计算机架构有个基本的了解，第三章数学比较多，含枯燥的公式论证</p>
-<h3 id="算法竞赛入门经典"><a href="#算法竞赛入门经典" class="headerlink" title="算法竞赛入门经典"></a>算法竞赛入门经典</h3><p><img src="/../someimage/%E7%AE%97%E6%B3%95.jpg"><br>人称紫书，看了一半很有收获，感觉里面的oi类型较为古早，但是有很棒的思路，希望他能带我打进区域赛（  </p>
-<h3 id="算法笔记"><a href="#算法笔记" class="headerlink" title="算法笔记"></a>算法笔记</h3><p><img src="/../someimage/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0.jpg"><br>我看完的第一本算法书，也是我的算法入门书，全书小500页，讲的通俗易懂，知识点覆盖不全  </p>
-<h3 id="网络是怎样连的"><a href="#网络是怎样连的" class="headerlink" title="网络是怎样连的"></a>网络是怎样连的</h3><p><img src="/../someimage/%E7%BD%91%E7%BB%9C.jpg"><br>我的互联网入门书，算是我看过的最容易懂的网络书了。推荐给大家入门  </p>
-<h3 id="图解TCP-x2F-IP"><a href="#图解TCP-x2F-IP" class="headerlink" title="图解TCP&#x2F;IP"></a>图解TCP&#x2F;IP</h3><p><img src="/../someimage/%E5%9B%BE%E8%A7%A3.jpg"><br>薄书，比上一本难且枯燥一些，推荐有一些基础再看，目前看了20%左右吧  </p>
-<h3 id="挑战程序设计竞赛"><a href="#挑战程序设计竞赛" class="headerlink" title="挑战程序设计竞赛"></a>挑战程序设计竞赛</h3><p><img src="/../someimage/%E6%8C%91%E6%88%98.jpg"><br>人称白书，和紫书一起看的，大家说这本比紫书简单但是我不觉得。有些难点的算法和数据结构，比如状压dp，st表这种。跳着看的  </p>
-<h3 id="深入理解计算机系统"><a href="#深入理解计算机系统" class="headerlink" title="深入理解计算机系统"></a>深入理解计算机系统</h3><p><img src="/../someimage/%E6%B7%B1%E5%85%A5.jpg"><br>计算机界有名的大厚书，并且是大二要上的一门课，对各种现象解释的非常底层和详尽。由于有对大书的畏惧，目前看了10%吧   </p>
-<h3 id="面向对象程序设计"><a href="#面向对象程序设计" class="headerlink" title="面向对象程序设计"></a>面向对象程序设计</h3><p><img src="/../someimage/%E9%9D%A2%E5%90%91.jpg"><br>我大一上特爱这本书，带我入门了面向对象编程，写的巨好，把我看同类型的书觉得很难的东西春风化雨，写的特别好理解。是我看过的教c++面向对象里最好的书了，看了1.5遍…（ps但是依旧没有拯救我的java……  </p>
-<h2 id="关于人生-x2F-生活"><a href="#关于人生-x2F-生活" class="headerlink" title="关于人生&#x2F;生活"></a>关于人生&#x2F;生活</h2><h3 id="影响力"><a href="#影响力" class="headerlink" title="影响力"></a>影响力</h3><p><img src="/../someimage/%E5%BD%B1%E5%93%8D.jpg"><br>会学到一些小技巧，比如目的是7就开口要10这种</p>
-<h3 id="亲密关系"><a href="#亲密关系" class="headerlink" title="亲密关系"></a>亲密关系</h3><p>有很多有意思的调查  </p>
-<h3 id="你不可不知的人性"><a href="#你不可不知的人性" class="headerlink" title="你不可不知的人性"></a>你不可不知的人性</h3><p><img src="/../someimage/%E4%BD%A0%E4%B8%8D.jpg"><br>刘庸的处事系列我都很喜欢，尤其是那本《我不是教你诈》，讲了好多令我叹为观止的人间套路……感觉看完这个系列后情商提高了  </p>
-]]></content>
-  </entry>
-  <entry>
-    <title>关于clion配置</title>
-    <url>/2023/04/14/clion/</url>
-    <content><![CDATA[<p>起岸希一开始配置好了各种编译环境。但是出现<strong>运行小三角灰色，无法运行</strong> 的情况。<br>如图所示：<img src="/../someimage/1.png"><br>解决方法：<br>1.检查是否配置好编译环境   </p>
-<span id="more"></span>  
-
-
-<p><img src="/../someimage/2.png"><br>注意！buildtool那三排下面如果有个黄三角警告是不行的。可能需要手动选择。按图上的来就好啦~</p>
-<p>2.环境配好了注意储存项目的路径必须是全英文。如果是全英文但是问题依旧没有解决你应该是把项目存c盘了。c盘路径“用户”显示的是“users”，我猜是因为这个。可以在D盘中新开一个文件夹，重新存项目，新开好的项目如果生成这样一个cmake文件就没有问题啦~<img src="/../someimage/3.png"></p>
 ]]></content>
   </entry>
   <entry>
@@ -240,21 +229,14 @@ for (int iy = 0; iy &lt; real_h; iy++) &#123;
 <h2 id="6-无解"><a href="#6-无解" class="headerlink" title="6.无解"></a>6.无解</h2>]]></content>
   </entry>
   <entry>
-    <title>工大杯比赛记录</title>
-    <url>/2023/05/24/gdb/</url>
-    <content><![CDATA[<h2 id="可能是因为大佬都没来，混了个好排名。。。"><a href="#可能是因为大佬都没来，混了个好排名。。。" class="headerlink" title="可能是因为大佬都没来，混了个好排名。。。"></a>可能是因为大佬都没来，混了个好排名。。。</h2><p><img src="/../someimage/5.jpg">  </p>
+    <title>关于clion配置</title>
+    <url>/2023/04/14/clion/</url>
+    <content><![CDATA[<p>起岸希一开始配置好了各种编译环境。但是出现<strong>运行小三角灰色，无法运行</strong> 的情况。<br>如图所示：<img src="/../someimage/1.png"><br>解决方法：<br>1.检查是否配置好编译环境   </p>
 <span id="more"></span>  
-<h2 id="比赛过程"><a href="#比赛过程" class="headerlink" title="比赛过程"></a>比赛过程</h2><p>需要感谢我自己的一点是比赛之前买了一杯一直想喝的奶茶，绿茶味的，很解困，加上是凉的，全程没怎么困过。。。这个比赛acm赛制让带资料，于是我带着我两本大书就去了，去了发现我不是阵仗最大的，一堆人拿着什么c primer什么c语言程序设计就来了，还有带物理作业的，我顿时就不紧张了。。。见到了久仰的大佬ysm，还是他来跟我打的招呼。。。比赛的时候真的很离谱，1:30了大家都开始写了我校园网还没上去2333，边上的大哥告诉我校园网网址才上去的。写了5题，一共8题，爽。  </p>
-<h3 id="A"><a href="#A" class="headerlink" title="A"></a>A</h3><p>用时5min？<br>第一道题就让我很困惑。。。找数据就行，答案非常明显一眼就能看出，但是出题人小熊还是水了一页的字…找到答案后我都不敢置信。。一页的数据，那么多字，答案就这？但是看榜上大家都ac了一遍过，我心想也不能有什么坑，然后就交了,ac。至今我也不清楚他为什么给了那么多数据。  </p>
-<h3 id="B"><a href="#B" class="headerlink" title="B"></a>B</h3><p>用时30min<br>b题是另一个学长出的，有很多小坑点，擦边过的特判，任何时刻鸟都不能沾地啥的，写了老长，五六十行吧。第一次交没过，心态崩了往后写了，一个小时后我还是只过了A一道题，b和e都wa。返回来看的时候发现了一条补充说明。。。改改过了。</p>
-<h3 id="C"><a href="#C" class="headerlink" title="C"></a>C</h3><p>用时1h<br>这题我写的时候距离比赛结束还有一个小时，我当时排名30多，已经封榜了（这个真的坑，我一开始不知道封榜还寻思为什么做出的题变蓝了）就想着无所谓了爱对不对吧，我上学期11月蓝桥也是30多名，不就是毫无进步么，无所谓（悲）而且c题是我很久没练的树题！！当时看榜上比我强的基本就是C和F写了，然后C过的最多，我想着他最简单就开始尝试。写着写着我发现他不是二叉树，这就说明这应该不是道建树的题，每个给出father，所以我想着fa数组保存就不建树了，这样还挺简单的，最后证明我的想法是对的。。。<br>C题考的是最大未污染子树，我当时一看题以为要建树，而且这名字很耳熟，应该之前在学堂在线看过，但是没研究过，不过我当时其他的应该也不会了，于是我打算自创算法（）<br>就用fa保存整个树，re保存每个点红不红，ans保存每个点开始的子树数量。然后遍历每个点，如果这个点红就把他所有父亲标红，不红就把他自己和所有父亲的ans+1，直到红父亲或者根。最后遍历ans找最大的节点就是答案。我16的时候交了一次wa了，然后发现没看清题，找不到的时候要输出-1，然后又自己创造样例输入发现有个循环没进，这时候24了，各种调试发现原来是应该&lt;&#x3D;n写成&lt;n了，改完这些已经28了，我赶紧交了，剩下的就听天由命了，然后我看他那个评测一直转一直转我就害怕，然后！！居然过了！！我那一刻都快哭了，二叉树没白学，题没白做啊啊啊啊。。然后就29了，我躺尸等待考试结束。。。。好久没经历这么刺激的考试结束前7分钟了，真就创造奇迹，感觉把我排名拉高了十几名。。真就一念之间<img src="/../someimage/he.jpg"></p>
-<h3 id="E"><a href="#E" class="headerlink" title="E"></a>E</h3><p>用时30min<br>小熊出的题，我当时想着一定要过，考哈希表嘛，我寻思看着很简单啊，遂交，wa。然后我觉得我的判断条件逻辑不好，遂改，又交，wa。然后自己想了几组数据测试，还真测出问题来了，判断的||写成&amp;&amp;了，你说怎么可能有数在&lt;1800的同时&gt;29597呢。改了，遂ac</p>
-<h3 id="H"><a href="#H" class="headerlink" title="H"></a>H</h3><p>用时40min<br>这题是第4个过的，真的写爽了，快说，感谢ysm。。。各种STL啪啪往上招呼好快乐，一开始用的map后来发现不行，他（应该）没有按键key排完按value排的特性（按数字排序，同数字按名字排序），遂换priority_queue。发现也不行，他也不是先按pair的first排完按second。但是我有书啊！！我直接翻书哈哈哈哈哈，写了个cmp结构体给整出来了，<code>if(p1.first!=p2.first)return p1.first&lt;p2.first;   else return p1.second&gt;p2.second;</code>。不知道为什么两个符号是反的，反正结果是对的（狗头）我头一次体验到带书上阵的魅力。幸好没出bug，否则还真不会改。。。因为不了解实现。有句话说得好：</p>
-<blockquote>
-<p>我们至今仍未知道那题ac的原因  </p>
-</blockquote>
-<p>笑死。</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>经历过蓝桥杯和天梯赛的暴打可能人变踏实了一点。专心刷了几道不会的题，心态上也不那么狂了，轻易不尝试自己以前拿ide都调半天的题（这次的c是个例外哈哈哈，临时发挥出来了），devcpp越发熟练了，调试上没出大问题，比如“一顿操作猛如虎，运行一看没输出”这种，这次没有写出没输出的程序，也没有dfs啥的难调试的东西，就是基本理论想明白了实际就没什么别的问题。调程序很好的方法就是自己多创造几个样例，咱可以模拟那种很小的输入比如只有一两个点，一般就能看出问题了。<br>我要吐槽！学校破电脑黑窗口不能ctrl+v……每个测试例都要手动输入！！h题那个输入就逆天，电脑类型MacBook_Pro_19_2023，崩溃每次都来一遍，我都记下来了。。。</p>
+
+
+<p><img src="/../someimage/2.png"><br>注意！buildtool那三排下面如果有个黄三角警告是不行的。可能需要手动选择。按图上的来就好啦~</p>
+<p>2.环境配好了注意储存项目的路径必须是全英文。如果是全英文但是问题依旧没有解决你应该是把项目存c盘了。c盘路径“用户”显示的是“users”，我猜是因为这个。可以在D盘中新开一个文件夹，重新存项目，新开好的项目如果生成这样一个cmake文件就没有问题啦~<img src="/../someimage/3.png"></p>
 ]]></content>
   </entry>
   <entry>
@@ -276,33 +258,25 @@ for (int i = 1; i &lt;= 20; ++i)
 </code></pre>
 <p>将单词变为代码<code>the fool</code>一个反引号包裹单词</p>
 <hr>
-<p>分割线<br>这是一个<a href="https://markdown.com.cn/basic-syntax/links.html">markdown语法链接</a><br>这是起岸希的email：<a href="mailto:&#x34;&#51;&#x30;&#x33;&#54;&#50;&#51;&#x38;&#x35;&#x40;&#113;&#x71;&#x2e;&#x63;&#111;&#109;">&#x34;&#51;&#x30;&#x33;&#54;&#50;&#51;&#x38;&#x35;&#x40;&#113;&#x71;&#x2e;&#x63;&#111;&#109;</a><br>这是图片 <img src="/../someimage/wdt.jpg" alt="picture">  </p>
+<p>分割线<br>这是一个<a href="https://markdown.com.cn/basic-syntax/links.html">markdown语法链接</a><br>这是起岸希的email：<a href="mailto:&#x34;&#51;&#48;&#x33;&#x36;&#x32;&#51;&#56;&#x35;&#64;&#113;&#x71;&#46;&#99;&#x6f;&#109;">&#x34;&#51;&#48;&#x33;&#x36;&#x32;&#51;&#56;&#x35;&#64;&#113;&#x71;&#46;&#99;&#x6f;&#109;</a><br>这是图片 <img src="/../someimage/wdt.jpg" alt="picture">  </p>
 ]]></content>
   </entry>
   <entry>
-    <title>蓝桥杯2022年题目思路</title>
-    <url>/2023/03/29/lanqiao/</url>
-    <content><![CDATA[<h2 id="E：爬树的甲壳虫"><a href="#E：爬树的甲壳虫" class="headerlink" title="E：爬树的甲壳虫"></a>E：爬树的甲壳虫</h2><p>状态转移方程：<img src="/../someimage/wsl.png">  </p>
+    <title>工大杯比赛记录</title>
+    <url>/2023/05/24/gdb/</url>
+    <content><![CDATA[<h2 id="可能是因为大佬都没来，混了个好排名。。。"><a href="#可能是因为大佬都没来，混了个好排名。。。" class="headerlink" title="可能是因为大佬都没来，混了个好排名。。。"></a>可能是因为大佬都没来，混了个好排名。。。</h2><p><img src="/../someimage/5.jpg">  </p>
 <span id="more"></span>  
-
-<p>其中i&#x3D;0,1…n。a[i]代表<strong>从a[i]开始爬到树顶的期望时间</strong>，即a[i-1]有p[i]的可能爬上a[i]并且继承a[i]的期望时间。有1-p[i]的可能掉到树根，从头来过，继承a[0]的时间。a[0]指从根开始爬到树顶的时间。</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>关于ST表</title>
-    <url>/2023/03/21/second/</url>
-    <content><![CDATA[<h3 id="定义：用于求可重复性贡献问题的解。（即重复计算结果不变）对于一个一维数组，采用分治的方法，用一个二维数组储存每个区间内的最大最小值。f-a-b-表示从a开始2的b次方个数的最大值"><a href="#定义：用于求可重复性贡献问题的解。（即重复计算结果不变）对于一个一维数组，采用分治的方法，用一个二维数组储存每个区间内的最大最小值。f-a-b-表示从a开始2的b次方个数的最大值" class="headerlink" title="定义：用于求可重复性贡献问题的解。（即重复计算结果不变）对于一个一维数组，采用分治的方法，用一个二维数组储存每个区间内的最大最小值。f[a][b]表示从a开始2的b次方个数的最大值"></a>定义：用于求可重复性贡献问题的解。（即重复计算结果不变）对于一个一维数组，采用分治的方法，用一个二维数组储存每个区间内的最大最小值。<code>f[a][b]</code>表示从a开始2的b次方个数的最大值</h3><p>状态转移方程：f ( i , j ) &#x3D; m a x ( f ( i , j − 1 ) ,   f ( i + 2^(j − 1) , j − 1 ) )  </p>
-<span id="more"></span>  
-
-<p>将原区间分成两个大小相等子区间（因为长度是2的j次方，所以不存在不能等分的情况）<br>代码如下</p>
-<pre><code>int f[MAXN][21]; // 第二维的大小根据数据范围决定，不小于log(MAXN)
-    for (int i = 1; i &lt;= n; ++i)
-           f[i][0] = read(); //读入数据
-for (int j = 1; j &lt;= 20; ++j)//枚举倍数
-    for (int i = 1; i + (1 &lt;&lt; j) - 1 &lt;= n; ++i)//枚举起点,i到i+2^j-1刚好2^j个数
-        f[i][j] = max(f[i][j - 1], f[i + (1 &lt;&lt; (j- 1))][j- 1]);
-</code></pre>
-<p>内部存储像这样 <img src="/../someimage/02.jpg" alt="picture"><br>对于询问(l,r)，寻找两个分别以l开头和以s结尾的区间，两区间的最大值即总最大值。我们需要使第一个子区间的右端点尽可能的接近r​，那么不妨直接令l + 2^s − 1 &#x3D; r即s&#x3D;lg[ r-l+1]向下取整。则区间[l,r]被分为：f[ l ][ l + 2^s - 1]和f[r-( 2^s -1)][ r ]  <strong>从l开始2^s个，从r往前2^s个</strong><br>对log进行预处理：<code>lg[i]=lg[i/2]+1;</code>,<code>lg[0]=-1;</code><strong>千万别忘！</strong>  </p>
+<h2 id="比赛过程"><a href="#比赛过程" class="headerlink" title="比赛过程"></a>比赛过程</h2><p>需要感谢我自己的一点是比赛之前买了一杯一直想喝的奶茶，绿茶味的，很解困，加上是凉的，全程没怎么困过。。。这个比赛acm赛制让带资料，于是我带着我两本大书就去了，去了发现我不是阵仗最大的，一堆人拿着什么c primer什么c语言程序设计就来了，还有带物理作业的，我顿时就不紧张了。。。见到了久仰的大佬ysm，还是他来跟我打的招呼。。。比赛的时候真的很离谱，1:30了大家都开始写了我校园网还没上去2333，边上的大哥告诉我校园网网址才上去的。写了5题，一共8题，爽。  </p>
+<h3 id="A"><a href="#A" class="headerlink" title="A"></a>A</h3><p>用时5min？<br>第一道题就让我很困惑。。。找数据就行，答案非常明显一眼就能看出，但是出题人小熊还是水了一页的字…找到答案后我都不敢置信。。一页的数据，那么多字，答案就这？但是看榜上大家都ac了一遍过，我心想也不能有什么坑，然后就交了,ac。至今我也不清楚他为什么给了那么多数据。  </p>
+<h3 id="B"><a href="#B" class="headerlink" title="B"></a>B</h3><p>用时30min<br>b题是另一个学长出的，有很多小坑点，擦边过的特判，任何时刻鸟都不能沾地啥的，写了老长，五六十行吧。第一次交没过，心态崩了往后写了，一个小时后我还是只过了A一道题，b和e都wa。返回来看的时候发现了一条补充说明。。。改改过了。</p>
+<h3 id="C"><a href="#C" class="headerlink" title="C"></a>C</h3><p>用时1h<br>这题我写的时候距离比赛结束还有一个小时，我当时排名30多，已经封榜了（这个真的坑，我一开始不知道封榜还寻思为什么做出的题变蓝了）就想着无所谓了爱对不对吧，我上学期11月蓝桥也是30多名，不就是毫无进步么，无所谓（悲）而且c题是我很久没练的树题！！当时看榜上比我强的基本就是C和F写了，然后C过的最多，我想着他最简单就开始尝试。写着写着我发现他不是二叉树，这就说明这应该不是道建树的题，每个给出father，所以我想着fa数组保存就不建树了，这样还挺简单的，最后证明我的想法是对的。。。<br>C题考的是最大未污染子树，我当时一看题以为要建树，而且这名字很耳熟，应该之前在学堂在线看过，但是没研究过，不过我当时其他的应该也不会了，于是我打算自创算法（）<br>就用fa保存整个树，re保存每个点红不红，ans保存每个点开始的子树数量。然后遍历每个点，如果这个点红就把他所有父亲标红，不红就把他自己和所有父亲的ans+1，直到红父亲或者根。最后遍历ans找最大的节点就是答案。我16的时候交了一次wa了，然后发现没看清题，找不到的时候要输出-1，然后又自己创造样例输入发现有个循环没进，这时候24了，各种调试发现原来是应该&lt;&#x3D;n写成&lt;n了，改完这些已经28了，我赶紧交了，剩下的就听天由命了，然后我看他那个评测一直转一直转我就害怕，然后！！居然过了！！我那一刻都快哭了，二叉树没白学，题没白做啊啊啊啊。。然后就29了，我躺尸等待考试结束。。。。好久没经历这么刺激的考试结束前7分钟了，真就创造奇迹，感觉把我排名拉高了十几名。。真就一念之间<img src="/../someimage/he.jpg"></p>
+<h3 id="E"><a href="#E" class="headerlink" title="E"></a>E</h3><p>用时30min<br>小熊出的题，我当时想着一定要过，考哈希表嘛，我寻思看着很简单啊，遂交，wa。然后我觉得我的判断条件逻辑不好，遂改，又交，wa。然后自己想了几组数据测试，还真测出问题来了，判断的||写成&amp;&amp;了，你说怎么可能有数在&lt;1800的同时&gt;29597呢。改了，遂ac</p>
+<h3 id="H"><a href="#H" class="headerlink" title="H"></a>H</h3><p>用时40min<br>这题是第4个过的，真的写爽了，快说，感谢ysm。。。各种STL啪啪往上招呼好快乐，一开始用的map后来发现不行，他（应该）没有按键key排完按value排的特性（按数字排序，同数字按名字排序），遂换priority_queue。发现也不行，他也不是先按pair的first排完按second。但是我有书啊！！我直接翻书哈哈哈哈哈，写了个cmp结构体给整出来了，<code>if(p1.first!=p2.first)return p1.first&lt;p2.first;   else return p1.second&gt;p2.second;</code>。不知道为什么两个符号是反的，反正结果是对的（狗头）我头一次体验到带书上阵的魅力。幸好没出bug，否则还真不会改。。。因为不了解实现。有句话说得好：</p>
+<blockquote>
+<p>我们至今仍未知道那题ac的原因  </p>
+</blockquote>
+<p>笑死。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>经历过蓝桥杯和天梯赛的暴打可能人变踏实了一点。专心刷了几道不会的题，心态上也不那么狂了，轻易不尝试自己以前拿ide都调半天的题（这次的c是个例外哈哈哈，临时发挥出来了），devcpp越发熟练了，调试上没出大问题，比如“一顿操作猛如虎，运行一看没输出”这种，这次没有写出没输出的程序，也没有dfs啥的难调试的东西，就是基本理论想明白了实际就没什么别的问题。调程序很好的方法就是自己多创造几个样例，咱可以模拟那种很小的输入比如只有一两个点，一般就能看出问题了。<br>我要吐槽！学校破电脑黑窗口不能ctrl+v……每个测试例都要手动输入！！h题那个输入就逆天，电脑类型MacBook_Pro_19_2023，崩溃每次都来一遍，我都记下来了。。。</p>
 ]]></content>
   </entry>
   <entry>
@@ -333,6 +307,80 @@ for (int j = 1; j &lt;= 20; ++j)//枚举倍数
 <li>四种偏移只要不超界都踩一遍</li>
 <li>用vis数组保存踩过的非0，main函数判断没踩过的非零开始dfs。后来让vis保存踩过的所有也不行，不会了。。。</li>
 </ol>
+]]></content>
+  </entry>
+  <entry>
+    <title>洛谷题解</title>
+    <url>/2023/04/25/%E6%B4%9B%E8%B0%B7/</url>
+    <content><![CDATA[<h2 id="P2089-烤鸡"><a href="#P2089-烤鸡" class="headerlink" title="P2089 烤鸡"></a>P2089 烤鸡</h2><p>考点：深搜 剪枝 回溯（记录路径） </p>
+<span id="more"></span>  
+
+
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"> 	<span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> n,ans,a[<span class="number">12</span>],aa[<span class="number">10007</span>][<span class="number">12</span>];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">save</span><span class="params">(<span class="type">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)</span><br><span class="line">	aa[n][i] = a[i];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> sum, <span class="type">int</span> pos)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">if</span> (sum == n &amp;&amp; pos == <span class="number">10</span>)</span><br><span class="line">&#123;</span><br><span class="line">	ans++;</span><br><span class="line">	<span class="built_in">save</span>(ans);<span class="comment">//正确：存答案</span></span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (sum &gt;= n) <span class="keyword">return</span>;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (pos == <span class="number">10</span>) <span class="keyword">return</span>;</span><br><span class="line">a[pos] = <span class="number">1</span>;<span class="comment">//记录路径数组</span></span><br><span class="line"><span class="built_in">dfs</span>(sum + <span class="number">1</span>, pos+<span class="number">1</span>);</span><br><span class="line">a[pos] = <span class="number">2</span>;<span class="comment">//回溯</span></span><br><span class="line"><span class="built_in">dfs</span>(sum + <span class="number">2</span>, pos+<span class="number">1</span>);</span><br><span class="line">a[pos] = <span class="number">3</span>;</span><br><span class="line"><span class="built_in">dfs</span>(sum + <span class="number">3</span>, pos+<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">cin &gt;&gt; n;</span><br><span class="line"><span class="built_in">dfs</span>(<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">cout &lt;&lt; ans&lt;&lt;endl;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;=ans; i++)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; <span class="number">10</span>; j++)</span><br><span class="line">		cout &lt;&lt; aa[i][j]&lt;&lt;<span class="string">&quot; &quot;</span>;</span><br><span class="line">	cout &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="P1618-三连击"><a href="#P1618-三连击" class="headerlink" title="P1618 三连击"></a>P1618 三连击</h2><p>深搜&#x2F;枚举每个成比例的三位数判重</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> k,b,c,f;</span><br><span class="line"><span class="type">int</span> used[<span class="number">11</span>],a[<span class="number">10</span>];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">tonum</span><span class="params">(<span class="type">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> sum=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">3</span>*n<span class="number">-2</span>;i&lt;=<span class="number">3</span>*n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        sum*=<span class="number">10</span>;</span><br><span class="line">        sum+=a[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n==<span class="number">10</span>&amp;&amp;<span class="built_in">tonum</span>(<span class="number">1</span>)*b==<span class="built_in">tonum</span>(<span class="number">2</span>)*k&amp;&amp;<span class="built_in">tonum</span>(<span class="number">2</span>)*c==<span class="built_in">tonum</span>(<span class="number">3</span>)*b)</span><br><span class="line">    &#123;cout&lt;&lt;<span class="built_in">tonum</span>(<span class="number">1</span>)&lt;&lt;<span class="string">&quot; &quot;</span>&lt;&lt;<span class="built_in">tonum</span>(<span class="number">2</span>)&lt;&lt;<span class="string">&quot; &quot;</span>&lt;&lt;<span class="built_in">tonum</span>(<span class="number">3</span>)&lt;&lt;endl;</span><br><span class="line">        f=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;<span class="number">10</span>;i++)</span><br><span class="line">        <span class="keyword">if</span>(!used[i])</span><br><span class="line">            &#123;</span><br><span class="line">                used[i]=<span class="number">1</span>;</span><br><span class="line">                a[n]=i;</span><br><span class="line">                <span class="built_in">dfs</span>(n+<span class="number">1</span>);</span><br><span class="line">                used[i]=<span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cin&gt;&gt;k&gt;&gt;b&gt;&gt;c;</span><br><span class="line">    <span class="built_in">dfs</span>(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span>(!f)cout&lt;&lt;<span class="string">&quot;No!!!&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line">```  </span><br><span class="line">## UVA816  bfs迷宫</span><br><span class="line">code:  </span><br><span class="line">```cpp</span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line">string name;</span><br><span class="line"><span class="type">int</span> stap1, stap2, goal1, goal2;</span><br><span class="line"><span class="type">char</span> fx;</span><br><span class="line"><span class="type">int</span> has_e[<span class="number">10</span>][<span class="number">10</span>][<span class="number">10</span>][<span class="number">10</span>];</span><br><span class="line"><span class="type">int</span> d[<span class="number">10</span>][<span class="number">10</span>][<span class="number">5</span>];</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Node</span> &#123;</span><br><span class="line">	<span class="type">int</span> x, y, dir;</span><br><span class="line">	<span class="built_in">Node</span>(<span class="type">int</span> x, <span class="type">int</span> y, <span class="type">int</span> dir) :<span class="built_in">x</span>(x), <span class="built_in">y</span>(y), <span class="built_in">dir</span>(dir) &#123;&#125;</span><br><span class="line">	<span class="built_in">Node</span>() &#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line">Node p[<span class="number">10</span>][<span class="number">10</span>][<span class="number">5</span>];</span><br><span class="line"><span class="type">int</span> dr[] = &#123; <span class="number">-1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span> &#125;;<span class="comment">//对应NESW</span></span><br><span class="line"><span class="type">int</span> dc[] = &#123; <span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">-1</span> &#125;;</span><br><span class="line"><span class="type">const</span> <span class="type">char</span>* dirs = <span class="string">&quot;NESW&quot;</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">char</span>* turns = <span class="string">&quot;FLR&quot;</span>;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">dir_id</span><span class="params">(<span class="type">char</span> ch)</span> </span>&#123; <span class="keyword">return</span> <span class="built_in">strchr</span>(dirs, ch) - dirs; &#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">turn_id</span><span class="params">(<span class="type">char</span> c)</span> </span>&#123; <span class="keyword">return</span> <span class="built_in">strchr</span>(turns, c) - turns; &#125;</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">read</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cin &gt;&gt; name;</span><br><span class="line">	<span class="keyword">if</span> (name == <span class="string">&quot;END&quot;</span>)<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	cin &gt;&gt; stap1 &gt;&gt; stap2 &gt;&gt; fx &gt;&gt; goal1 &gt;&gt; goal2;</span><br><span class="line">	<span class="type">int</span> x=<span class="number">0</span>, y=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (cin &gt;&gt; x &amp;&amp; x)</span><br><span class="line">	&#123;</span><br><span class="line">		cin &gt;&gt; y;</span><br><span class="line">		string s;</span><br><span class="line">		<span class="keyword">while</span> (cin &gt;&gt; s &amp;&amp; s != <span class="string">&quot;*&quot;</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;s.<span class="built_in">size</span>();i++)</span><br><span class="line">			has_e[x][y][<span class="built_in">dir_id</span>(s[<span class="number">0</span>])][<span class="built_in">turn_id</span>(s[i])]=<span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	has_e[stap1][stap2][<span class="built_in">dir_id</span>(fx)][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">Node <span class="title">walk</span><span class="params">(<span class="type">const</span> Node&amp; u, <span class="type">int</span> turn)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> dir = u.dir;</span><br><span class="line">	<span class="keyword">if</span> (turn == <span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		dir = (dir + <span class="number">3</span>) % <span class="number">4</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (turn == <span class="number">2</span>)dir = (dir + <span class="number">1</span>) % <span class="number">4</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">Node</span>(u.x+dr[dir], u.y+dc[dir], dir);<span class="comment">//往某个方向走的下一格和朝向</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">print_ans</span><span class="params">(Node&amp; u)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	vector&lt;Node&gt;nodes;</span><br><span class="line">	<span class="keyword">for</span> (;;) &#123;</span><br><span class="line">		nodes.<span class="built_in">push_back</span>(u);</span><br><span class="line">		<span class="keyword">if</span> (d[u.x][u.y][u.dir] == <span class="number">0</span>)</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		u = p[u.x][u.y][u.dir];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//nodes.push_back(Node(stap1, stap2, dir_id(fx)));</span></span><br><span class="line">	<span class="type">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = nodes.<span class="built_in">size</span>() - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (cnt % <span class="number">10</span> == <span class="number">0</span>)cout &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot; (%d,%d)&quot;</span>, nodes[i].x, nodes[i].y);</span><br><span class="line">		<span class="keyword">if</span> (++cnt % <span class="number">10</span> == <span class="number">0</span>)cout &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (nodes.<span class="built_in">size</span>() % <span class="number">10</span> != <span class="number">0</span>)cout &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">bfs</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	queue&lt;Node&gt;q;</span><br><span class="line">	<span class="built_in">memset</span>(d, <span class="number">-1</span>, <span class="built_in">sizeof</span>(d));</span><br><span class="line">	<span class="function">Node <span class="title">u</span><span class="params">(stap1, stap2, dir_id(fx))</span></span>;</span><br><span class="line">	d[u.x][u.y][u.dir] = <span class="number">0</span>;</span><br><span class="line">	q.<span class="built_in">push</span>(u);</span><br><span class="line">	<span class="keyword">while</span> (!q.<span class="built_in">empty</span>())</span><br><span class="line">	&#123;</span><br><span class="line">		Node u = q.<span class="built_in">front</span>(); q.<span class="built_in">pop</span>();</span><br><span class="line">		<span class="keyword">if</span> (u.x == goal1 &amp;&amp; u.y == goal2) &#123; <span class="built_in">print_ans</span>(u); <span class="keyword">return</span>; &#125;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="comment">//三个方向都试试看能不能走</span></span><br><span class="line">			Node v = <span class="built_in">walk</span>(u, i);</span><br><span class="line">			<span class="keyword">if</span> (has_e[u.x][u.y][u.dir][i] &amp;&amp; v.x &gt;= <span class="number">0</span> &amp;&amp; v.x &lt;= <span class="number">9</span> &amp;&amp; v.y &gt;= <span class="number">0</span> &amp;&amp; v.y &lt;= <span class="number">9</span> &amp;&amp; d[v.x][v.y][v.dir] &lt; <span class="number">0</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				d[v.x][v.y][v.dir] = d[u.x][u.y][u.dir] + <span class="number">1</span>;</span><br><span class="line">				p[v.x][v.y][v.dir] = u;</span><br><span class="line">				q.<span class="built_in">push</span>(v);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;  No Solution Possible&quot;</span> &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span> (<span class="built_in">read</span>())</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; name &lt;&lt; endl;</span><br><span class="line">		<span class="built_in">bfs</span>();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">```  </span><br><span class="line">蒟蒻照着竞赛书写的首个<span class="number">100</span>行以上代码，本程序的最妙之处是位移函数和方向绑定。两套表示方向的体系NEWS是总方向，FLR是具体到每个节点能走的方向。根据人到达这个节点的朝向结合FLR枚举可以去的朝向（NEWS），此时注意朝向编号与位移编号对应。再根据图来筛选。基于此做BFS  </span><br><span class="line">## UVA10305 拓扑排序</span><br><span class="line">ac code:  </span><br><span class="line">```cpp</span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="type">int</span> map[<span class="number">200</span>][<span class="number">200</span>];</span><br><span class="line"><span class="type">int</span> n, m, a, b,t;</span><br><span class="line"><span class="type">int</span> u[<span class="number">200</span>],topo[<span class="number">200</span>];</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> pos)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	u[pos] = <span class="number">-1</span>;<span class="comment">//正在用</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (map[pos][i] &amp;&amp; !u[i]) &#123;</span><br><span class="line">			<span class="keyword">if</span> (u[i] &lt; <span class="number">0</span>)<span class="keyword">return</span> <span class="literal">false</span>;<span class="comment">//检测环路</span></span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span>(!u[i])<span class="built_in">dfs</span>(i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	topo[--t] = pos;</span><br><span class="line">	u[pos] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span> (cin &gt;&gt; n &gt;&gt; m &amp;&amp; n) &#123;</span><br><span class="line">		t = n;</span><br><span class="line">		<span class="built_in">memset</span>(map, <span class="number">0</span>, <span class="built_in">sizeof</span>(map));</span><br><span class="line">		<span class="built_in">memset</span>(u, <span class="number">0</span>, <span class="built_in">sizeof</span>(u));</span><br><span class="line">		<span class="built_in">memset</span>(topo, <span class="number">0</span>, <span class="built_in">sizeof</span>(topo));</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; m; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			cin &gt;&gt; a &gt;&gt; b;</span><br><span class="line">			map[a][b] = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">		&#123;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">if</span> (!u[i])<span class="built_in">dfs</span>(i);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">			cout &lt;&lt; topo[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">		cout &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>拓扑排序思路：两个数组一个放排完序列一个表示是否走过。一张图<br>dfs不断深搜找到最深节点，从后往前倒着放入目标数组。正着看就是目标排列了~~~<br>三种状态0，-1，1表示没用过，正在用，已用。便于检测环路。每次dfs先切换当前节点状态，for循环向下递归的时候检测下个节点状态。  </p>
+<h2 id="无序字母对"><a href="#无序字母对" class="headerlink" title="无序字母对"></a>无序字母对</h2><p>ac code：  </p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> map[<span class="number">150</span>][<span class="number">150</span>],vis[<span class="number">150</span>][<span class="number">150</span>];</span><br><span class="line"><span class="type">int</span> a[<span class="number">60</span>],degree[<span class="number">60</span>],c[<span class="number">100009</span>];</span><br><span class="line"><span class="type">int</span> n,k=<span class="number">128</span>,tot;</span><br><span class="line">string s;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> u)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> v = <span class="number">0</span>; v &lt; <span class="number">60</span>; v++)<span class="comment">//从小到大让每一步递归最小</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (map[u][v] &amp;&amp; !vis[u][v]) &#123;</span><br><span class="line">			vis[u][v] = vis[v][u] = <span class="number">1</span>;</span><br><span class="line">			<span class="built_in">dfs</span>(v);</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	c[tot++] = u;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cin &gt;&gt; n;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		cin &gt;&gt; s;</span><br><span class="line">		map[s[<span class="number">0</span>]-<span class="string">&#x27;A&#x27;</span>][s[<span class="number">1</span>]-<span class="string">&#x27;A&#x27;</span>] = map[s[<span class="number">1</span>]-<span class="string">&#x27;A&#x27;</span>][s[<span class="number">0</span>]-<span class="string">&#x27;A&#x27;</span>] = <span class="number">1</span>;</span><br><span class="line">		degree[s[<span class="number">0</span>] - <span class="string">&#x27;A&#x27;</span>]++;</span><br><span class="line">		degree[s[<span class="number">1</span>] - <span class="string">&#x27;A&#x27;</span>] ++;</span><br><span class="line">		k = <span class="built_in">min</span>(k, <span class="built_in">min</span>((<span class="type">int</span> )s[<span class="number">0</span>], (<span class="type">int</span> )s[<span class="number">1</span>]));</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">60</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (degree[i] &amp; <span class="number">1</span>)</span><br><span class="line">			a[++a[<span class="number">0</span>]]= i;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (!a[<span class="number">0</span>])<span class="built_in">dfs</span>(k-<span class="string">&#x27;A&#x27;</span>);</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (a[<span class="number">0</span>] == <span class="number">2</span>)<span class="built_in">dfs</span>(a[<span class="number">1</span>]);</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;No Solution&quot;</span> &lt;&lt; endl; <span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=tot<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)</span><br><span class="line">	cout &lt;&lt; (<span class="type">char</span>)(c[i]+<span class="string">&#x27;A&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">solve</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>有很多小细节，比如 n的体量可以算出。字符型存储浪费空间。<code>-&#39;A&#39;</code>来压缩一下。其中a数组用法最巧妙。遍历一遍既统计了奇点的个数（a[0]）中。又把他们按大小顺序存在了数组里<br>欧拉路径的精髓是度数的判断。一旦判断了能形成欧拉通路之后就只需要dfs就好了  </p>
+<h2 id="P1308-字符串题"><a href="#P1308-字符串题" class="headerlink" title="P1308 字符串题"></a>P1308 字符串题</h2><p>很离谱，这题一开始轻敌了，写了半天都wa，后来看了题解，好家伙大家都搁那发挥呢，一道水题有写指针移动的有写字典树的，没一个30行以内的……so本人不才就来开这个先河吧……<br>ac code：  </p>
+<pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;sstream&gt;
+#include&lt;cctype&gt;
+#define inf 0x3f3f3f3f
+using namespace std;
+int ans=inf,c=0,ans2=0;
+int main()&#123;
+    string a,b,cc;
+    cin&gt;&gt;a;
+    getchar();
+    getline(cin,cc);
+    for(int i=0;i&lt;a.size();i++)//处理a
+        a[i]=tolower(a[i]);
+    string k=&quot; &quot;+a+&quot; &quot;;
+    for(int i=0;i&lt;cc.size();i++)//处理cc
+        cc[i]=tolower(cc[i]);
+    stringstream ss(cc);
+    cc=&quot; &quot;+cc+&quot; &quot;;
+    ans=cc.find(k)+1;//在cc里找处理后的a
+    while(ss&gt;&gt;b)&#123;
+        if(a==b)&#123;
+            ans2++;
+        &#125;c++;
+    &#125;
+    if(ans!=0)
+    cout&lt;&lt;ans2&lt;&lt;&quot; &quot;&lt;&lt;ans;
+    else
+        cout&lt;&lt;&quot;-1&quot;;
+&#125;
+</code></pre>
+<p>29行ac的完美代码。其中有两处巧思</p>
+<ol>
+<li>用getline读入一整行（会读取行前空格）再注入b中，可避免写<code>while(cin&gt;&gt;b)</code>时不能调试的问题</li>
+<li>在处理过的cc中直接用find找a不能确定找到的是单独的单词还是重合的一部分。我的解决方法是处理a，前后加上两个空格，找到后再把下标加一，ps找不到默认返回-1（npos），这个值可以改所以网上说法不一。<br>tolower和sstream不必多说，这题还是挺有技术含量的<br><img src="/../someimage/acp.png"></li>
+</ol>
+<h2 id="p5735-距离函数"><a href="#p5735-距离函数" class="headerlink" title="p5735 距离函数"></a>p5735 距离函数</h2><p>ac code:  </p>
+<pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;cstdio&gt;
+#include&lt;algorithm&gt;
+#include&lt;cmath&gt;
+using namespace std;
+double x1,x2,x3,y11,y2,y3,k;
+double des(double x1,double y1,double x2,double y2)
+&#123;
+    return sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2));
+&#125;
+int main()
+&#123;
+    cin&gt;&gt;x1&gt;&gt;y11&gt;&gt;x2&gt;&gt;y2&gt;&gt;x3&gt;&gt;y3;
+    double a=des(x1,y11,x2,y2);
+    double b=des(x1,y11,x3,y3);
+    double c=des(x2,y2,x3,y3);
+    k=a+b+c;
+    printf(&quot;%.2lf&quot;,k);
+&#125;
+</code></pre>
+<p>咱就是说不要用pow，会有误差，很怪。我一开始是pow套abs，有0.02的误差</p>
 ]]></content>
   </entry>
   <entry>
@@ -382,157 +430,29 @@ else &#123;
 ]]></content>
   </entry>
   <entry>
-    <title>洛谷题解</title>
-    <url>/2023/04/25/%E6%B4%9B%E8%B0%B7/</url>
-    <content><![CDATA[<h2 id="P2089-烤鸡"><a href="#P2089-烤鸡" class="headerlink" title="P2089 烤鸡"></a>P2089 烤鸡</h2><p>考点：深搜 剪枝 回溯（记录路径） </p>
+    <title>蓝桥杯2022年题目思路</title>
+    <url>/2023/03/29/lanqiao/</url>
+    <content><![CDATA[<h2 id="E：爬树的甲壳虫"><a href="#E：爬树的甲壳虫" class="headerlink" title="E：爬树的甲壳虫"></a>E：爬树的甲壳虫</h2><p>状态转移方程：<img src="/../someimage/wsl.png">  </p>
 <span id="more"></span>  
 
+<p>其中i&#x3D;0,1…n。a[i]代表<strong>从a[i]开始爬到树顶的期望时间</strong>，即a[i-1]有p[i]的可能爬上a[i]并且继承a[i]的期望时间。有1-p[i]的可能掉到树根，从头来过，继承a[0]的时间。a[0]指从根开始爬到树顶的时间。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>关于ST表</title>
+    <url>/2023/03/21/second/</url>
+    <content><![CDATA[<h3 id="定义：用于求可重复性贡献问题的解。（即重复计算结果不变）对于一个一维数组，采用分治的方法，用一个二维数组储存每个区间内的最大最小值。f-a-b-表示从a开始2的b次方个数的最大值"><a href="#定义：用于求可重复性贡献问题的解。（即重复计算结果不变）对于一个一维数组，采用分治的方法，用一个二维数组储存每个区间内的最大最小值。f-a-b-表示从a开始2的b次方个数的最大值" class="headerlink" title="定义：用于求可重复性贡献问题的解。（即重复计算结果不变）对于一个一维数组，采用分治的方法，用一个二维数组储存每个区间内的最大最小值。f[a][b]表示从a开始2的b次方个数的最大值"></a>定义：用于求可重复性贡献问题的解。（即重复计算结果不变）对于一个一维数组，采用分治的方法，用一个二维数组储存每个区间内的最大最小值。<code>f[a][b]</code>表示从a开始2的b次方个数的最大值</h3><p>状态转移方程：f ( i , j ) &#x3D; m a x ( f ( i , j − 1 ) ,   f ( i + 2^(j − 1) , j − 1 ) )  </p>
+<span id="more"></span>  
 
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"> 	<span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> n,ans,a[<span class="number">12</span>],aa[<span class="number">10007</span>][<span class="number">12</span>];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">save</span><span class="params">(<span class="type">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)</span><br><span class="line">	aa[n][i] = a[i];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> sum, <span class="type">int</span> pos)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">if</span> (sum == n &amp;&amp; pos == <span class="number">10</span>)</span><br><span class="line">&#123;</span><br><span class="line">	ans++;</span><br><span class="line">	<span class="built_in">save</span>(ans);<span class="comment">//正确：存答案</span></span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (sum &gt;= n) <span class="keyword">return</span>;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (pos == <span class="number">10</span>) <span class="keyword">return</span>;</span><br><span class="line">a[pos] = <span class="number">1</span>;<span class="comment">//记录路径数组</span></span><br><span class="line"><span class="built_in">dfs</span>(sum + <span class="number">1</span>, pos+<span class="number">1</span>);</span><br><span class="line">a[pos] = <span class="number">2</span>;<span class="comment">//回溯</span></span><br><span class="line"><span class="built_in">dfs</span>(sum + <span class="number">2</span>, pos+<span class="number">1</span>);</span><br><span class="line">a[pos] = <span class="number">3</span>;</span><br><span class="line"><span class="built_in">dfs</span>(sum + <span class="number">3</span>, pos+<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">cin &gt;&gt; n;</span><br><span class="line"><span class="built_in">dfs</span>(<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">cout &lt;&lt; ans&lt;&lt;endl;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;=ans; i++)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; <span class="number">10</span>; j++)</span><br><span class="line">		cout &lt;&lt; aa[i][j]&lt;&lt;<span class="string">&quot; &quot;</span>;</span><br><span class="line">	cout &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="P1618-三连击"><a href="#P1618-三连击" class="headerlink" title="P1618 三连击"></a>P1618 三连击</h2><p>深搜&#x2F;枚举每个成比例的三位数判重</p>
-<pre><code class="cpp">#include&lt;iostream&gt;
-using namespace std;
-int k,b,c,f;
-int used[11],a[10];
-int tonum(int n)
-&#123;
-    int sum=0;
-    for(int i=3*n-2;i&lt;=3*n;i++)
-    &#123;
-        sum*=10;
-        sum+=a[i];
-    &#125;
-    return sum;
-&#125;
-void dfs(int n)
-&#123;
-    if(n==10&amp;&amp;tonum(1)*b==tonum(2)*k&amp;&amp;tonum(2)*c==tonum(3)*b)
-    &#123;cout&lt;&lt;tonum(1)&lt;&lt;&quot; &quot;&lt;&lt;tonum(2)&lt;&lt;&quot; &quot;&lt;&lt;tonum(3)&lt;&lt;endl;
-        f=1;
-    &#125;
-    for(int i=1;i&lt;10;i++)
-        if(!used[i])
-            &#123;
-                used[i]=1;
-                a[n]=i;
-                dfs(n+1);
-                used[i]=0;
-            &#125;
-&#125;
-int main()
-&#123;
-    cin&gt;&gt;k&gt;&gt;b&gt;&gt;c;
-    dfs(1);
-    if(!f)cout&lt;&lt;&quot;No!!!&quot;;
-&#125;
+<p>将原区间分成两个大小相等子区间（因为长度是2的j次方，所以不存在不能等分的情况）<br>代码如下</p>
+<pre><code>int f[MAXN][21]; // 第二维的大小根据数据范围决定，不小于log(MAXN)
+    for (int i = 1; i &lt;= n; ++i)
+           f[i][0] = read(); //读入数据
+for (int j = 1; j &lt;= 20; ++j)//枚举倍数
+    for (int i = 1; i + (1 &lt;&lt; j) - 1 &lt;= n; ++i)//枚举起点,i到i+2^j-1刚好2^j个数
+        f[i][j] = max(f[i][j - 1], f[i + (1 &lt;&lt; (j- 1))][j- 1]);
 </code></pre>
-<h2 id="UVA816-bfs迷宫"><a href="#UVA816-bfs迷宫" class="headerlink" title="UVA816  bfs迷宫"></a>UVA816  bfs迷宫</h2><p>code:  </p>
-<pre><code class="cpp">#include&lt;iostream&gt;
-#include&lt;queue&gt;
-#include&lt;vector&gt;
-using namespace std;
-string name;
-int stap1, stap2, goal1, goal2;
-char fx;
-int has_e[10][10][10][10];
-int d[10][10][5];
-struct Node &#123;
-    int x, y, dir;
-    Node(int x, int y, int dir) :x(x), y(y), dir(dir) &#123;&#125;
-    Node() &#123;&#125;
-&#125;;
-Node p[10][10][5];
-int dr[] = &#123; -1,0,1,0 &#125;;//对应NESW
-int dc[] = &#123; 0,1,0,-1 &#125;;
-const char* dirs = &quot;NESW&quot;;
-const char* turns = &quot;FLR&quot;;
-int dir_id(char ch) &#123; return strchr(dirs, ch) - dirs; &#125;
-int turn_id(char c) &#123; return strchr(turns, c) - turns; &#125;
-bool read()
-&#123;
-    cin &gt;&gt; name;
-    if (name == &quot;END&quot;)return false;
-    cin &gt;&gt; stap1 &gt;&gt; stap2 &gt;&gt; fx &gt;&gt; goal1 &gt;&gt; goal2;
-    int x=0, y=0;
-    while (cin &gt;&gt; x &amp;&amp; x)
-    &#123;
-        cin &gt;&gt; y;
-        string s;
-        while (cin &gt;&gt; s &amp;&amp; s != &quot;*&quot;)
-        &#123;
-            for(int i=1;i&lt;s.size();i++)
-            has_e[x][y][dir_id(s[0])][turn_id(s[i])]=1;
-        &#125;
-    &#125;
-    has_e[stap1][stap2][dir_id(fx)][0] = 1;
-    return true;
-&#125;
-
-Node walk(const Node&amp; u, int turn)
-&#123;
-    int dir = u.dir;
-    if (turn == 1)
-    &#123;
-        dir = (dir + 3) % 4;
-    &#125;
-    if (turn == 2)dir = (dir + 1) % 4;
-    return Node(u.x+dr[dir], u.y+dc[dir], dir);//往某个方向走的下一格和朝向
-&#125;
-void print_ans(Node&amp; u)
-&#123;
-    vector&lt;Node&gt;nodes;
-    for (;;) &#123;
-        nodes.push_back(u);
-        if (d[u.x][u.y][u.dir] == 0)
-            break;
-        u = p[u.x][u.y][u.dir];
-    &#125;
-    //nodes.push_back(Node(stap1, stap2, dir_id(fx)));
-    int cnt = 0;
-    for (int i = nodes.size() - 1; i &gt;= 0; i--)
-    &#123;
-        if (cnt % 10 == 0)cout &lt;&lt; &quot; &quot;;
-        printf(&quot; (%d,%d)&quot;, nodes[i].x, nodes[i].y);
-        if (++cnt % 10 == 0)cout &lt;&lt; endl;
-
-    &#125;
-    if (nodes.size() % 10 != 0)cout &lt;&lt; endl;
-&#125;
-void bfs()
-&#123;
-    queue&lt;Node&gt;q;
-    memset(d, -1, sizeof(d));
-    Node u(stap1, stap2, dir_id(fx));
-    d[u.x][u.y][u.dir] = 0;
-    q.push(u);
-    while (!q.empty())
-    &#123;
-        Node u = q.front(); q.pop();
-        if (u.x == goal1 &amp;&amp; u.y == goal2) &#123; print_ans(u); return; &#125;
-        for (int i = 0; i &lt; 3; i++)
-        &#123;
-            //三个方向都试试看能不能走
-            Node v = walk(u, i);
-            if (has_e[u.x][u.y][u.dir][i] &amp;&amp; v.x &gt;= 0 &amp;&amp; v.x &lt;= 9 &amp;&amp; v.y &gt;= 0 &amp;&amp; v.y &lt;= 9 &amp;&amp; d[v.x][v.y][v.dir] &lt; 0)
-            &#123;
-                d[v.x][v.y][v.dir] = d[u.x][u.y][u.dir] + 1;
-                p[v.x][v.y][v.dir] = u;
-                q.push(v);
-            &#125;
-        &#125;
-    &#125;
-    cout &lt;&lt; &quot;  No Solution Possible&quot; &lt;&lt; endl;
-&#125;
-int main()
-&#123;
-    while (read())
-    &#123;
-        cout &lt;&lt; name &lt;&lt; endl;
-        bfs();
-    &#125;
-&#125;
-</code></pre>
-<p>蒟蒻照着竞赛书写的首个100行以上代码，本程序的最妙之处是位移函数和方向绑定。两套表示方向的体系NEWS是总方向，FLR是具体到每个节点能走的方向。根据人到达这个节点的朝向结合FLR枚举可以去的朝向（NEWS），此时注意朝向编号与位移编号对应。再根据图来筛选。基于此做BFS</p>
+<p>内部存储像这样 <img src="/../someimage/02.jpg" alt="picture"><br>对于询问(l,r)，寻找两个分别以l开头和以s结尾的区间，两区间的最大值即总最大值。我们需要使第一个子区间的右端点尽可能的接近r​，那么不妨直接令l + 2^s − 1 &#x3D; r即s&#x3D;lg[ r-l+1]向下取整。则区间[l,r]被分为：f[ l ][ l + 2^s - 1]和f[r-( 2^s -1)][ r ]  <strong>从l开始2^s个，从r往前2^s个</strong><br>对log进行预处理：<code>lg[i]=lg[i/2]+1;</code>,<code>lg[0]=-1;</code><strong>千万别忘！</strong>  </p>
 ]]></content>
   </entry>
 </search>
