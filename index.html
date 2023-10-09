@@ -202,6 +202,69 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://qianxi77-4g2i14dm510072c2-1317352669.ap-shanghai.app.tcloudbase.com/2023/10/09/%E4%B8%8B%E8%BE%B9%E6%A0%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="起岸希">
+      <meta itemprop="description" content="不要圆滑，要变成星星，有棱角，还会发光">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="起岸希's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/10/09/%E4%B8%8B%E8%BE%B9%E6%A0%8F/" class="post-title-link" itemprop="url">电脑下侧任务栏不显示</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-10-09 22:06:42" itemprop="dateCreated datePublished" datetime="2023-10-09T22:06:42+08:00">2023-10-09</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <ol>
+<li>ctrl+shift+ESC打开任务管理器  </li>
+<li>找到左侧的“资源管理器”。如果没有点击一下桌面的此电脑就有了  </li>
+<li>右键选择“重新启动”  </li>
+<li>下边栏就回来了！！</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://qianxi77-4g2i14dm510072c2-1317352669.ap-shanghai.app.tcloudbase.com/2023/09/17/acm-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -233,7 +296,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-09-19 21:07:37" itemprop="dateModified" datetime="2023-09-19T21:07:37+08:00">2023-09-19</time>
+                <time title="修改时间：2023-10-09 22:31:36" itemprop="dateModified" datetime="2023-10-09T22:31:36+08:00">2023-10-09</time>
               </span>
 
           
@@ -247,88 +310,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>我意识到acm是真正意义上智商的比拼。想要找到能一起讨论题目的人先得看懂题目。只有当你的水平远远高于环境时你的环境才有可能改变。主动改变环境只是徒有其表，内里没有改变，只会不欢而散。<br>用不欢而散来形容今天很合适，我早就预想到了今天的结果。因为我耐不住寂寞<br>无法在悄无声息中改变自己。我是一个很虚浮的人<br>总结一下情况吧。北工大一共有十个队，我们是倒数123的位置（可能真是倒1？）有点丢人。封榜时我们只写出一道题，第一名写出6道题（一共12道）。记录一下情况吧</p>
-<h2 id="A-去重-归并"><a href="#A-去重-归并" class="headerlink" title="A:去重+归并"></a>A:去重+归并</h2><p>题目不难，难在理解题意和排序上。人多容易打乱思路，加上刚开始考试时紧张，代码写的有点恶心。我是最开始做这个题的，结果一直做到了离结束还有四十分钟的时候。中途ghj还写了完整的代码但超时了（他完全不会stl）我最后写出了代码但是wa，还是ghj想了个样例给我说新建一个map才搞出来。如果就凭我自己的话大概也只能做出来一道吧</p>
-<h2 id="B：string"><a href="#B：string" class="headerlink" title="B：string"></a>B：string</h2><p>大佬的玩具，整个百工没人做出来。ghj想了一个小时这题，我笑死</p>
-<h2 id="D-无向图"><a href="#D-无向图" class="headerlink" title="D:无向图"></a>D:无向图</h2><p>我看不懂题目。。我觉得就是补全所有边但是wa，队友也不会<br>9.19更新：wa了一天一夜后，花重金请大佬帮忙改了代码。大佬果然是大佬  </p>
-<pre><code class="cpp">#include&lt;iostream&gt;
-#include&lt;vector&gt;
-#include&lt;algorithm&gt;
-using namespace std;
-vector&lt;int&gt;v[1000006];
-int fa[1000006];
-int n, m, a, b;
-int x1, x2;
-bool flag;
-long long eg[1000006];//散列化记边
-long long vt[1000006];//散列化记点
-long long ans;
-
-int fin(int now) &#123;
-    if (fa[now] != now)
-        return fa[now] = fin(fa[now]);
-    else
-        return now;
-&#125;
-
-void connect(int A, int B)
-&#123;
-    int a = fin(A), b = fin(B);
-    if (a != b) &#123;
-        fa[a] = fa[b] = min(a, b);
-    &#125;
-&#125;
-
-int main()
-&#123;
-    //freopen(&quot;text_input.txt&quot;, &quot;r&quot;, stdin);
-    cin &gt;&gt; n &gt;&gt; m;
-    for (int i = 1; i &lt;= n; i++)
-        fa[i] = i;
-    for (int i = 0; i &lt; m; i++)
-    &#123;
-        scanf(&quot;%d %d&quot;, &amp;a, &amp;b);
-        v[a].push_back(b);
-        v[b].push_back(a);
-        connect(a, b);
-    &#125;//建图
-    for (int i = 1; i &lt;= n; i++)
-    &#123;
-        fin(i);
-    &#125; 
-    for (int i = 1; i &lt;= n; i++)
-        eg[fa[i]] += (long long)v[i].size();
-    for (int i = 1; i &lt;= n; i++)
-        eg[i] /= 2LL;
-    for (int i = 1; i &lt;= n; i++)
-        vt[fa[i]]++;
-    for (int i = 1; i &lt;= n; i++)
-        if (vt[i])
-            if (eg[i] &lt; (vt[i] * (vt[i] - 1)) / 2)
-                ans += ((vt[i] * (vt[i] - 1)) / 2 - eg[i]);
-    if (!ans)
-    &#123;
-        sort(vt + 1, vt + 1 + n);
-        for (int i = 1; i &lt;= n; i++)
-        &#123;
-            if (vt[i] != 0)
-            &#123;
-                x1 = vt[i];
-                x2 = vt[i + 1];
-                break;
-            &#125;
-        &#125;
-        ans = x1 * x2;
-    &#125;
-    cout &lt;&lt; ans &lt;&lt; endl;
-    return 0;
-&#125;
-</code></pre>
-<p>咱就是说别在百度上下搜算法。。。害人害己。。。。并查集find和connect函数就是不能少啊。。。我发现我老是太喜欢投机取巧了。大佬的代码只挑一篇自己喜欢的看，别的不理解也无所谓，算法复杂的东西一律掠过，只接受自己想接受的……真的太高傲了，我对待学问的态度很傲慢。而且从小到大一直如此，尤其是数学。</p>
-<h2 id="J-计算几何"><a href="#J-计算几何" class="headerlink" title="J:计算几何"></a>J:计算几何</h2><p>我瞎想了一个贪心但是差0.01，后来发现方法不对，很崩溃</p>
-<h2 id="L-签到题"><a href="#L-签到题" class="headerlink" title="L:签到题"></a>L:签到题</h2><p>翔哥签的，我没看。不到半小时就做出来的题。也是我们前四小时唯一做出来的一题<br>怎么说呢。谨以此文纪念我的队友。三个人一起敲代码很有意思。如果他们会的比我多就更好了。希望下次还能聚在一起。但是我感觉下次他们可能不愿意来了。但是我还是很想打第二场，我觉得发挥的一定能比这次好。不知道为什么。<br>为什么没有大佬带带我啊……  </p>
-<h2 id="情况总结"><a href="#情况总结" class="headerlink" title="情况总结"></a>情况总结</h2><p>百工a4题排在中间位置。5题有望进区域赛。2题垫底。说到这里我就得感谢一下ysm了，我问他去年的信息他回答的模模糊糊的，说什么每届不一样。害得我问他做出一半多不多。。显得我像个小丑。这种数据不能实实在在的告诉我吗。。。还有我的队友好像过于乐观的估计了情况。只写出了两题告诉我他想死，他之前自己真的了解都不了解一下，我真的服气。我打的最好情况就是两道题。这已经是我预想中很好的结果了。只不过大家都比我想的厉害罢了。队友能不能别瞎交题啊<br>越写怨气越大了……应该多反省自己，为什么这么菜……但是J和D我真的尽力了。还有A。我也是头一次感觉到了我可能确实不太适合这个游戏<br>还有下次吗？</p>
-
+          <p>我意识到acm是真正意义上智商的比拼。想要找到能一起讨论题目的人先得看懂题目。只有当你的水平远远高于环境时你的环境才有可能改变。主动改变环境只是徒有其表，内里没有改变，只会不欢而散。<br>用不欢而散来形容今天很合适，我早就预想到了今天的结果。因为我耐不住寂寞  </p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/09/17/acm-1/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -921,78 +911,6 @@ int main()
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://qianxi77-4g2i14dm510072c2-1317352669.ap-shanghai.app.tcloudbase.com/2023/04/03/xianduanshu/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="起岸希">
-      <meta itemprop="description" content="不要圆滑，要变成星星，有棱角，还会发光">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="起岸希's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/04/03/xianduanshu/" class="post-title-link" itemprop="url">线段树</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-04-03 22:11:16" itemprop="dateCreated datePublished" datetime="2023-04-03T22:11:16+08:00">2023-04-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-07-22 17:27:02" itemprop="dateModified" datetime="2023-07-22T17:27:02+08:00">2023-07-22</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="节点：线段树节点每个代表一个区间，用二分法将每个区间依次减半直到最小，故节点数量是元素数量的二倍。节点内包含三个部分："><a href="#节点：线段树节点每个代表一个区间，用二分法将每个区间依次减半直到最小，故节点数量是元素数量的二倍。节点内包含三个部分：" class="headerlink" title="节点：线段树节点每个代表一个区间，用二分法将每个区间依次减半直到最小，故节点数量是元素数量的二倍。节点内包含三个部分："></a>节点：线段树节点每个代表一个区间，用二分法将每个区间依次减半直到最小，故节点数量是元素数量的二倍。节点内包含三个部分：</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">tree</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> l, r, mx;<span class="comment">//mx为每个区间内要维护的数值（通常为最大，最小值）</span></span><br><span class="line">&#125;tr[N &lt;&lt; <span class="number">2</span>];</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2023/04/03/xianduanshu/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1064,7 +982,7 @@ int main()
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-count">15</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
