@@ -66,9 +66,51 @@ int main() &#123;
     <title>蒟蒻的2024蓝桥杯省赛之旅</title>
     <url>/2024/04/15/2024lanqiao/</url>
     <content><![CDATA[<h2 id="A艺术与篮球"><a href="#A艺术与篮球" class="headerlink" title="A艺术与篮球"></a>A艺术与篮球</h2><p>我真服了。回来后对着答案调都调不出来。。。。。黄豆流汗送给自己。考场上写了小四十分钟。丢东拉西的，就像被某种东西附体了一样。变成弱智了。考场上3202，回来后再写3230,答案3228。md都是玄学是吧，然后发现该死的闰年判错了。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">	<span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line">	<span class="meta">#<span class="keyword">include</span><span class="string">&lt;string&gt;</span></span></span><br><span class="line">	<span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line">	<span class="type">int</span> a[] = &#123; <span class="number">13</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span> &#125;;</span><br><span class="line">	<span class="type">int</span> month[] = &#123; <span class="number">0</span>,<span class="number">31</span>,<span class="number">28</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span> &#125;;</span><br><span class="line">	<span class="type">int</span> ans,tmp;</span><br><span class="line">	<span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2000</span>; i &lt;= <span class="number">2024</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> ((i % <span class="number">100</span>) &amp;&amp; (!(i % <span class="number">4</span>)) || !(i % <span class="number">400</span>))month[<span class="number">2</span>] = <span class="number">29</span>;</span><br><span class="line">		<span class="keyword">else</span> month[<span class="number">2</span>] = <span class="number">28</span>;</span><br><span class="line">		<span class="comment">//cout &lt;&lt; month[2] &lt;&lt; &quot; &quot;;</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt;= <span class="number">12</span>; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="type">int</span> k = <span class="number">1</span>; k &lt;= month[j]; k++)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span> (i == <span class="number">2024</span> &amp;&amp; j == <span class="number">4</span> &amp;&amp; k == <span class="number">14</span>)<span class="keyword">goto</span> end;</span><br><span class="line">				string ss = <span class="built_in">to_string</span>(i);</span><br><span class="line">				<span class="keyword">if</span> (j &lt; <span class="number">10</span>)ss += <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">				ss += <span class="built_in">to_string</span>(j);</span><br><span class="line">				<span class="keyword">if</span> (k &lt; <span class="number">10</span>)ss += <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">				ss += <span class="built_in">to_string</span>(k);</span><br><span class="line">				<span class="keyword">for</span> (<span class="type">int</span> d = <span class="number">0</span>; d &lt; ss.<span class="built_in">length</span>(); d++)</span><br><span class="line">					tmp += a[ss[d] - <span class="string">&#x27;0&#x27;</span>];</span><br><span class="line">				<span class="keyword">if</span> (tmp &gt; <span class="number">50</span>)ans++;</span><br><span class="line">				tmp = <span class="number">0</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	end: cout &lt;&lt; ans;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">```  </span><br><span class="line">&lt;!--more--&gt; </span><br><span class="line"></span><br><span class="line">还有件事，考场上devc不让用to_string？我明明include string了也不行。可能是语言版本问题？</span><br><span class="line">## B五子棋</span><br><span class="line">我当时直接自信dfs，但是没有发现太慢了。我枚举棋盘上可能发生的所有情况，每个人所有走法，这个好像是<span class="number">25</span>！。<span class="number">25</span>！是<span class="number">15511210043330985984000000</span>。我考试时特意写了个程序算了一下，当时算的是十位数。为什么呢？因为没开longlong...蛤蛤。但是不用考虑走法的，其实只要枚举棋盘所有结果就好。不同路径可能得到相同方案的。我太搞笑了。</span><br><span class="line">蓝桥的填空看起来简单，其实真的很考验代码功底。真的无从验证对错，还不能加样例。只能审视程序  </span><br><span class="line">accode:</span><br><span class="line">```cpp</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> maxn  (1 &lt;&lt; 25)-1</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> ans;</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">check</span><span class="params">(<span class="type">int</span> a)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="type">int</span> s = <span class="number">0</span>,s2=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; <span class="number">5</span>; j++)</span><br><span class="line">			s += (a &gt;&gt; (i * <span class="number">5</span> + j) &amp; <span class="number">1</span>);</span><br><span class="line">		<span class="keyword">if</span> (s == <span class="number">0</span> || s == <span class="number">5</span>)<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; <span class="number">5</span>; j++)</span><br><span class="line">			s2 += (a &gt;&gt; (j * <span class="number">5</span> + i) &amp; <span class="number">1</span>);</span><br><span class="line">		<span class="keyword">if</span> (s2 == <span class="number">0</span> || s2 == <span class="number">5</span>) &#123;  <span class="comment">//cout &lt;&lt; 1 &lt;&lt; endl;</span></span><br><span class="line">			<span class="keyword">return</span> <span class="literal">true</span>; &#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (((a &gt;&gt; <span class="number">0</span> &amp; <span class="number">1</span>) + (a &gt;&gt; <span class="number">6</span> &amp; <span class="number">1</span>) + (a &gt;&gt; <span class="number">12</span> &amp; <span class="number">1</span>) + (a &gt;&gt; <span class="number">18</span> &amp; <span class="number">1</span>) + (a &gt;&gt; <span class="number">24</span> &amp; <span class="number">1</span>)) == <span class="number">5</span> || ((a &gt;&gt; <span class="number">0</span> &amp; <span class="number">1</span>) + (a &gt;&gt; <span class="number">6</span> &amp; <span class="number">1</span>) + (a &gt;&gt; <span class="number">12</span> &amp; <span class="number">1</span>) + (a &gt;&gt; <span class="number">18</span> &amp; <span class="number">1</span>) + (a &gt;&gt; <span class="number">24</span> &amp; <span class="number">1</span>)) == <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">if</span> (((a &gt;&gt; <span class="number">4</span> &amp; <span class="number">1</span>) + (a &gt;&gt; <span class="number">8</span> &amp; <span class="number">1</span>) + (a &gt;&gt; <span class="number">12</span> &amp; <span class="number">1</span>) + (a &gt;&gt; <span class="number">16</span> &amp; <span class="number">1</span>) + (a &gt;&gt; <span class="number">20</span> &amp; <span class="number">1</span>)) == <span class="number">5</span> || ((a &gt;&gt; <span class="number">4</span> &amp; <span class="number">1</span>) + (a &gt;&gt; <span class="number">8</span> &amp; <span class="number">1</span>) + (a &gt;&gt; <span class="number">12</span> &amp; <span class="number">1</span>) + (a &gt;&gt; <span class="number">16</span> &amp; <span class="number">1</span>) + (a &gt;&gt; <span class="number">20</span> &amp; <span class="number">1</span>)) == <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;= maxn ; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="type">int</span> num = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> k = <span class="number">0</span>; k &lt; <span class="number">25</span>; k++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (i &gt;&gt; k &amp; <span class="number">1</span>)num++;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (num == <span class="number">13</span> &amp;&amp; !<span class="built_in">check</span>(i))ans++;</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; ans;<span class="comment">//3126376</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">	<span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line">	<span class="meta">#<span class="keyword">include</span><span class="string">&lt;string&gt;</span></span></span><br><span class="line">	<span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line">	<span class="type">int</span> a[] = &#123; <span class="number">13</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span> &#125;;</span><br><span class="line">	<span class="type">int</span> month[] = &#123; <span class="number">0</span>,<span class="number">31</span>,<span class="number">28</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span> &#125;;</span><br><span class="line">	<span class="type">int</span> ans,tmp;</span><br><span class="line">	<span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2000</span>; i &lt;= <span class="number">2024</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> ((i % <span class="number">100</span>) &amp;&amp; (!(i % <span class="number">4</span>)) || !(i % <span class="number">400</span>))month[<span class="number">2</span>] = <span class="number">29</span>;</span><br><span class="line">		<span class="keyword">else</span> month[<span class="number">2</span>] = <span class="number">28</span>;</span><br><span class="line">		<span class="comment">//cout &lt;&lt; month[2] &lt;&lt; &quot; &quot;;</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt;= <span class="number">12</span>; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="type">int</span> k = <span class="number">1</span>; k &lt;= month[j]; k++)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span> (i == <span class="number">2024</span> &amp;&amp; j == <span class="number">4</span> &amp;&amp; k == <span class="number">14</span>)<span class="keyword">goto</span> end;</span><br><span class="line">				string ss = <span class="built_in">to_string</span>(i);</span><br><span class="line">				<span class="keyword">if</span> (j &lt; <span class="number">10</span>)ss += <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">				ss += <span class="built_in">to_string</span>(j);</span><br><span class="line">				<span class="keyword">if</span> (k &lt; <span class="number">10</span>)ss += <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">				ss += <span class="built_in">to_string</span>(k);</span><br><span class="line">				<span class="keyword">for</span> (<span class="type">int</span> d = <span class="number">0</span>; d &lt; ss.<span class="built_in">length</span>(); d++)</span><br><span class="line">					tmp += a[ss[d] - <span class="string">&#x27;0&#x27;</span>];</span><br><span class="line">				<span class="keyword">if</span> (tmp &gt; <span class="number">50</span>)ans++;</span><br><span class="line">				tmp = <span class="number">0</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	end: cout &lt;&lt; ans;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line">&lt;!--more--&gt; </span><br><span class="line"></span><br><span class="line">还有件事，考场上devc不让用to_string？我明明include string了也不行。可能是语言版本问题？</span><br><span class="line">## B五子棋</span><br><span class="line">我当时直接自信dfs，但是没有发现太慢了。我枚举棋盘上可能发生的所有情况，每个人所有走法，这个好像是<span class="number">25</span>！。<span class="number">25</span>！是<span class="number">15511210043330985984000000</span>。我考试时特意写了个程序算了一下，当时算的是十位数。为什么呢？因为没开longlong...蛤蛤。但是不用考虑走法的，其实只要枚举棋盘所有结果就好。不同路径可能得到相同方案的。我太搞笑了。</span><br><span class="line">蓝桥的填空看起来简单，其实真的很考验代码功底。真的无从验证对错，还不能加样例。只能审视程序  </span><br><span class="line">accode:</span><br><span class="line">```cpp</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> maxn  (1 &lt;&lt; 25)-1</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> ans;</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">check</span><span class="params">(<span class="type">int</span> a)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="type">int</span> s = <span class="number">0</span>,s2=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; <span class="number">5</span>; j++)</span><br><span class="line">			s += (a &gt;&gt; (i * <span class="number">5</span> + j) &amp; <span class="number">1</span>);</span><br><span class="line">		<span class="keyword">if</span> (s == <span class="number">0</span> || s == <span class="number">5</span>)<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; <span class="number">5</span>; j++)</span><br><span class="line">			s2 += (a &gt;&gt; (j * <span class="number">5</span> + i) &amp; <span class="number">1</span>);</span><br><span class="line">		<span class="keyword">if</span> (s2 == <span class="number">0</span> || s2 == <span class="number">5</span>) &#123;  <span class="comment">//cout &lt;&lt; 1 &lt;&lt; endl;</span></span><br><span class="line">			<span class="keyword">return</span> <span class="literal">true</span>; &#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (((a &gt;&gt; <span class="number">0</span> &amp; <span class="number">1</span>) + (a &gt;&gt; <span class="number">6</span> &amp; <span class="number">1</span>) + (a &gt;&gt; <span class="number">12</span> &amp; <span class="number">1</span>) + (a &gt;&gt; <span class="number">18</span> &amp; <span class="number">1</span>) + (a &gt;&gt; <span class="number">24</span> &amp; <span class="number">1</span>)) == <span class="number">5</span> || ((a &gt;&gt; <span class="number">0</span> &amp; <span class="number">1</span>) + (a &gt;&gt; <span class="number">6</span> &amp; <span class="number">1</span>) + (a &gt;&gt; <span class="number">12</span> &amp; <span class="number">1</span>) + (a &gt;&gt; <span class="number">18</span> &amp; <span class="number">1</span>) + (a &gt;&gt; <span class="number">24</span> &amp; <span class="number">1</span>)) == <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">if</span> (((a &gt;&gt; <span class="number">4</span> &amp; <span class="number">1</span>) + (a &gt;&gt; <span class="number">8</span> &amp; <span class="number">1</span>) + (a &gt;&gt; <span class="number">12</span> &amp; <span class="number">1</span>) + (a &gt;&gt; <span class="number">16</span> &amp; <span class="number">1</span>) + (a &gt;&gt; <span class="number">20</span> &amp; <span class="number">1</span>)) == <span class="number">5</span> || ((a &gt;&gt; <span class="number">4</span> &amp; <span class="number">1</span>) + (a &gt;&gt; <span class="number">8</span> &amp; <span class="number">1</span>) + (a &gt;&gt; <span class="number">12</span> &amp; <span class="number">1</span>) + (a &gt;&gt; <span class="number">16</span> &amp; <span class="number">1</span>) + (a &gt;&gt; <span class="number">20</span> &amp; <span class="number">1</span>)) == <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;= maxn ; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="type">int</span> num = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> k = <span class="number">0</span>; k &lt; <span class="number">25</span>; k++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (i &gt;&gt; k &amp; <span class="number">1</span>)num++;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (num == <span class="number">13</span> &amp;&amp; !<span class="built_in">check</span>(i))ans++;</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; ans;<span class="comment">//3126376</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="C训练士兵"><a href="#C训练士兵" class="headerlink" title="C训练士兵"></a>C训练士兵</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> PII pair<span class="string">&lt;int,int&gt;</span> </span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> n, s,tmp1,tmp2,maxn,l,r;</span><br><span class="line">PII p[<span class="number">100050</span>];<span class="comment">//p c</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">jis</span><span class="params">(<span class="type">int</span> a)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> sum = a * s;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (p[i].second &gt; a)sum += (p[i].second - a) * p[i].first;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cin &gt;&gt; n &gt;&gt; s;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		cin &gt;&gt; p[i].first &gt;&gt; p[i].second;</span><br><span class="line">		maxn = <span class="built_in">max</span>(maxn, p[i].second);</span><br><span class="line">	&#125;</span><br><span class="line">	r = maxn;</span><br><span class="line">	<span class="keyword">while</span> (l &lt; r)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="type">int</span> mid = (l + r+<span class="number">1</span>) / <span class="number">2</span>;</span><br><span class="line">		<span class="keyword">if</span> (<span class="built_in">jis</span>(mid) &gt; <span class="built_in">jis</span>(mid + <span class="number">1</span>))l = mid + <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">else</span> r = mid;</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; <span class="built_in">jis</span>(l) &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>考场上的二分代码。不知道对不对。二次函数也算有二段性吧，，对吧。mid+1的思想是看斜率。。。说实话是我考场上发明的，不知道大数据行不行。。。</p>
+<p>考场上的二分代码。不知道对不对。二次函数也算有二段性吧，，对吧。mid+1的思想是看斜率。。。说实话是我考场上发明的，不知道大数据行不行。。。  </p>
+<h2 id="D团建"><a href="#D团建" class="headerlink" title="D团建"></a>D团建</h2><p>暴力是10*11会超时。我当时想了一下用空间换时间。其实我最开始以为是书上dp，瞪眼半个小时没敢开始做，哈哈哈。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> PII pair<span class="string">&lt;int,int&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> wn[<span class="number">200050</span>], wm[<span class="number">200050</span>];</span><br><span class="line"><span class="type">int</span> n, m,tmp1,tmp2,ans;</span><br><span class="line">vector&lt;<span class="type">int</span>&gt;vn[<span class="number">200050</span>],vm[<span class="number">200050</span>];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> root1,<span class="type">int</span> root2,<span class="type">int</span> lev)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ans = <span class="built_in">max</span>(ans, lev);</span><br><span class="line">	map&lt;<span class="type">int</span>, <span class="type">int</span>&gt;a;<span class="comment">//往map插键值省空间。</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; vn[root1].<span class="built_in">size</span>(); i++)</span><br><span class="line">	&#123;</span><br><span class="line">		a[wn[vn[root1][i]]] = i; <span class="comment">//在孩子中的相对位置</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; vm[root2].<span class="built_in">size</span>(); i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (a.<span class="built_in">find</span>(wm[vm[root2][i]]) != a.<span class="built_in">end</span>())<span class="comment">//n里有这个权值</span></span><br><span class="line">			<span class="built_in">dfs</span>(vn[root1][a[wm[vm[root2][i]]]], vm[root2][i],lev + <span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cin &gt;&gt; n &gt;&gt; m;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">		cin &gt;&gt; wn[i];</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= m; i++)</span><br><span class="line">		cin &gt;&gt; wm[i];</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n - <span class="number">1</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		cin &gt;&gt; tmp1&gt;&gt; tmp2;</span><br><span class="line">		vn[tmp1].<span class="built_in">push_back</span>(tmp2);</span><br><span class="line">		vn[tmp2].<span class="built_in">push_back</span>(tmp1);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; m - <span class="number">1</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		cin &gt;&gt; tmp1 &gt;&gt; tmp2;</span><br><span class="line">		vm[tmp1].<span class="built_in">push_back</span>(tmp2);</span><br><span class="line">		vm[tmp2].<span class="built_in">push_back</span>(tmp1);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//如果根节点权值相等</span></span><br><span class="line">	<span class="built_in">dfs</span>(<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>);</span><br><span class="line">	cout &lt;&lt; ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>还没调出来。我的思路又绕了，老认不清哪存了什么，对应关系太乱了。应该在map里直接存这个节点名，而不是相对位置，还要算……还要注意vis，可以开数组，可以带着父亲传参dfs。太乱了先不调了</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>天梯赛力挽狂澜局</title>
+    <url>/2024/04/16/2024%E5%A4%A9%E6%A2%AF%E7%BB%83%E4%B9%A0/</url>
+    <content><![CDATA[<h2 id="L2-032彩虹瓶"><a href="#L2-032彩虹瓶" class="headerlink" title="L2-032彩虹瓶"></a>L2-032彩虹瓶</h2><p>我真的心态炸了，又是栈，狗东西，又写一小时！！！！！还只有18分！！！！！还是看了大佬错因！！！！！   </p>
+<h3 id="啊啊啊啊啊啊啊啊啊啊"><a href="#啊啊啊啊啊啊啊啊啊啊" class="headerlink" title="啊啊啊啊啊啊啊啊啊啊"></a>啊啊啊啊啊啊啊啊啊啊</h3><p>我是不是不适合学这个啊？？？我最后都对自己的c语言基本功产生怀疑了。好不容易找到错误样例，我调啊调，到底是哪段代码不干净，原来nmd是输入不干净啊啊啊啊啊啊啊啊啊！！！是谁随读随用还break……累了，随便吧。<br>code:</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> color, h, n, i;</span><br><span class="line">	cin &gt;&gt; color &gt;&gt; h &gt;&gt; n;</span><br><span class="line">	<span class="keyword">while</span> (n--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="type">int</span> b = <span class="number">1</span>, c[<span class="number">1001</span>];</span><br><span class="line">		stack&lt;<span class="type">int</span>&gt; s;</span><br><span class="line">		<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; color; i++)</span><br><span class="line">			cin &gt;&gt; c[i];<span class="comment">//一定要用数组先储存再判断</span></span><br><span class="line">		<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; color; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (c[i] == b)<span class="comment">//如果是当前需要的颜色</span></span><br><span class="line">			&#123;</span><br><span class="line">				b++;<span class="comment">//这里决策很重要。装了一次后再看货架</span></span><br><span class="line">				<span class="keyword">while</span> (!s.<span class="built_in">empty</span>() &amp;&amp; s.<span class="built_in">top</span>() == b) &#123; s.<span class="built_in">pop</span>(); b++; &#125;<span class="comment">//看一下栈顶是不是当前要装填的，如果是，则取下来装填</span></span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">			&#123;</span><br><span class="line">				s.<span class="built_in">push</span>(c[i]);<span class="comment">//放在货架上</span></span><br><span class="line">				<span class="keyword">if</span> (s.<span class="built_in">size</span>() &gt; h) <span class="keyword">break</span>; <span class="comment">//超出容量直接结束</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (b &lt; color + <span class="number">1</span>) cout &lt;&lt; <span class="string">&quot;NO&quot;</span> &lt;&lt; endl;<span class="comment">//b&lt;color + 1说明没装完</span></span><br><span class="line">		<span class="keyword">else</span> cout &lt;&lt; <span class="string">&quot;YES&quot;</span> &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>这种题我老捋不清逻辑。题目里其实有给。自己写的时候我把看货架和判断当前搞成并列关系了。事实上当前的可以装再看货架更对，当前的不能装货架上的也装不了。货架上拿下来一个以后要循环的看看后面的。我自己写的时候没有，直接push进去当前的。这个逻辑不对。我真的好讨厌模拟。。。。。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>数字逻辑知识点总结</title>
+    <url>/2023/10/15/Untitled-1/</url>
+    <content><![CDATA[<p>希希很讨厌这门课orz，很玄妙  </p>
+<ol>
+<li>根据真值表画卡诺图   <span id="more"></span></li>
+</ol>
+<p>真值表里是1，对应卡诺图也就填1.比如011(3)是1，那么卡诺图里的011也就是1.真值表里是0同理。 真值表里变量顺序无所谓<br><img src="/../someimage/knt.png"><br><strong>AB为最高位！！</strong>  </p>
+<ol>
+<li>根据最小项画卡诺图<br>最小项m（1，3，4），对应的位置表格里填1，最大项反之   </li>
+<li>卡诺图直接化简出与或式</li>
+<li>门级结构描述f&#x3D;x2~x3+x1x3   <figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"><span class="keyword">module</span> top_module(</span><br><span class="line"><span class="keyword">input</span> x3,</span><br><span class="line"><span class="keyword">input</span> x2,</span><br><span class="line"><span class="keyword">input</span> x1,</span><br><span class="line"><span class="keyword">output</span> f</span><br><span class="line">);</span><br><span class="line"><span class="keyword">wire</span> w1,w2;<span class="comment">//连出的线</span></span><br><span class="line"><span class="keyword">and</span> a1(w1,x2,~x3),a2(w2,x3,x1);</span><br><span class="line"><span class="keyword">or</span> o1(f,w1,w2);</span><br><span class="line"><span class="keyword">endmodule</span>;</span><br></pre></td></tr></table></figure></li>
+<li>数据流描述（不关心门的构造，只管描述表达式）   <figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"><span class="keyword">module</span> tm(</span><br><span class="line"><span class="keyword">input</span> x1,</span><br><span class="line"><span class="keyword">input</span> x2,</span><br><span class="line"><span class="keyword">input</span> x3,</span><br><span class="line"><span class="keyword">output</span> f</span><br><span class="line">);</span><br><span class="line"><span class="keyword">assign</span> f=(~x3&amp;x2)|(x3&amp;x1);<span class="comment">//一定有assign，是重点,好像括号没有太大的必要</span></span><br><span class="line"><span class="keyword">endmodule</span></span><br></pre></td></tr></table></figure></li>
+<li>行为描述（模块）<br>用到always之类的块</li>
+<li>2421码<br>从左到右，第一位权值为2，第二位的权值为4，第三位的权值为2，第四位的权值为1。 <figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"><span class="keyword">module</span> zh8421_2421(in,out,err);</span><br><span class="line">    <span class="keyword">input</span> [<span class="number">3</span>:<span class="number">0</span>]in;<span class="comment">//4位，不写则为一位</span></span><br><span class="line">    <span class="keyword">output</span> [<span class="number">3</span>:<span class="number">0</span>]out;</span><br><span class="line">    <span class="keyword">output</span> err;</span><br><span class="line">    <span class="keyword">reg</span> [<span class="number">3</span>:<span class="number">0</span>]out;<span class="comment">//reg表示被定义的信号将用在always模块内</span></span><br><span class="line">    <span class="keyword">reg</span> err;<span class="comment">//四个口也可以写在上面括号里</span></span><br><span class="line">        <span class="keyword">always</span>@(in)</span><br><span class="line">            <span class="keyword">if</span>(in&gt;<span class="number">4&#x27;b1001</span>)<span class="comment">//&gt;9,&#x27;b表示二进制，&#x27;h十六进制</span></span><br><span class="line">                <span class="keyword">begin</span></span><br><span class="line">                out=<span class="number">0</span>;</span><br><span class="line">                err=<span class="number">1</span>;</span><br><span class="line">                <span class="keyword">end</span></span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(in&gt;<span class="number">4&#x27;b0100</span>)</span><br><span class="line">                <span class="keyword">begin</span></span><br><span class="line">                out=in+<span class="number">4&#x27;b0110</span>;</span><br><span class="line">                err=<span class="number">0</span>;</span><br><span class="line">                <span class="keyword">end</span></span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                <span class="keyword">begin</span></span><br><span class="line">                out=in;</span><br><span class="line">                err=<span class="number">0</span>;</span><br><span class="line">                <span class="keyword">end</span></span><br><span class="line"><span class="keyword">endmodule</span></span><br></pre></td></tr></table></figure></li>
+<li>一些运算符<br>&amp;按位与<br>&amp;&amp;逻辑与<br>位拼接{}<br>b[3]b为4位向量的<strong>第一位</strong>，最左边这个-&gt;口口口口,还有b[2],b[1]……注意和数组是反的  </li>
+<li>一些奇怪的名词  <ol>
+<li>半加器 指对输入的两个一位二进制数相加（A与B），输出<strong>一个结果位（SUM）和进位（C）</strong>，没有进位的输入加法器电路，是一个实现一位二进制数的加法电路  </li>
+<li>全加器 输入两个二进制位和一个进位，一起运算后输出和和进位<br> <img src="/..%5Csomeimage%5Cssk.png"></li>
+<li>全减器<br> <img src="/image-18.png" alt="Alt text"><br> bo的a取非，其他一样。接受来自低位的借位，输出向高位的借位。</li>
+</ol>
+</li>
+<li>一些逻辑式化简规则<br><img src="/..%5Csomeimage%5C707.jpg"></li>
+<li>逻辑险象<br>也称逻辑冒险。 两个输入信号同时向相反方向的逻辑电平跳变的现象（即一个由1- &gt; 0， 另一个从0 -&gt; 1），称为竞争。<br>因竞争导致在输出端可能产生尖峰脉冲的现象，称为冒险。<img src="/..%5Csomeimage%5C81ca.png"><br>判断逻辑险象：出现相切的卡诺图，或式中A和A’同时出现。<img src="/..%5Csomeimage%5C732.png"><img src="/..%5Csomeimage%5C142.png"><br>ps消除时也画包含切线的最大圈！</li>
+<li>典型代码类型<br>格雷码：二进制转格雷码要用三个异或</li>
+<li>触发器<br>很抽象。<br>同步置位:上升沿来临才赋值<br>异步：异步置位与复位是与时钟无关的。把它们列入always块的事件控制括号内就能触发always块的执行。<br><img src="/image.png" alt="Alt text"><figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"><span class="comment">//边沿JK触发器。同步</span></span><br><span class="line"><span class="keyword">module</span> jk_trigger(clk, j, k, q);</span><br><span class="line"> </span><br><span class="line"><span class="keyword">input</span> clk, j, k;</span><br><span class="line"><span class="keyword">output</span> q;</span><br><span class="line"><span class="keyword">reg</span> q;</span><br><span class="line"><span class="keyword">wire</span> qb;</span><br><span class="line"><span class="keyword">always</span>@(<span class="keyword">posedge</span> clk)       <span class="comment">//时钟上升沿到来时，判断jk的值</span></span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">	<span class="keyword">case</span>(&#123;j,k&#125;)</span><br><span class="line">	<span class="number">2&#x27;b00</span>: q &lt;= q;       <span class="comment">//如果&#123;j,k&#125;=00，则触发器处于保持状态</span></span><br><span class="line">	<span class="number">2&#x27;b01</span>: q &lt;= <span class="number">1&#x27;b0</span>;    <span class="comment">//如果&#123;j,k&#125;=01，则触发器置1</span></span><br><span class="line">	<span class="number">2&#x27;b10</span>: q &lt;= <span class="number">1&#x27;b1</span>;    <span class="comment">//同理10，清零</span></span><br><span class="line">	<span class="number">2&#x27;b11</span>: q &lt;= ~q;      <span class="comment">//11,翻转</span></span><br><span class="line">	<span class="keyword">default</span>: q &lt;= q;</span><br><span class="line">	<span class="keyword">endcase</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">assign</span> qb = ~q;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">endmodule</span></span><br></pre></td></tr></table></figure>
+D画波形的题：锁存器在有效时与输入D保持一致。触发器在有效边沿来临时与来临前的D值保持一致。</li>
+</ol>
 ]]></content>
   </entry>
   <entry>
@@ -150,72 +192,22 @@ path:
 ]]></content>
   </entry>
   <entry>
-    <title>数字逻辑知识点总结</title>
-    <url>/2023/10/15/Untitled-1/</url>
-    <content><![CDATA[<p>希希很讨厌这门课orz，很玄妙  </p>
-<ol>
-<li>根据真值表画卡诺图   <span id="more"></span></li>
-</ol>
-<p>真值表里是1，对应卡诺图也就填1.比如011(3)是1，那么卡诺图里的011也就是1.真值表里是0同理。 真值表里变量顺序无所谓<br><img src="/../someimage/knt.png"><br><strong>AB为最高位！！</strong>  </p>
-<ol>
-<li>根据最小项画卡诺图<br>最小项m（1，3，4），对应的位置表格里填1，最大项反之   </li>
-<li>卡诺图直接化简出与或式</li>
-<li>门级结构描述f&#x3D;x2~x3+x1x3   <figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"><span class="keyword">module</span> top_module(</span><br><span class="line"><span class="keyword">input</span> x3,</span><br><span class="line"><span class="keyword">input</span> x2,</span><br><span class="line"><span class="keyword">input</span> x1,</span><br><span class="line"><span class="keyword">output</span> f</span><br><span class="line">);</span><br><span class="line"><span class="keyword">wire</span> w1,w2;<span class="comment">//连出的线</span></span><br><span class="line"><span class="keyword">and</span> a1(w1,x2,~x3),a2(w2,x3,x1);</span><br><span class="line"><span class="keyword">or</span> o1(f,w1,w2);</span><br><span class="line"><span class="keyword">endmodule</span>;</span><br></pre></td></tr></table></figure></li>
-<li>数据流描述（不关心门的构造，只管描述表达式）   <figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"><span class="keyword">module</span> tm(</span><br><span class="line"><span class="keyword">input</span> x1,</span><br><span class="line"><span class="keyword">input</span> x2,</span><br><span class="line"><span class="keyword">input</span> x3,</span><br><span class="line"><span class="keyword">output</span> f</span><br><span class="line">);</span><br><span class="line"><span class="keyword">assign</span> f=(~x3&amp;x2)|(x3&amp;x1);<span class="comment">//一定有assign，是重点,好像括号没有太大的必要</span></span><br><span class="line"><span class="keyword">endmodule</span></span><br></pre></td></tr></table></figure></li>
-<li>行为描述（模块）<br>用到always之类的块</li>
-<li>2421码<br>从左到右，第一位权值为2，第二位的权值为4，第三位的权值为2，第四位的权值为1。 <figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"><span class="keyword">module</span> zh8421_2421(in,out,err);</span><br><span class="line">    <span class="keyword">input</span> [<span class="number">3</span>:<span class="number">0</span>]in;<span class="comment">//4位，不写则为一位</span></span><br><span class="line">    <span class="keyword">output</span> [<span class="number">3</span>:<span class="number">0</span>]out;</span><br><span class="line">    <span class="keyword">output</span> err;</span><br><span class="line">    <span class="keyword">reg</span> [<span class="number">3</span>:<span class="number">0</span>]out;<span class="comment">//reg表示被定义的信号将用在always模块内</span></span><br><span class="line">    <span class="keyword">reg</span> err;<span class="comment">//四个口也可以写在上面括号里</span></span><br><span class="line">        <span class="keyword">always</span>@(in)</span><br><span class="line">            <span class="keyword">if</span>(in&gt;<span class="number">4&#x27;b1001</span>)<span class="comment">//&gt;9,&#x27;b表示二进制，&#x27;h十六进制</span></span><br><span class="line">                <span class="keyword">begin</span></span><br><span class="line">                out=<span class="number">0</span>;</span><br><span class="line">                err=<span class="number">1</span>;</span><br><span class="line">                <span class="keyword">end</span></span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(in&gt;<span class="number">4&#x27;b0100</span>)</span><br><span class="line">                <span class="keyword">begin</span></span><br><span class="line">                out=in+<span class="number">4&#x27;b0110</span>;</span><br><span class="line">                err=<span class="number">0</span>;</span><br><span class="line">                <span class="keyword">end</span></span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                <span class="keyword">begin</span></span><br><span class="line">                out=in;</span><br><span class="line">                err=<span class="number">0</span>;</span><br><span class="line">                <span class="keyword">end</span></span><br><span class="line"><span class="keyword">endmodule</span></span><br></pre></td></tr></table></figure></li>
-<li>一些运算符<br>&amp;按位与<br>&amp;&amp;逻辑与<br>位拼接{}<br>b[3]b为4位向量的<strong>第一位</strong>，最左边这个-&gt;口口口口,还有b[2],b[1]……注意和数组是反的  </li>
-<li>一些奇怪的名词  <ol>
-<li>半加器 指对输入的两个一位二进制数相加（A与B），输出<strong>一个结果位（SUM）和进位（C）</strong>，没有进位的输入加法器电路，是一个实现一位二进制数的加法电路  </li>
-<li>全加器 输入两个二进制位和一个进位，一起运算后输出和和进位<br> <img src="/..%5Csomeimage%5Cssk.png"></li>
-<li>全减器<br> <img src="/image-18.png" alt="Alt text"><br> bo的a取非，其他一样。接受来自低位的借位，输出向高位的借位。</li>
-</ol>
-</li>
-<li>一些逻辑式化简规则<br><img src="/..%5Csomeimage%5C707.jpg"></li>
-<li>逻辑险象<br>也称逻辑冒险。 两个输入信号同时向相反方向的逻辑电平跳变的现象（即一个由1- &gt; 0， 另一个从0 -&gt; 1），称为竞争。<br>因竞争导致在输出端可能产生尖峰脉冲的现象，称为冒险。<img src="/..%5Csomeimage%5C81ca.png"><br>判断逻辑险象：出现相切的卡诺图，或式中A和A’同时出现。<img src="/..%5Csomeimage%5C732.png"><img src="/..%5Csomeimage%5C142.png"><br>ps消除时也画包含切线的最大圈！</li>
-<li>典型代码类型<br>格雷码：二进制转格雷码要用三个异或</li>
-<li>触发器<br>很抽象。<br>同步置位:上升沿来临才赋值<br>异步：异步置位与复位是与时钟无关的。把它们列入always块的事件控制括号内就能触发always块的执行。<br><img src="/image.png" alt="Alt text"><figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"><span class="comment">//边沿JK触发器。同步</span></span><br><span class="line"><span class="keyword">module</span> jk_trigger(clk, j, k, q);</span><br><span class="line"> </span><br><span class="line"><span class="keyword">input</span> clk, j, k;</span><br><span class="line"><span class="keyword">output</span> q;</span><br><span class="line"><span class="keyword">reg</span> q;</span><br><span class="line"><span class="keyword">wire</span> qb;</span><br><span class="line"><span class="keyword">always</span>@(<span class="keyword">posedge</span> clk)       <span class="comment">//时钟上升沿到来时，判断jk的值</span></span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">	<span class="keyword">case</span>(&#123;j,k&#125;)</span><br><span class="line">	<span class="number">2&#x27;b00</span>: q &lt;= q;       <span class="comment">//如果&#123;j,k&#125;=00，则触发器处于保持状态</span></span><br><span class="line">	<span class="number">2&#x27;b01</span>: q &lt;= <span class="number">1&#x27;b0</span>;    <span class="comment">//如果&#123;j,k&#125;=01，则触发器置1</span></span><br><span class="line">	<span class="number">2&#x27;b10</span>: q &lt;= <span class="number">1&#x27;b1</span>;    <span class="comment">//同理10，清零</span></span><br><span class="line">	<span class="number">2&#x27;b11</span>: q &lt;= ~q;      <span class="comment">//11,翻转</span></span><br><span class="line">	<span class="keyword">default</span>: q &lt;= q;</span><br><span class="line">	<span class="keyword">endcase</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">assign</span> qb = ~q;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">endmodule</span></span><br></pre></td></tr></table></figure>
-D画波形的题：锁存器在有效时与输入D保持一致。触发器在有效边沿来临时与来临前的D值保持一致。</li>
-</ol>
-]]></content>
-  </entry>
-  <entry>
-    <title>基于B树的图书管理系统</title>
-    <url>/2023/05/26/btree/</url>
-    <content><![CDATA[<h2 id="程序构思"><a href="#程序构思" class="headerlink" title="程序构思"></a>程序构思</h2><p>分为三个头文件：类头文件，函数实现头文件，源文件。源文件实现和用户的交互。<br>分为三个类：book btnode btree<br>分别存储  书对象  树节点  b树接口<br>一共六个操作：  </p>
-<ol>
-<li>采编入口  </li>
-<li>清除库存  </li>
-<li>借阅  </li>
-<li>归还  </li>
-<li>查询  </li>
-<li>显示<br>每个操作两个函数，一个负责和b树的交互，一个和用户交互。</li>
-</ol>
-<span id="more"></span>  
-
-<h2 id="遇到的一些问题"><a href="#遇到的一些问题" class="headerlink" title="遇到的一些问题"></a>遇到的一些问题</h2><ol>
-<li>头文件源文件如何共享全局变量  </li>
-<li>文件oi乱码</li>
-<li>如何实现文件的更新</li>
-<li>凹入表</li>
-</ol>
-<h3 id="头文件源文件如何共享全局变量"><a href="#头文件源文件如何共享全局变量" class="headerlink" title="头文件源文件如何共享全局变量"></a>头文件源文件如何共享全局变量</h3><p>用extern在头文件中声明变量，在cpp中定义（赋值）变量<br>本来想定义一个全局树对象，后来发现还是不行。。。就改传参了。类A中有两个函数a(),b()，a中调用b居然也要以对象.的形式，真麻烦。。。。</p>
-<h3 id="文件oi乱码"><a href="#文件oi乱码" class="headerlink" title="文件oi乱码"></a>文件oi乱码</h3><p><img src="/../someimage/hao.png"><br>咱就是说电脑是GBK，但是文件是UTF-8，将文件编码改为ANSI就行了<br><img src="/../someimage/le.png"></p>
-<h3 id="凹入表"><a href="#凹入表" class="headerlink" title="凹入表"></a>凹入表</h3><p>之前看网上的凹入表图片没有头绪，后来发现不过是树的先序遍历……打印孩子换行，根据层数记算每个孩子前面的空格  </p>
-<pre><code class="cpp">void travel(BTNodePosi a, int k)
-&#123;
-    if (a == NULL)return;//没有东西
-    for (int cnt = 0; cnt &lt; k; cnt++)
-        cout &lt;&lt; &quot;  &quot;;
-    for (int i = 0; i &lt; a-&gt;key.size(); i++)
-        if (i == 0)cout &lt;&lt; a-&gt;key[i];
-        else cout &lt;&lt; &quot;,&quot; &lt;&lt; a-&gt;key[i];
-    cout &lt;&lt; endl;
-    for (int i = 0; i &lt; a-&gt;child.size(); i++)
-        travel(a-&gt;child[i], k + 1);//下一层
-&#125;
-</code></pre>
-<h2 id="写后感"><a href="#写后感" class="headerlink" title="写后感"></a>写后感</h2><p>这个程序最怪的是主函数中定义了一棵树，然后树类内部的操作函数还需要传树根的参，很诡异，也不知道哪里出了问题。因为借鉴的是c语言版，也不知道这个树实例化后怎么通过自己的函数直接改内部特性，好像可以this指针？<br>下了个大数据，4k本书调了一下，树没有问题，不过2-3树感觉没有用到b树过多的特性，速度方面应该还是挺慢的吧……</p>
+    <title>关于起岸希的书单</title>
+    <url>/2023/07/20/book/</url>
+    <content><![CDATA[<p>众所周知，起岸希还是很爱读书的，她把她从大学一年级起读过的书整理了一下，有的没有读完，不过会努力更新进度  </p>
+<h2 id="关于计算机"><a href="#关于计算机" class="headerlink" title="关于计算机"></a>关于计算机</h2><h3 id="c-primer-plus"><a href="#c-primer-plus" class="headerlink" title="c primer plus"></a>c primer plus</h3><span id="more"></span>    
+<p><img src="/../someimage/cp.jpg"><br>我的c语言入门经典书~学校讲的稀烂，所有的计算机语言特性和c语言基础都是跟他学的，很厚，讲的很细致，很适合入门啃。我当时啃了两个月，期间的每一天都很快乐。  </p>
+<h3 id="计组"><a href="#计组" class="headerlink" title="计组"></a>计组</h3><p><img src="/../someimage/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86.jpg"><br>看了前2章，对整个计算机架构有个基本的了解，第三章数学比较多，含枯燥的公式论证</p>
+<h3 id="算法竞赛入门经典"><a href="#算法竞赛入门经典" class="headerlink" title="算法竞赛入门经典"></a>算法竞赛入门经典</h3><p><img src="/../someimage/%E7%AE%97%E6%B3%95.jpg"><br>人称紫书，看了一半很有收获，感觉里面的oi类型较为古早，但是有很棒的思路，希望他能带我打进区域赛（  </p>
+<h3 id="算法笔记"><a href="#算法笔记" class="headerlink" title="算法笔记"></a>算法笔记</h3><p><img src="/../someimage/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0.jpg"><br>我看完的第一本算法书，也是我的算法入门书，全书小500页，讲的通俗易懂，知识点覆盖不全  </p>
+<h3 id="网络是怎样连的"><a href="#网络是怎样连的" class="headerlink" title="网络是怎样连的"></a>网络是怎样连的</h3><p><img src="/../someimage/%E7%BD%91%E7%BB%9C.jpg"><br>我的互联网入门书，算是我看过的最容易懂的网络书了。推荐给大家入门  </p>
+<h3 id="图解TCP-x2F-IP"><a href="#图解TCP-x2F-IP" class="headerlink" title="图解TCP&#x2F;IP"></a>图解TCP&#x2F;IP</h3><p><img src="/../someimage/%E5%9B%BE%E8%A7%A3.jpg"><br>薄书，比上一本难且枯燥一些，推荐有一些基础再看，目前看了20%左右吧  </p>
+<h3 id="挑战程序设计竞赛"><a href="#挑战程序设计竞赛" class="headerlink" title="挑战程序设计竞赛"></a>挑战程序设计竞赛</h3><p><img src="/../someimage/%E6%8C%91%E6%88%98.jpg"><br>人称白书，和紫书一起看的，大家说这本比紫书简单但是我不觉得。有些难点的算法和数据结构，比如状压dp，st表这种。跳着看的  </p>
+<h3 id="深入理解计算机系统"><a href="#深入理解计算机系统" class="headerlink" title="深入理解计算机系统"></a>深入理解计算机系统</h3><p><img src="/../someimage/%E6%B7%B1%E5%85%A5.jpg"><br>计算机界有名的大厚书，并且是大二要上的一门课，对各种现象解释的非常底层和详尽。由于有对大书的畏惧，目前看了10%吧   </p>
+<h3 id="面向对象程序设计"><a href="#面向对象程序设计" class="headerlink" title="面向对象程序设计"></a>面向对象程序设计</h3><p><img src="/../someimage/%E9%9D%A2%E5%90%91.jpg"><br>我大一上特爱这本书，带我入门了面向对象编程，写的巨好，把我看同类型的书觉得很难的东西春风化雨，写的特别好理解。是我看过的教c++面向对象里最好的书了，看了1.5遍…（ps但是依旧没有拯救我的java……  </p>
+<h2 id="关于人生-x2F-生活"><a href="#关于人生-x2F-生活" class="headerlink" title="关于人生&#x2F;生活"></a>关于人生&#x2F;生活</h2><h3 id="影响力"><a href="#影响力" class="headerlink" title="影响力"></a>影响力</h3><p><img src="/../someimage/%E5%BD%B1%E5%93%8D.jpg"><br>会学到一些小技巧，比如目的是7就开口要10这种</p>
+<h3 id="亲密关系"><a href="#亲密关系" class="headerlink" title="亲密关系"></a>亲密关系</h3><p>有很多有意思的调查  </p>
+<h3 id="你不可不知的人性"><a href="#你不可不知的人性" class="headerlink" title="你不可不知的人性"></a>你不可不知的人性</h3><p><img src="/../someimage/%E4%BD%A0%E4%B8%8D.jpg"><br>刘庸的处事系列我都很喜欢，尤其是那本《我不是教你诈》，讲了好多令我叹为观止的人间套路……感觉看完这个系列后情商提高了  </p>
 ]]></content>
   </entry>
   <entry>
@@ -307,22 +299,42 @@ int main()
 ]]></content>
   </entry>
   <entry>
-    <title>关于起岸希的书单</title>
-    <url>/2023/07/20/book/</url>
-    <content><![CDATA[<p>众所周知，起岸希还是很爱读书的，她把她从大学一年级起读过的书整理了一下，有的没有读完，不过会努力更新进度  </p>
-<h2 id="关于计算机"><a href="#关于计算机" class="headerlink" title="关于计算机"></a>关于计算机</h2><h3 id="c-primer-plus"><a href="#c-primer-plus" class="headerlink" title="c primer plus"></a>c primer plus</h3><span id="more"></span>    
-<p><img src="/../someimage/cp.jpg"><br>我的c语言入门经典书~学校讲的稀烂，所有的计算机语言特性和c语言基础都是跟他学的，很厚，讲的很细致，很适合入门啃。我当时啃了两个月，期间的每一天都很快乐。  </p>
-<h3 id="计组"><a href="#计组" class="headerlink" title="计组"></a>计组</h3><p><img src="/../someimage/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86.jpg"><br>看了前2章，对整个计算机架构有个基本的了解，第三章数学比较多，含枯燥的公式论证</p>
-<h3 id="算法竞赛入门经典"><a href="#算法竞赛入门经典" class="headerlink" title="算法竞赛入门经典"></a>算法竞赛入门经典</h3><p><img src="/../someimage/%E7%AE%97%E6%B3%95.jpg"><br>人称紫书，看了一半很有收获，感觉里面的oi类型较为古早，但是有很棒的思路，希望他能带我打进区域赛（  </p>
-<h3 id="算法笔记"><a href="#算法笔记" class="headerlink" title="算法笔记"></a>算法笔记</h3><p><img src="/../someimage/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0.jpg"><br>我看完的第一本算法书，也是我的算法入门书，全书小500页，讲的通俗易懂，知识点覆盖不全  </p>
-<h3 id="网络是怎样连的"><a href="#网络是怎样连的" class="headerlink" title="网络是怎样连的"></a>网络是怎样连的</h3><p><img src="/../someimage/%E7%BD%91%E7%BB%9C.jpg"><br>我的互联网入门书，算是我看过的最容易懂的网络书了。推荐给大家入门  </p>
-<h3 id="图解TCP-x2F-IP"><a href="#图解TCP-x2F-IP" class="headerlink" title="图解TCP&#x2F;IP"></a>图解TCP&#x2F;IP</h3><p><img src="/../someimage/%E5%9B%BE%E8%A7%A3.jpg"><br>薄书，比上一本难且枯燥一些，推荐有一些基础再看，目前看了20%左右吧  </p>
-<h3 id="挑战程序设计竞赛"><a href="#挑战程序设计竞赛" class="headerlink" title="挑战程序设计竞赛"></a>挑战程序设计竞赛</h3><p><img src="/../someimage/%E6%8C%91%E6%88%98.jpg"><br>人称白书，和紫书一起看的，大家说这本比紫书简单但是我不觉得。有些难点的算法和数据结构，比如状压dp，st表这种。跳着看的  </p>
-<h3 id="深入理解计算机系统"><a href="#深入理解计算机系统" class="headerlink" title="深入理解计算机系统"></a>深入理解计算机系统</h3><p><img src="/../someimage/%E6%B7%B1%E5%85%A5.jpg"><br>计算机界有名的大厚书，并且是大二要上的一门课，对各种现象解释的非常底层和详尽。由于有对大书的畏惧，目前看了10%吧   </p>
-<h3 id="面向对象程序设计"><a href="#面向对象程序设计" class="headerlink" title="面向对象程序设计"></a>面向对象程序设计</h3><p><img src="/../someimage/%E9%9D%A2%E5%90%91.jpg"><br>我大一上特爱这本书，带我入门了面向对象编程，写的巨好，把我看同类型的书觉得很难的东西春风化雨，写的特别好理解。是我看过的教c++面向对象里最好的书了，看了1.5遍…（ps但是依旧没有拯救我的java……  </p>
-<h2 id="关于人生-x2F-生活"><a href="#关于人生-x2F-生活" class="headerlink" title="关于人生&#x2F;生活"></a>关于人生&#x2F;生活</h2><h3 id="影响力"><a href="#影响力" class="headerlink" title="影响力"></a>影响力</h3><p><img src="/../someimage/%E5%BD%B1%E5%93%8D.jpg"><br>会学到一些小技巧，比如目的是7就开口要10这种</p>
-<h3 id="亲密关系"><a href="#亲密关系" class="headerlink" title="亲密关系"></a>亲密关系</h3><p>有很多有意思的调查  </p>
-<h3 id="你不可不知的人性"><a href="#你不可不知的人性" class="headerlink" title="你不可不知的人性"></a>你不可不知的人性</h3><p><img src="/../someimage/%E4%BD%A0%E4%B8%8D.jpg"><br>刘庸的处事系列我都很喜欢，尤其是那本《我不是教你诈》，讲了好多令我叹为观止的人间套路……感觉看完这个系列后情商提高了  </p>
+    <title>基于B树的图书管理系统</title>
+    <url>/2023/05/26/btree/</url>
+    <content><![CDATA[<h2 id="程序构思"><a href="#程序构思" class="headerlink" title="程序构思"></a>程序构思</h2><p>分为三个头文件：类头文件，函数实现头文件，源文件。源文件实现和用户的交互。<br>分为三个类：book btnode btree<br>分别存储  书对象  树节点  b树接口<br>一共六个操作：  </p>
+<ol>
+<li>采编入口  </li>
+<li>清除库存  </li>
+<li>借阅  </li>
+<li>归还  </li>
+<li>查询  </li>
+<li>显示<br>每个操作两个函数，一个负责和b树的交互，一个和用户交互。</li>
+</ol>
+<span id="more"></span>  
+
+<h2 id="遇到的一些问题"><a href="#遇到的一些问题" class="headerlink" title="遇到的一些问题"></a>遇到的一些问题</h2><ol>
+<li>头文件源文件如何共享全局变量  </li>
+<li>文件oi乱码</li>
+<li>如何实现文件的更新</li>
+<li>凹入表</li>
+</ol>
+<h3 id="头文件源文件如何共享全局变量"><a href="#头文件源文件如何共享全局变量" class="headerlink" title="头文件源文件如何共享全局变量"></a>头文件源文件如何共享全局变量</h3><p>用extern在头文件中声明变量，在cpp中定义（赋值）变量<br>本来想定义一个全局树对象，后来发现还是不行。。。就改传参了。类A中有两个函数a(),b()，a中调用b居然也要以对象.的形式，真麻烦。。。。</p>
+<h3 id="文件oi乱码"><a href="#文件oi乱码" class="headerlink" title="文件oi乱码"></a>文件oi乱码</h3><p><img src="/../someimage/hao.png"><br>咱就是说电脑是GBK，但是文件是UTF-8，将文件编码改为ANSI就行了<br><img src="/../someimage/le.png"></p>
+<h3 id="凹入表"><a href="#凹入表" class="headerlink" title="凹入表"></a>凹入表</h3><p>之前看网上的凹入表图片没有头绪，后来发现不过是树的先序遍历……打印孩子换行，根据层数记算每个孩子前面的空格  </p>
+<pre><code class="cpp">void travel(BTNodePosi a, int k)
+&#123;
+    if (a == NULL)return;//没有东西
+    for (int cnt = 0; cnt &lt; k; cnt++)
+        cout &lt;&lt; &quot;  &quot;;
+    for (int i = 0; i &lt; a-&gt;key.size(); i++)
+        if (i == 0)cout &lt;&lt; a-&gt;key[i];
+        else cout &lt;&lt; &quot;,&quot; &lt;&lt; a-&gt;key[i];
+    cout &lt;&lt; endl;
+    for (int i = 0; i &lt; a-&gt;child.size(); i++)
+        travel(a-&gt;child[i], k + 1);//下一层
+&#125;
+</code></pre>
+<h2 id="写后感"><a href="#写后感" class="headerlink" title="写后感"></a>写后感</h2><p>这个程序最怪的是主函数中定义了一棵树，然后树类内部的操作函数还需要传树根的参，很诡异，也不知道哪里出了问题。因为借鉴的是c语言版，也不知道这个树实例化后怎么通过自己的函数直接改内部特性，好像可以this指针？<br>下了个大数据，4k本书调了一下，树没有问题，不过2-3树感觉没有用到b树过多的特性，速度方面应该还是挺慢的吧……</p>
 ]]></content>
   </entry>
   <entry>
@@ -334,28 +346,6 @@ int main()
 
 <p><img src="/../someimage/2.png"><br>注意！buildtool那三排下面如果有个黄三角警告是不行的。可能需要手动选择。按图上的来就好啦~</p>
 <p>2.环境配好了注意储存项目的路径必须是全英文。如果是全英文但是问题依旧没有解决你应该是把项目存c盘了。c盘路径“用户”显示的是“users”，我猜是因为这个。可以在D盘中新开一个文件夹，重新存项目，新开好的项目如果生成这样一个cmake文件就没有问题啦~<img src="/../someimage/3.png"></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>起岸希的第一篇博客</title>
-    <url>/2023/03/21/first/</url>
-    <content><![CDATA[<h2 id="好激动"><a href="#好激动" class="headerlink" title="好激动"></a>好激动</h2><p>对于一些计算机学习心得<br>起岸希觉得有必要分享一下  </p>
-<span id="more"></span>
-<p>首先记录一下<strong>markdown</strong>语法</p>
-<blockquote>
-<p>引用一下</p>
-</blockquote>
-<p>好了（空行退出引用段落）<br>插入代码段<br>空一行在打代码，每行前加一个tab</p>
-<pre><code>int f[MAXN][21]; // 第二维的大小根据数据范围决定，不小于log(MAXN)
-    for (int i = 1; i &lt;= n; ++i)
-        f[i][0] = read(); // 读入数据
-for (int i = 1; i &lt;= 20; ++i)
-    for (int j = 1; j + (1 &lt;&lt; i) - 1 &lt;= n; ++j)
-        f[j][i] = max(f[j][i - 1], f[j + (1 &lt;&lt; (i - 1))][i - 1]);
-</code></pre>
-<p>将单词变为代码<code>the fool</code>一个反引号包裹单词</p>
-<hr>
-<p>分割线<br>这是一个<a href="https://markdown.com.cn/basic-syntax/links.html">markdown语法链接</a><br>这是起岸希的email：<a href="mailto:&#52;&#x33;&#48;&#x33;&#54;&#x32;&#51;&#x38;&#x35;&#64;&#113;&#113;&#x2e;&#x63;&#111;&#x6d;">&#52;&#x33;&#48;&#x33;&#54;&#x32;&#51;&#x38;&#x35;&#64;&#113;&#113;&#x2e;&#x63;&#111;&#x6d;</a><br>这是图片 <img src="/../someimage/wdt.jpg" alt="picture">  </p>
 ]]></content>
   </entry>
   <entry>
@@ -466,6 +456,28 @@ for (int iy = 0; iy &lt; real_h; iy++) &#123;
 <h2 id="6-无解"><a href="#6-无解" class="headerlink" title="6.无解"></a>6.无解</h2>]]></content>
   </entry>
   <entry>
+    <title>起岸希的第一篇博客</title>
+    <url>/2023/03/21/first/</url>
+    <content><![CDATA[<h2 id="好激动"><a href="#好激动" class="headerlink" title="好激动"></a>好激动</h2><p>对于一些计算机学习心得<br>起岸希觉得有必要分享一下  </p>
+<span id="more"></span>
+<p>首先记录一下<strong>markdown</strong>语法</p>
+<blockquote>
+<p>引用一下</p>
+</blockquote>
+<p>好了（空行退出引用段落）<br>插入代码段<br>空一行在打代码，每行前加一个tab</p>
+<pre><code>int f[MAXN][21]; // 第二维的大小根据数据范围决定，不小于log(MAXN)
+    for (int i = 1; i &lt;= n; ++i)
+        f[i][0] = read(); // 读入数据
+for (int i = 1; i &lt;= 20; ++i)
+    for (int j = 1; j + (1 &lt;&lt; i) - 1 &lt;= n; ++j)
+        f[j][i] = max(f[j][i - 1], f[j + (1 &lt;&lt; (i - 1))][i - 1]);
+</code></pre>
+<p>将单词变为代码<code>the fool</code>一个反引号包裹单词</p>
+<hr>
+<p>分割线<br>这是一个<a href="https://markdown.com.cn/basic-syntax/links.html">markdown语法链接</a><br>这是起岸希的email：<a href="mailto:&#52;&#51;&#x30;&#x33;&#x36;&#x32;&#x33;&#56;&#53;&#x40;&#113;&#x71;&#x2e;&#x63;&#x6f;&#109;">&#52;&#51;&#x30;&#x33;&#x36;&#x32;&#x33;&#56;&#53;&#x40;&#113;&#x71;&#x2e;&#x63;&#x6f;&#109;</a><br>这是图片 <img src="/../someimage/wdt.jpg" alt="picture">  </p>
+]]></content>
+  </entry>
+  <entry>
     <title>工大杯比赛记录</title>
     <url>/2023/05/24/gdb/</url>
     <content><![CDATA[<h2 id="可能是因为大佬都没来，混了个好排名。。。"><a href="#可能是因为大佬都没来，混了个好排名。。。" class="headerlink" title="可能是因为大佬都没来，混了个好排名。。。"></a>可能是因为大佬都没来，混了个好排名。。。</h2><p><img src="/../someimage/5.jpg">  </p>
@@ -509,6 +521,23 @@ for (int iy = 0; iy &lt; real_h; iy++) &#123;
 ]]></content>
   </entry>
   <entry>
+    <title>关于ST表</title>
+    <url>/2023/03/21/second/</url>
+    <content><![CDATA[<h3 id="定义：用于求可重复性贡献问题的解。（即重复计算结果不变）对于一个一维数组，采用分治的方法，用一个二维数组储存每个区间内的最大最小值。f-a-b-表示从a开始2的b次方个数的最大值"><a href="#定义：用于求可重复性贡献问题的解。（即重复计算结果不变）对于一个一维数组，采用分治的方法，用一个二维数组储存每个区间内的最大最小值。f-a-b-表示从a开始2的b次方个数的最大值" class="headerlink" title="定义：用于求可重复性贡献问题的解。（即重复计算结果不变）对于一个一维数组，采用分治的方法，用一个二维数组储存每个区间内的最大最小值。f[a][b]表示从a开始2的b次方个数的最大值"></a>定义：用于求可重复性贡献问题的解。（即重复计算结果不变）对于一个一维数组，采用分治的方法，用一个二维数组储存每个区间内的最大最小值。<code>f[a][b]</code>表示从a开始2的b次方个数的最大值</h3><p>状态转移方程：f ( i , j ) &#x3D; m a x ( f ( i , j − 1 ) ,   f ( i + 2^(j − 1) , j − 1 ) )  </p>
+<span id="more"></span>  
+
+<p>将原区间分成两个大小相等子区间（因为长度是2的j次方，所以不存在不能等分的情况）<br>代码如下</p>
+<pre><code>int f[MAXN][21]; // 第二维的大小根据数据范围决定，不小于log(MAXN)
+    for (int i = 1; i &lt;= n; ++i)
+           f[i][0] = read(); //读入数据
+for (int j = 1; j &lt;= 20; ++j)//枚举倍数
+    for (int i = 1; i + (1 &lt;&lt; j) - 1 &lt;= n; ++i)//枚举起点,i到i+2^j-1刚好2^j个数
+        f[i][j] = max(f[i][j - 1], f[i + (1 &lt;&lt; (j- 1))][j- 1]);
+</code></pre>
+<p>内部存储像这样 <img src="/../someimage/02.jpg" alt="picture"><br>对于询问(l,r)，寻找两个分别以l开头和以s结尾的区间，两区间的最大值即总最大值。我们需要使第一个子区间的右端点尽可能的接近r​，那么不妨直接令l + 2^s − 1 &#x3D; r即s&#x3D;lg[ r-l+1]向下取整。则区间[l,r]被分为：f[ l ][ l + 2^s - 1]和f[r-( 2^s -1)][ r ]  <strong>从l开始2^s个，从r往前2^s个</strong><br>对log进行预处理：<code>lg[i]=lg[i/2]+1;</code>,<code>lg[0]=-1;</code><strong>千万别忘！</strong>  </p>
+]]></content>
+  </entry>
+  <entry>
     <title>数字逻辑知识点总结</title>
     <url>/2024/03/29/shuluo/</url>
     <content><![CDATA[<p>希希很讨厌这门课orz，很玄妙  </p>
@@ -540,7 +569,7 @@ D画波形的题：锁存器在有效时与输入D保持一致。触发器在有
   </entry>
   <entry>
     <title>关于ST表</title>
-    <url>/2023/03/21/second/</url>
+    <url>/2024/03/29/st/</url>
     <content><![CDATA[<h3 id="定义：用于求可重复性贡献问题的解。（即重复计算结果不变）对于一个一维数组，采用分治的方法，用一个二维数组储存每个区间内的最大最小值。f-a-b-表示从a开始2的b次方个数的最大值"><a href="#定义：用于求可重复性贡献问题的解。（即重复计算结果不变）对于一个一维数组，采用分治的方法，用一个二维数组储存每个区间内的最大最小值。f-a-b-表示从a开始2的b次方个数的最大值" class="headerlink" title="定义：用于求可重复性贡献问题的解。（即重复计算结果不变）对于一个一维数组，采用分治的方法，用一个二维数组储存每个区间内的最大最小值。f[a][b]表示从a开始2的b次方个数的最大值"></a>定义：用于求可重复性贡献问题的解。（即重复计算结果不变）对于一个一维数组，采用分治的方法，用一个二维数组储存每个区间内的最大最小值。<code>f[a][b]</code>表示从a开始2的b次方个数的最大值</h3><p>状态转移方程：f ( i , j ) &#x3D; m a x ( f ( i , j − 1 ) ,   f ( i + 2^(j − 1) , j − 1 ) )  </p>
 <span id="more"></span>  
 
@@ -556,20 +585,13 @@ for (int j = 1; j &lt;= 20; ++j)//枚举倍数
 ]]></content>
   </entry>
   <entry>
-    <title>关于ST表</title>
-    <url>/2024/03/29/st/</url>
-    <content><![CDATA[<h3 id="定义：用于求可重复性贡献问题的解。（即重复计算结果不变）对于一个一维数组，采用分治的方法，用一个二维数组储存每个区间内的最大最小值。f-a-b-表示从a开始2的b次方个数的最大值"><a href="#定义：用于求可重复性贡献问题的解。（即重复计算结果不变）对于一个一维数组，采用分治的方法，用一个二维数组储存每个区间内的最大最小值。f-a-b-表示从a开始2的b次方个数的最大值" class="headerlink" title="定义：用于求可重复性贡献问题的解。（即重复计算结果不变）对于一个一维数组，采用分治的方法，用一个二维数组储存每个区间内的最大最小值。f[a][b]表示从a开始2的b次方个数的最大值"></a>定义：用于求可重复性贡献问题的解。（即重复计算结果不变）对于一个一维数组，采用分治的方法，用一个二维数组储存每个区间内的最大最小值。<code>f[a][b]</code>表示从a开始2的b次方个数的最大值</h3><p>状态转移方程：f ( i , j ) &#x3D; m a x ( f ( i , j − 1 ) ,   f ( i + 2^(j − 1) , j − 1 ) )  </p>
-<span id="more"></span>  
-
-<p>将原区间分成两个大小相等子区间（因为长度是2的j次方，所以不存在不能等分的情况）<br>代码如下</p>
-<pre><code>int f[MAXN][21]; // 第二维的大小根据数据范围决定，不小于log(MAXN)
-    for (int i = 1; i &lt;= n; ++i)
-           f[i][0] = read(); //读入数据
-for (int j = 1; j &lt;= 20; ++j)//枚举倍数
-    for (int i = 1; i + (1 &lt;&lt; j) - 1 &lt;= n; ++i)//枚举起点,i到i+2^j-1刚好2^j个数
-        f[i][j] = max(f[i][j - 1], f[i + (1 &lt;&lt; (j- 1))][j- 1]);
-</code></pre>
-<p>内部存储像这样 <img src="/../someimage/02.jpg" alt="picture"><br>对于询问(l,r)，寻找两个分别以l开头和以s结尾的区间，两区间的最大值即总最大值。我们需要使第一个子区间的右端点尽可能的接近r​，那么不妨直接令l + 2^s − 1 &#x3D; r即s&#x3D;lg[ r-l+1]向下取整。则区间[l,r]被分为：f[ l ][ l + 2^s - 1]和f[r-( 2^s -1)][ r ]  <strong>从l开始2^s个，从r往前2^s个</strong><br>对log进行预处理：<code>lg[i]=lg[i/2]+1;</code>,<code>lg[0]=-1;</code><strong>千万别忘！</strong>  </p>
+    <title>These dependencies were not found:* @/config/config</title>
+    <url>/2024/03/29/these%20dependencies%20were%20not%20found/</url>
+    <content><![CDATA[<h2 id="webstorm导入项目发生报错"><a href="#webstorm导入项目发生报错" class="headerlink" title="webstorm导入项目发生报错"></a>webstorm导入项目发生报错</h2><h3 id="完整报错："><a href="#完整报错：" class="headerlink" title="完整报错："></a>完整报错：</h3><p><code>* @/config/config in ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./  node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/TestCase.vue?vue&amp;type=script&amp;lang=js&amp;, ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Editor/MarkdownEditor.vue?vue&amp;type=script&amp;lang=js&amp; and 6 others</code>  </p>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><ul>
+<li>这个报错说明我src&#x2F;config&#x2F;路径下缺少config.js文件。增加以后报错减少到了一行。</li>
+<li>vue.config.js文件里边lintOnSave字段值改为false<br><img src="/../someimage/image-25.png" alt="Alt text"></li>
+</ul>
 ]]></content>
   </entry>
   <entry>
@@ -657,16 +679,6 @@ else &#123;
 <li>右键选择“重新启动”  </li>
 <li>下边栏就回来了！！</li>
 </ol>
-]]></content>
-  </entry>
-  <entry>
-    <title>These dependencies were not found:* @/config/config</title>
-    <url>/2024/03/29/these%20dependencies%20were%20not%20found/</url>
-    <content><![CDATA[<h2 id="webstorm导入项目发生报错"><a href="#webstorm导入项目发生报错" class="headerlink" title="webstorm导入项目发生报错"></a>webstorm导入项目发生报错</h2><h3 id="完整报错："><a href="#完整报错：" class="headerlink" title="完整报错："></a>完整报错：</h3><p><code>* @/config/config in ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./  node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/TestCase.vue?vue&amp;type=script&amp;lang=js&amp;, ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Editor/MarkdownEditor.vue?vue&amp;type=script&amp;lang=js&amp; and 6 others</code>  </p>
-<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><ul>
-<li>这个报错说明我src&#x2F;config&#x2F;路径下缺少config.js文件。增加以后报错减少到了一行。</li>
-<li>vue.config.js文件里边lintOnSave字段值改为false<br><img src="/../someimage/image-25.png" alt="Alt text"></li>
-</ul>
 ]]></content>
   </entry>
   <entry>
@@ -783,6 +795,12 @@ int main()
 ]]></content>
   </entry>
   <entry>
+    <title></title>
+    <url>/2024/01/11/%E7%A6%BB%E6%95%A3/</url>
+    <content><![CDATA[<p>二部图：<br>简单来说，如果图中点可以被分为两组，并且使得所有边都跨越组的边界<br>哈斯图：<br>上界：（界外）盖住全范围的x及盖住x的<br>上确界：x<br>下界<br>下确界<br>极大元：不被盖住<br>最大元：盖住所有<br>极小元：不盖住任意<br>最小元：万物原点<br>矩阵的传递性：m*m是m的子集<br>图长度为x的路径数量：A^x所有元素和，回路数：主对角线元素和</p>
+]]></content>
+  </entry>
+  <entry>
     <title>组合数学</title>
     <url>/2023/11/18/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/</url>
     <content><![CDATA[<h2 id="大二上的起岸希决定开始研究数论方面"><a href="#大二上的起岸希决定开始研究数论方面" class="headerlink" title="大二上的起岸希决定开始研究数论方面"></a>大二上的起岸希决定开始研究数论方面</h2><hr>
@@ -865,12 +883,6 @@ int main()
 <li>了解《网络安全法》、《密码法》、《数据安全法》和《个人信息保护法》出台的先后顺序。<br>–就是这个序</li>
 <li>对上述法律有最基本的了解：<br>① 《中华人民共和国国家安全法》明确提出了“网络空间主权”，表明了网络空间安全的重要性。《网络安全法》是2015年7月1日颁布施行的《国家安全法》在网络空间上的具体化。<br>② 《密码法》旨在规范密码应用和管理。<br>③ 《数据安全法》旨在规范数据处理活动，保障数据安全，促进数据开发利用。<br>④ 《中华人民共和国个人信息保护法》是为了保护个人信息权益，规范个人信息处理活动。</li>
 </ol>
-]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/2024/01/11/%E7%A6%BB%E6%95%A3/</url>
-    <content><![CDATA[<p>二部图：<br>简单来说，如果图中点可以被分为两组，并且使得所有边都跨越组的边界<br>哈斯图：<br>上界：（界外）盖住全范围的x及盖住x的<br>上确界：x<br>下界<br>下确界<br>极大元：不被盖住<br>最大元：盖住所有<br>极小元：不盖住任意<br>最小元：万物原点<br>矩阵的传递性：m*m是m的子集<br>图长度为x的路径数量：A^x所有元素和，回路数：主对角线元素和</p>
 ]]></content>
   </entry>
 </search>
