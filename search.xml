@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>蓝桥杯2020年题目思路</title>
+    <url>/2023/04/06/2020/</url>
+    <content><![CDATA[<h2 id="D七段码"><a href="#D七段码" class="headerlink" title="D七段码"></a>D七段码</h2><p>题目：<br><img src="/../someimage/asa.png"><br>注意两个三根棍相连地方对三根棍来说都算连接。难点：  </p>
+<ol>
+<li>将每个边抽象成一个点建图</li>
+<li>枚举每个点亮不亮两种选择，共有2^7-1&#x3D;127种。将状态压缩为一个整数，每个灯亮不亮由0或1表示</li>
+<li>判断每种组合是否联通：随便找一点dfs，用vis数组记录走过。最后遍历vis，若有为0的点则不连通</li>
+</ol>
+<span id="more"></span>  
+
+<p>代码如下：  </p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> num,sum, q, cous, map[<span class="number">10</span>][<span class="number">10</span>];</span><br><span class="line"><span class="type">int</span> vis[<span class="number">10</span>];</span><br><span class="line">vector&lt;<span class="type">int</span>&gt; v;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">shuchu</span><span class="params">(<span class="type">int</span> a)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(a)</span><br><span class="line">	&#123;</span><br><span class="line">		cout&lt;&lt;a%<span class="number">2</span>;</span><br><span class="line">		a/=<span class="number">2</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	cout&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> a)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	vis[a] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt;= <span class="number">7</span>; j++)</span><br><span class="line">	&#123;<span class="comment">//儿子并且选出来并且没走过</span></span><br><span class="line">		<span class="keyword">if</span> (map[a][j] &amp;&amp; <span class="built_in">find</span>(v.<span class="built_in">begin</span>(), v.<span class="built_in">end</span>(), j) != v.<span class="built_in">end</span>()&amp;&amp;!vis[j])</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">dfs</span>(j);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">check</span><span class="params">(<span class="type">int</span> a)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">memset</span>(vis,<span class="number">0</span> ,<span class="built_in">sizeof</span>(vis) );</span><br><span class="line">	q = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">dfs</span>(v[<span class="number">0</span>]);</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; v.<span class="built_in">size</span>(); i++)</span><br><span class="line">	&#123;</span><br><span class="line">	<span class="keyword">if</span> (vis[v[i]] == <span class="number">0</span>)</span><br><span class="line">		q = <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (q)</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">map[<span class="number">1</span>][<span class="number">2</span>] = map[<span class="number">2</span>][<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">map[<span class="number">1</span>][<span class="number">6</span>] = map[<span class="number">6</span>][<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">map[<span class="number">2</span>][<span class="number">7</span>] = map[<span class="number">7</span>][<span class="number">2</span>] = <span class="number">1</span>;</span><br><span class="line">map[<span class="number">2</span>][<span class="number">3</span>]=map[<span class="number">3</span>][<span class="number">2</span>]=<span class="number">1</span>;</span><br><span class="line">map[<span class="number">3</span>][<span class="number">4</span>] = map[<span class="number">4</span>][<span class="number">3</span>] = <span class="number">1</span>;</span><br><span class="line">map[<span class="number">3</span>][<span class="number">7</span>] = map[<span class="number">7</span>][<span class="number">3</span>] = <span class="number">1</span>;</span><br><span class="line">map[<span class="number">4</span>][<span class="number">5</span>] = map[<span class="number">5</span>][<span class="number">4</span>] = <span class="number">1</span>;</span><br><span class="line">map[<span class="number">5</span>][<span class="number">6</span>]=map[<span class="number">6</span>][<span class="number">5</span>]=<span class="number">1</span>;</span><br><span class="line">map[<span class="number">5</span>][<span class="number">7</span>] = map[<span class="number">7</span>][<span class="number">5</span>] = <span class="number">1</span>;</span><br><span class="line">map[<span class="number">6</span>][<span class="number">7</span>] = map[<span class="number">7</span>][<span class="number">6</span>] = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= (<span class="number">1</span> &lt;&lt; <span class="number">7</span>) - <span class="number">1</span>; i++) &#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> m = <span class="number">0</span>; m &lt; <span class="number">7</span>; m++)</span><br><span class="line">		<span class="keyword">if</span> (i &gt;&gt; m &amp; <span class="number">1</span>)</span><br><span class="line">			v.<span class="built_in">push_back</span>(m+<span class="number">1</span>);</span><br><span class="line">	<span class="keyword">if</span> (<span class="built_in">check</span>(i))</span><br><span class="line">	&#123;</span><br><span class="line">		sum++;</span><br><span class="line">	&#125;</span><br><span class="line">	v.<span class="built_in">clear</span>();<span class="comment">//清空v</span></span><br><span class="line">&#125;</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;答案：&quot;</span> &lt;&lt; sum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="/../someimage/wa.png"></p>
+]]></content>
+  </entry>
+  <entry>
     <title>蒟蒻的蓝桥杯省赛之旅</title>
     <url>/2023/04/11/2023/</url>
     <content><![CDATA[<h2 id="A-幸运数"><a href="#A-幸运数" class="headerlink" title="A:幸运数"></a>A:幸运数</h2><p>题目大意：寻找<code>100000000</code>内的长度为偶数的，前面一半和等于后面一半的数<br>code：  </p>
@@ -41,25 +60,6 @@ int main() &#123;
 <p>答案4430091。可是！！！！！这个破玩意活生生运行了6分钟！！！！我考场上还以为是devcpp的问题，结果回来拿vs一弄发现。。。怎么也这么慢。不过细细一想就知道了。。。因为这是个O(n2)的算法。。。  </p>
 <h2 id="B：有奖问答"><a href="#B：有奖问答" class="headerlink" title="B：有奖问答"></a>B：有奖问答</h2><p>题目大意：一共30道题，答对一题加10分，答错分数清零。你攒够100分就可以拿到奖品退出游戏。现在做完所有题后，你一共拿了70分。请问对于你答对的题有几种可能性<br>思路：暴搜。。。到达100剪枝<br>我知道我哪错了……我dfs的时候答错没给分数清零……这波是审题问题啊啊啊啊我哭死  </p>
 <h2 id="C：平方差"><a href="#C：平方差" class="headerlink" title="C：平方差"></a>C：平方差</h2><p>题目大意：输入区间l，r。请你查找区间中有哪些数可以写成x^2-y^2的形式<br>思路：暴力打表……不会…打了1000以内的表，应该能水30%的点？</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>蓝桥杯2020年题目思路</title>
-    <url>/2023/04/06/2020/</url>
-    <content><![CDATA[<h2 id="D七段码"><a href="#D七段码" class="headerlink" title="D七段码"></a>D七段码</h2><p>题目：<br><img src="/../someimage/asa.png"><br>注意两个三根棍相连地方对三根棍来说都算连接。难点：  </p>
-<ol>
-<li>将每个边抽象成一个点建图</li>
-<li>枚举每个点亮不亮两种选择，共有2^7-1&#x3D;127种。将状态压缩为一个整数，每个灯亮不亮由0或1表示</li>
-<li>判断每种组合是否联通：随便找一点dfs，用vis数组记录走过。最后遍历vis，若有为0的点则不连通</li>
-</ol>
-<span id="more"></span>  
-
-<p>代码如下：  </p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> num,sum, q, cous, map[<span class="number">10</span>][<span class="number">10</span>];</span><br><span class="line"><span class="type">int</span> vis[<span class="number">10</span>];</span><br><span class="line">vector&lt;<span class="type">int</span>&gt; v;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">shuchu</span><span class="params">(<span class="type">int</span> a)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(a)</span><br><span class="line">	&#123;</span><br><span class="line">		cout&lt;&lt;a%<span class="number">2</span>;</span><br><span class="line">		a/=<span class="number">2</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	cout&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> a)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	vis[a] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt;= <span class="number">7</span>; j++)</span><br><span class="line">	&#123;<span class="comment">//儿子并且选出来并且没走过</span></span><br><span class="line">		<span class="keyword">if</span> (map[a][j] &amp;&amp; <span class="built_in">find</span>(v.<span class="built_in">begin</span>(), v.<span class="built_in">end</span>(), j) != v.<span class="built_in">end</span>()&amp;&amp;!vis[j])</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">dfs</span>(j);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">check</span><span class="params">(<span class="type">int</span> a)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">memset</span>(vis,<span class="number">0</span> ,<span class="built_in">sizeof</span>(vis) );</span><br><span class="line">	q = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">dfs</span>(v[<span class="number">0</span>]);</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; v.<span class="built_in">size</span>(); i++)</span><br><span class="line">	&#123;</span><br><span class="line">	<span class="keyword">if</span> (vis[v[i]] == <span class="number">0</span>)</span><br><span class="line">		q = <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (q)</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">map[<span class="number">1</span>][<span class="number">2</span>] = map[<span class="number">2</span>][<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">map[<span class="number">1</span>][<span class="number">6</span>] = map[<span class="number">6</span>][<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">map[<span class="number">2</span>][<span class="number">7</span>] = map[<span class="number">7</span>][<span class="number">2</span>] = <span class="number">1</span>;</span><br><span class="line">map[<span class="number">2</span>][<span class="number">3</span>]=map[<span class="number">3</span>][<span class="number">2</span>]=<span class="number">1</span>;</span><br><span class="line">map[<span class="number">3</span>][<span class="number">4</span>] = map[<span class="number">4</span>][<span class="number">3</span>] = <span class="number">1</span>;</span><br><span class="line">map[<span class="number">3</span>][<span class="number">7</span>] = map[<span class="number">7</span>][<span class="number">3</span>] = <span class="number">1</span>;</span><br><span class="line">map[<span class="number">4</span>][<span class="number">5</span>] = map[<span class="number">5</span>][<span class="number">4</span>] = <span class="number">1</span>;</span><br><span class="line">map[<span class="number">5</span>][<span class="number">6</span>]=map[<span class="number">6</span>][<span class="number">5</span>]=<span class="number">1</span>;</span><br><span class="line">map[<span class="number">5</span>][<span class="number">7</span>] = map[<span class="number">7</span>][<span class="number">5</span>] = <span class="number">1</span>;</span><br><span class="line">map[<span class="number">6</span>][<span class="number">7</span>] = map[<span class="number">7</span>][<span class="number">6</span>] = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= (<span class="number">1</span> &lt;&lt; <span class="number">7</span>) - <span class="number">1</span>; i++) &#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> m = <span class="number">0</span>; m &lt; <span class="number">7</span>; m++)</span><br><span class="line">		<span class="keyword">if</span> (i &gt;&gt; m &amp; <span class="number">1</span>)</span><br><span class="line">			v.<span class="built_in">push_back</span>(m+<span class="number">1</span>);</span><br><span class="line">	<span class="keyword">if</span> (<span class="built_in">check</span>(i))</span><br><span class="line">	&#123;</span><br><span class="line">		sum++;</span><br><span class="line">	&#125;</span><br><span class="line">	v.<span class="built_in">clear</span>();<span class="comment">//清空v</span></span><br><span class="line">&#125;</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;答案：&quot;</span> &lt;&lt; sum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<p><img src="/../someimage/wa.png"></p>
 ]]></content>
   </entry>
   <entry>
@@ -175,36 +175,6 @@ path:
 ]]></content>
   </entry>
   <entry>
-    <title>数字逻辑知识点总结</title>
-    <url>/2023/10/15/Untitled-1/</url>
-    <content><![CDATA[<p>希希很讨厌这门课orz，很玄妙  </p>
-<ol>
-<li>根据真值表画卡诺图   <span id="more"></span></li>
-</ol>
-<p>真值表里是1，对应卡诺图也就填1.比如011(3)是1，那么卡诺图里的011也就是1.真值表里是0同理。 真值表里变量顺序无所谓<br><img src="/../someimage/knt.png"><br><strong>AB为最高位！！</strong>  </p>
-<ol>
-<li>根据最小项画卡诺图<br>最小项m（1，3，4），对应的位置表格里填1，最大项反之   </li>
-<li>卡诺图直接化简出与或式</li>
-<li>门级结构描述f&#x3D;x2~x3+x1x3   <figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"><span class="keyword">module</span> top_module(</span><br><span class="line"><span class="keyword">input</span> x3,</span><br><span class="line"><span class="keyword">input</span> x2,</span><br><span class="line"><span class="keyword">input</span> x1,</span><br><span class="line"><span class="keyword">output</span> f</span><br><span class="line">);</span><br><span class="line"><span class="keyword">wire</span> w1,w2;<span class="comment">//连出的线</span></span><br><span class="line"><span class="keyword">and</span> a1(w1,x2,~x3),a2(w2,x3,x1);</span><br><span class="line"><span class="keyword">or</span> o1(f,w1,w2);</span><br><span class="line"><span class="keyword">endmodule</span>;</span><br></pre></td></tr></table></figure></li>
-<li>数据流描述（不关心门的构造，只管描述表达式）   <figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"><span class="keyword">module</span> tm(</span><br><span class="line"><span class="keyword">input</span> x1,</span><br><span class="line"><span class="keyword">input</span> x2,</span><br><span class="line"><span class="keyword">input</span> x3,</span><br><span class="line"><span class="keyword">output</span> f</span><br><span class="line">);</span><br><span class="line"><span class="keyword">assign</span> f=(~x3&amp;x2)|(x3&amp;x1);<span class="comment">//一定有assign，是重点,好像括号没有太大的必要</span></span><br><span class="line"><span class="keyword">endmodule</span></span><br></pre></td></tr></table></figure></li>
-<li>行为描述（模块）<br>用到always之类的块</li>
-<li>2421码<br>从左到右，第一位权值为2，第二位的权值为4，第三位的权值为2，第四位的权值为1。 <figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"><span class="keyword">module</span> zh8421_2421(in,out,err);</span><br><span class="line">    <span class="keyword">input</span> [<span class="number">3</span>:<span class="number">0</span>]in;<span class="comment">//4位，不写则为一位</span></span><br><span class="line">    <span class="keyword">output</span> [<span class="number">3</span>:<span class="number">0</span>]out;</span><br><span class="line">    <span class="keyword">output</span> err;</span><br><span class="line">    <span class="keyword">reg</span> [<span class="number">3</span>:<span class="number">0</span>]out;<span class="comment">//reg表示被定义的信号将用在always模块内</span></span><br><span class="line">    <span class="keyword">reg</span> err;<span class="comment">//四个口也可以写在上面括号里</span></span><br><span class="line">        <span class="keyword">always</span>@(in)</span><br><span class="line">            <span class="keyword">if</span>(in&gt;<span class="number">4&#x27;b1001</span>)<span class="comment">//&gt;9,&#x27;b表示二进制，&#x27;h十六进制</span></span><br><span class="line">                <span class="keyword">begin</span></span><br><span class="line">                out=<span class="number">0</span>;</span><br><span class="line">                err=<span class="number">1</span>;</span><br><span class="line">                <span class="keyword">end</span></span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(in&gt;<span class="number">4&#x27;b0100</span>)</span><br><span class="line">                <span class="keyword">begin</span></span><br><span class="line">                out=in+<span class="number">4&#x27;b0110</span>;</span><br><span class="line">                err=<span class="number">0</span>;</span><br><span class="line">                <span class="keyword">end</span></span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                <span class="keyword">begin</span></span><br><span class="line">                out=in;</span><br><span class="line">                err=<span class="number">0</span>;</span><br><span class="line">                <span class="keyword">end</span></span><br><span class="line"><span class="keyword">endmodule</span></span><br></pre></td></tr></table></figure></li>
-<li>一些运算符<br>&amp;按位与<br>&amp;&amp;逻辑与<br>位拼接{}<br>b[3]b为4位向量的<strong>第一位</strong>，最左边这个-&gt;口口口口,还有b[2],b[1]……注意和数组是反的  </li>
-<li>一些奇怪的名词  <ol>
-<li>半加器 指对输入的两个一位二进制数相加（A与B），输出<strong>一个结果位（SUM）和进位（C）</strong>，没有进位的输入加法器电路，是一个实现一位二进制数的加法电路  </li>
-<li>全加器 输入两个二进制位和一个进位，一起运算后输出和和进位<br> <img src="/..%5Csomeimage%5Cssk.png"></li>
-<li>全减器<br> <img src="/image-18.png" alt="Alt text"><br> bo的a取非，其他一样。接受来自低位的借位，输出向高位的借位。</li>
-</ol>
-</li>
-<li>一些逻辑式化简规则<br><img src="/..%5Csomeimage%5C707.jpg"></li>
-<li>逻辑险象<br>也称逻辑冒险。 两个输入信号同时向相反方向的逻辑电平跳变的现象（即一个由1- &gt; 0， 另一个从0 -&gt; 1），称为竞争。<br>因竞争导致在输出端可能产生尖峰脉冲的现象，称为冒险。<img src="/..%5Csomeimage%5C81ca.png"><br>判断逻辑险象：出现相切的卡诺图，或式中A和A’同时出现。<img src="/..%5Csomeimage%5C732.png"><img src="/..%5Csomeimage%5C142.png"><br>ps消除时也画包含切线的最大圈！</li>
-<li>典型代码类型<br>格雷码：二进制转格雷码要用三个异或</li>
-<li>触发器<br>很抽象。<br>同步置位:上升沿来临才赋值<br>异步：异步置位与复位是与时钟无关的。把它们列入always块的事件控制括号内就能触发always块的执行。<br><img src="/image.png" alt="Alt text"><figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"><span class="comment">//边沿JK触发器。同步</span></span><br><span class="line"><span class="keyword">module</span> jk_trigger(clk, j, k, q);</span><br><span class="line"> </span><br><span class="line"><span class="keyword">input</span> clk, j, k;</span><br><span class="line"><span class="keyword">output</span> q;</span><br><span class="line"><span class="keyword">reg</span> q;</span><br><span class="line"><span class="keyword">wire</span> qb;</span><br><span class="line"><span class="keyword">always</span>@(<span class="keyword">posedge</span> clk)       <span class="comment">//时钟上升沿到来时，判断jk的值</span></span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">	<span class="keyword">case</span>(&#123;j,k&#125;)</span><br><span class="line">	<span class="number">2&#x27;b00</span>: q &lt;= q;       <span class="comment">//如果&#123;j,k&#125;=00，则触发器处于保持状态</span></span><br><span class="line">	<span class="number">2&#x27;b01</span>: q &lt;= <span class="number">1&#x27;b0</span>;    <span class="comment">//如果&#123;j,k&#125;=01，则触发器置1</span></span><br><span class="line">	<span class="number">2&#x27;b10</span>: q &lt;= <span class="number">1&#x27;b1</span>;    <span class="comment">//同理10，清零</span></span><br><span class="line">	<span class="number">2&#x27;b11</span>: q &lt;= ~q;      <span class="comment">//11,翻转</span></span><br><span class="line">	<span class="keyword">default</span>: q &lt;= q;</span><br><span class="line">	<span class="keyword">endcase</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">assign</span> qb = ~q;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">endmodule</span></span><br></pre></td></tr></table></figure>
-D画波形的题：锁存器在有效时与输入D保持一致。触发器在有效边沿来临时与来临前的D值保持一致。</li>
-</ol>
-]]></content>
-  </entry>
-  <entry>
     <title>第一次acm</title>
     <url>/2023/09/17/acm-1/</url>
     <content><![CDATA[<p>我意识到acm是真正意义上智商的比拼。想要找到能一起讨论题目的人先得看懂题目。只有当你的水平远远高于环境时你的环境才有可能改变。主动改变环境只是徒有其表，内里没有改变，只会不欢而散。<br>用不欢而散来形容今天很合适，我早就预想到了今天的结果。因为我耐不住寂寞  </p>
@@ -290,6 +260,36 @@ int main()
 <h2 id="J-计算几何"><a href="#J-计算几何" class="headerlink" title="J:计算几何"></a>J:计算几何</h2><p>我瞎想了一个贪心但是差0.01，后来发现方法不对，很崩溃</p>
 <h2 id="L-签到题"><a href="#L-签到题" class="headerlink" title="L:签到题"></a>L:签到题</h2><p>翔哥签的，我没看。不到半小时就做出来的题。也是我们前四小时唯一做出来的一题<br>怎么说呢。谨以此文纪念我的队友。三个人一起敲代码很有意思。如果他们会的比我多就更好了。希望下次还能聚在一起。但是我感觉下次他们可能不愿意来了。但是我还是很想打第二场，我觉得发挥的一定能比这次好。不知道为什么。<br>为什么没有大佬带带我啊……  </p>
 <h2 id="情况总结"><a href="#情况总结" class="headerlink" title="情况总结"></a>情况总结</h2><p>百工a4题排在中间位置。5题有望进区域赛。2题垫底。说到这里我就得感谢一下ysm了，我问他去年的信息他回答的模模糊糊的，说什么每届不一样。害得我问他做出一半多不多。。显得我像个小丑。这种数据不能实实在在的告诉我吗。。。还有我的队友好像过于乐观的估计了情况。只写出了两题告诉我他想死，他之前自己真的了解都不了解一下，我真的服气。我打的最好情况就是两道题。这已经是我预想中很好的结果了。只不过大家都比我想的厉害罢了。队友能不能别瞎交题啊<br>越写怨气越大了……应该多反省自己，为什么这么菜……但是J和D我真的尽力了。还有A。我也是头一次感觉到了我可能确实不太适合这个游戏<br>还有下次吗？</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>数字逻辑知识点总结</title>
+    <url>/2023/10/15/Untitled-1/</url>
+    <content><![CDATA[<p>希希很讨厌这门课orz，很玄妙  </p>
+<ol>
+<li>根据真值表画卡诺图   <span id="more"></span></li>
+</ol>
+<p>真值表里是1，对应卡诺图也就填1.比如011(3)是1，那么卡诺图里的011也就是1.真值表里是0同理。 真值表里变量顺序无所谓<br><img src="/../someimage/knt.png"><br><strong>AB为最高位！！</strong>  </p>
+<ol>
+<li>根据最小项画卡诺图<br>最小项m（1，3，4），对应的位置表格里填1，最大项反之   </li>
+<li>卡诺图直接化简出与或式</li>
+<li>门级结构描述f&#x3D;x2~x3+x1x3   <figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"><span class="keyword">module</span> top_module(</span><br><span class="line"><span class="keyword">input</span> x3,</span><br><span class="line"><span class="keyword">input</span> x2,</span><br><span class="line"><span class="keyword">input</span> x1,</span><br><span class="line"><span class="keyword">output</span> f</span><br><span class="line">);</span><br><span class="line"><span class="keyword">wire</span> w1,w2;<span class="comment">//连出的线</span></span><br><span class="line"><span class="keyword">and</span> a1(w1,x2,~x3),a2(w2,x3,x1);</span><br><span class="line"><span class="keyword">or</span> o1(f,w1,w2);</span><br><span class="line"><span class="keyword">endmodule</span>;</span><br></pre></td></tr></table></figure></li>
+<li>数据流描述（不关心门的构造，只管描述表达式）   <figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"><span class="keyword">module</span> tm(</span><br><span class="line"><span class="keyword">input</span> x1,</span><br><span class="line"><span class="keyword">input</span> x2,</span><br><span class="line"><span class="keyword">input</span> x3,</span><br><span class="line"><span class="keyword">output</span> f</span><br><span class="line">);</span><br><span class="line"><span class="keyword">assign</span> f=(~x3&amp;x2)|(x3&amp;x1);<span class="comment">//一定有assign，是重点,好像括号没有太大的必要</span></span><br><span class="line"><span class="keyword">endmodule</span></span><br></pre></td></tr></table></figure></li>
+<li>行为描述（模块）<br>用到always之类的块</li>
+<li>2421码<br>从左到右，第一位权值为2，第二位的权值为4，第三位的权值为2，第四位的权值为1。 <figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"><span class="keyword">module</span> zh8421_2421(in,out,err);</span><br><span class="line">    <span class="keyword">input</span> [<span class="number">3</span>:<span class="number">0</span>]in;<span class="comment">//4位，不写则为一位</span></span><br><span class="line">    <span class="keyword">output</span> [<span class="number">3</span>:<span class="number">0</span>]out;</span><br><span class="line">    <span class="keyword">output</span> err;</span><br><span class="line">    <span class="keyword">reg</span> [<span class="number">3</span>:<span class="number">0</span>]out;<span class="comment">//reg表示被定义的信号将用在always模块内</span></span><br><span class="line">    <span class="keyword">reg</span> err;<span class="comment">//四个口也可以写在上面括号里</span></span><br><span class="line">        <span class="keyword">always</span>@(in)</span><br><span class="line">            <span class="keyword">if</span>(in&gt;<span class="number">4&#x27;b1001</span>)<span class="comment">//&gt;9,&#x27;b表示二进制，&#x27;h十六进制</span></span><br><span class="line">                <span class="keyword">begin</span></span><br><span class="line">                out=<span class="number">0</span>;</span><br><span class="line">                err=<span class="number">1</span>;</span><br><span class="line">                <span class="keyword">end</span></span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(in&gt;<span class="number">4&#x27;b0100</span>)</span><br><span class="line">                <span class="keyword">begin</span></span><br><span class="line">                out=in+<span class="number">4&#x27;b0110</span>;</span><br><span class="line">                err=<span class="number">0</span>;</span><br><span class="line">                <span class="keyword">end</span></span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                <span class="keyword">begin</span></span><br><span class="line">                out=in;</span><br><span class="line">                err=<span class="number">0</span>;</span><br><span class="line">                <span class="keyword">end</span></span><br><span class="line"><span class="keyword">endmodule</span></span><br></pre></td></tr></table></figure></li>
+<li>一些运算符<br>&amp;按位与<br>&amp;&amp;逻辑与<br>位拼接{}<br>b[3]b为4位向量的<strong>第一位</strong>，最左边这个-&gt;口口口口,还有b[2],b[1]……注意和数组是反的  </li>
+<li>一些奇怪的名词  <ol>
+<li>半加器 指对输入的两个一位二进制数相加（A与B），输出<strong>一个结果位（SUM）和进位（C）</strong>，没有进位的输入加法器电路，是一个实现一位二进制数的加法电路  </li>
+<li>全加器 输入两个二进制位和一个进位，一起运算后输出和和进位<br> <img src="/..%5Csomeimage%5Cssk.png"></li>
+<li>全减器<br> <img src="/image-18.png" alt="Alt text"><br> bo的a取非，其他一样。接受来自低位的借位，输出向高位的借位。</li>
+</ol>
+</li>
+<li>一些逻辑式化简规则<br><img src="/..%5Csomeimage%5C707.jpg"></li>
+<li>逻辑险象<br>也称逻辑冒险。 两个输入信号同时向相反方向的逻辑电平跳变的现象（即一个由1- &gt; 0， 另一个从0 -&gt; 1），称为竞争。<br>因竞争导致在输出端可能产生尖峰脉冲的现象，称为冒险。<img src="/..%5Csomeimage%5C81ca.png"><br>判断逻辑险象：出现相切的卡诺图，或式中A和A’同时出现。<img src="/..%5Csomeimage%5C732.png"><img src="/..%5Csomeimage%5C142.png"><br>ps消除时也画包含切线的最大圈！</li>
+<li>典型代码类型<br>格雷码：二进制转格雷码要用三个异或</li>
+<li>触发器<br>很抽象。<br>同步置位:上升沿来临才赋值<br>异步：异步置位与复位是与时钟无关的。把它们列入always块的事件控制括号内就能触发always块的执行。<br><img src="/image.png" alt="Alt text"><figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"><span class="comment">//边沿JK触发器。同步</span></span><br><span class="line"><span class="keyword">module</span> jk_trigger(clk, j, k, q);</span><br><span class="line"> </span><br><span class="line"><span class="keyword">input</span> clk, j, k;</span><br><span class="line"><span class="keyword">output</span> q;</span><br><span class="line"><span class="keyword">reg</span> q;</span><br><span class="line"><span class="keyword">wire</span> qb;</span><br><span class="line"><span class="keyword">always</span>@(<span class="keyword">posedge</span> clk)       <span class="comment">//时钟上升沿到来时，判断jk的值</span></span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">	<span class="keyword">case</span>(&#123;j,k&#125;)</span><br><span class="line">	<span class="number">2&#x27;b00</span>: q &lt;= q;       <span class="comment">//如果&#123;j,k&#125;=00，则触发器处于保持状态</span></span><br><span class="line">	<span class="number">2&#x27;b01</span>: q &lt;= <span class="number">1&#x27;b0</span>;    <span class="comment">//如果&#123;j,k&#125;=01，则触发器置1</span></span><br><span class="line">	<span class="number">2&#x27;b10</span>: q &lt;= <span class="number">1&#x27;b1</span>;    <span class="comment">//同理10，清零</span></span><br><span class="line">	<span class="number">2&#x27;b11</span>: q &lt;= ~q;      <span class="comment">//11,翻转</span></span><br><span class="line">	<span class="keyword">default</span>: q &lt;= q;</span><br><span class="line">	<span class="keyword">endcase</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">assign</span> qb = ~q;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">endmodule</span></span><br></pre></td></tr></table></figure>
+D画波形的题：锁存器在有效时与输入D保持一致。触发器在有效边沿来临时与来临前的D值保持一致。</li>
+</ol>
 ]]></content>
   </entry>
   <entry>
@@ -469,28 +469,6 @@ for (int iy = 0; iy &lt; real_h; iy++) &#123;
 <h2 id="6-无解"><a href="#6-无解" class="headerlink" title="6.无解"></a>6.无解</h2>]]></content>
   </entry>
   <entry>
-    <title>起岸希的第一篇博客</title>
-    <url>/2023/03/21/first/</url>
-    <content><![CDATA[<h2 id="好激动"><a href="#好激动" class="headerlink" title="好激动"></a>好激动</h2><p>对于一些计算机学习心得<br>起岸希觉得有必要分享一下  </p>
-<span id="more"></span>
-<p>首先记录一下<strong>markdown</strong>语法</p>
-<blockquote>
-<p>引用一下</p>
-</blockquote>
-<p>好了（空行退出引用段落）<br>插入代码段<br>空一行在打代码，每行前加一个tab</p>
-<pre><code>int f[MAXN][21]; // 第二维的大小根据数据范围决定，不小于log(MAXN)
-    for (int i = 1; i &lt;= n; ++i)
-        f[i][0] = read(); // 读入数据
-for (int i = 1; i &lt;= 20; ++i)
-    for (int j = 1; j + (1 &lt;&lt; i) - 1 &lt;= n; ++j)
-        f[j][i] = max(f[j][i - 1], f[j + (1 &lt;&lt; (i - 1))][i - 1]);
-</code></pre>
-<p>将单词变为代码<code>the fool</code>一个反引号包裹单词</p>
-<hr>
-<p>分割线<br>这是一个<a href="https://markdown.com.cn/basic-syntax/links.html">markdown语法链接</a><br>这是起岸希的email：<a href="mailto:&#x34;&#x33;&#x30;&#x33;&#x36;&#50;&#51;&#56;&#x35;&#64;&#x71;&#x71;&#x2e;&#x63;&#111;&#109;">&#x34;&#x33;&#x30;&#x33;&#x36;&#50;&#51;&#56;&#x35;&#64;&#x71;&#x71;&#x2e;&#x63;&#111;&#109;</a><br>这是图片 <img src="/../someimage/wdt.jpg" alt="picture">  </p>
-]]></content>
-  </entry>
-  <entry>
     <title>工大杯比赛记录</title>
     <url>/2023/05/24/gdb/</url>
     <content><![CDATA[<h2 id="可能是因为大佬都没来，混了个好排名。。。"><a href="#可能是因为大佬都没来，混了个好排名。。。" class="headerlink" title="可能是因为大佬都没来，混了个好排名。。。"></a>可能是因为大佬都没来，混了个好排名。。。</h2><p><img src="/../someimage/5.jpg">  </p>
@@ -509,12 +487,25 @@ for (int i = 1; i &lt;= 20; ++i)
 ]]></content>
   </entry>
   <entry>
-    <title>蓝桥杯2022年题目思路</title>
-    <url>/2023/03/29/lanqiao/</url>
-    <content><![CDATA[<h2 id="E：爬树的甲壳虫"><a href="#E：爬树的甲壳虫" class="headerlink" title="E：爬树的甲壳虫"></a>E：爬树的甲壳虫</h2><p>状态转移方程：<img src="/../someimage/wsl.png">  </p>
-<span id="more"></span>  
-
-<p>其中i&#x3D;0,1…n。a[i]代表<strong>从a[i]开始爬到树顶的期望时间</strong>，即a[i-1]有p[i]的可能爬上a[i]并且继承a[i]的期望时间。有1-p[i]的可能掉到树根，从头来过，继承a[0]的时间。a[0]指从根开始爬到树顶的时间。</p>
+    <title>起岸希的第一篇博客</title>
+    <url>/2023/03/21/first/</url>
+    <content><![CDATA[<h2 id="好激动"><a href="#好激动" class="headerlink" title="好激动"></a>好激动</h2><p>对于一些计算机学习心得<br>起岸希觉得有必要分享一下  </p>
+<span id="more"></span>
+<p>首先记录一下<strong>markdown</strong>语法</p>
+<blockquote>
+<p>引用一下</p>
+</blockquote>
+<p>好了（空行退出引用段落）<br>插入代码段<br>空一行在打代码，每行前加一个tab</p>
+<pre><code>int f[MAXN][21]; // 第二维的大小根据数据范围决定，不小于log(MAXN)
+    for (int i = 1; i &lt;= n; ++i)
+        f[i][0] = read(); // 读入数据
+for (int i = 1; i &lt;= 20; ++i)
+    for (int j = 1; j + (1 &lt;&lt; i) - 1 &lt;= n; ++j)
+        f[j][i] = max(f[j][i - 1], f[j + (1 &lt;&lt; (i - 1))][i - 1]);
+</code></pre>
+<p>将单词变为代码<code>the fool</code>一个反引号包裹单词</p>
+<hr>
+<p>分割线<br>这是一个<a href="https://markdown.com.cn/basic-syntax/links.html">markdown语法链接</a><br>这是起岸希的email：<a href="mailto:&#52;&#51;&#x30;&#x33;&#x36;&#50;&#51;&#56;&#53;&#x40;&#x71;&#113;&#x2e;&#99;&#x6f;&#109;">&#52;&#51;&#x30;&#x33;&#x36;&#50;&#51;&#56;&#53;&#x40;&#x71;&#113;&#x2e;&#99;&#x6f;&#109;</a><br>这是图片 <img src="/../someimage/wdt.jpg" alt="picture">  </p>
 ]]></content>
   </entry>
   <entry>
@@ -534,25 +525,17 @@ for (int i = 1; i &lt;= 20; ++i)
 ]]></content>
   </entry>
   <entry>
-    <title>关于ST表</title>
-    <url>/2023/03/21/second/</url>
-    <content><![CDATA[<h3 id="定义：用于求可重复性贡献问题的解。（即重复计算结果不变）对于一个一维数组，采用分治的方法，用一个二维数组储存每个区间内的最大最小值。f-a-b-表示从a开始2的b次方个数的最大值"><a href="#定义：用于求可重复性贡献问题的解。（即重复计算结果不变）对于一个一维数组，采用分治的方法，用一个二维数组储存每个区间内的最大最小值。f-a-b-表示从a开始2的b次方个数的最大值" class="headerlink" title="定义：用于求可重复性贡献问题的解。（即重复计算结果不变）对于一个一维数组，采用分治的方法，用一个二维数组储存每个区间内的最大最小值。f[a][b]表示从a开始2的b次方个数的最大值"></a>定义：用于求可重复性贡献问题的解。（即重复计算结果不变）对于一个一维数组，采用分治的方法，用一个二维数组储存每个区间内的最大最小值。<code>f[a][b]</code>表示从a开始2的b次方个数的最大值</h3><p>状态转移方程：f ( i , j ) &#x3D; m a x ( f ( i , j − 1 ) ,   f ( i + 2^(j − 1) , j − 1 ) )  </p>
+    <title>蓝桥杯2022年题目思路</title>
+    <url>/2023/03/29/lanqiao/</url>
+    <content><![CDATA[<h2 id="E：爬树的甲壳虫"><a href="#E：爬树的甲壳虫" class="headerlink" title="E：爬树的甲壳虫"></a>E：爬树的甲壳虫</h2><p>状态转移方程：<img src="/../someimage/wsl.png">  </p>
 <span id="more"></span>  
 
-<p>将原区间分成两个大小相等子区间（因为长度是2的j次方，所以不存在不能等分的情况）<br>代码如下</p>
-<pre><code>int f[MAXN][21]; // 第二维的大小根据数据范围决定，不小于log(MAXN)
-    for (int i = 1; i &lt;= n; ++i)
-           f[i][0] = read(); //读入数据
-for (int j = 1; j &lt;= 20; ++j)//枚举倍数
-    for (int i = 1; i + (1 &lt;&lt; j) - 1 &lt;= n; ++i)//枚举起点,i到i+2^j-1刚好2^j个数
-        f[i][j] = max(f[i][j - 1], f[i + (1 &lt;&lt; (j- 1))][j- 1]);
-</code></pre>
-<p>内部存储像这样 <img src="/../someimage/02.jpg" alt="picture"><br>对于询问(l,r)，寻找两个分别以l开头和以s结尾的区间，两区间的最大值即总最大值。我们需要使第一个子区间的右端点尽可能的接近r​，那么不妨直接令l + 2^s − 1 &#x3D; r即s&#x3D;lg[ r-l+1]向下取整。则区间[l,r]被分为：f[ l ][ l + 2^s - 1]和f[r-( 2^s -1)][ r ]  <strong>从l开始2^s个，从r往前2^s个</strong><br>对log进行预处理：<code>lg[i]=lg[i/2]+1;</code>,<code>lg[0]=-1;</code><strong>千万别忘！</strong>  </p>
+<p>其中i&#x3D;0,1…n。a[i]代表<strong>从a[i]开始爬到树顶的期望时间</strong>，即a[i-1]有p[i]的可能爬上a[i]并且继承a[i]的期望时间。有1-p[i]的可能掉到树根，从头来过，继承a[0]的时间。a[0]指从根开始爬到树顶的时间。</p>
 ]]></content>
   </entry>
   <entry>
     <title>关于ST表</title>
-    <url>/2024/03/29/st/</url>
+    <url>/2023/03/21/second/</url>
     <content><![CDATA[<h3 id="定义：用于求可重复性贡献问题的解。（即重复计算结果不变）对于一个一维数组，采用分治的方法，用一个二维数组储存每个区间内的最大最小值。f-a-b-表示从a开始2的b次方个数的最大值"><a href="#定义：用于求可重复性贡献问题的解。（即重复计算结果不变）对于一个一维数组，采用分治的方法，用一个二维数组储存每个区间内的最大最小值。f-a-b-表示从a开始2的b次方个数的最大值" class="headerlink" title="定义：用于求可重复性贡献问题的解。（即重复计算结果不变）对于一个一维数组，采用分治的方法，用一个二维数组储存每个区间内的最大最小值。f[a][b]表示从a开始2的b次方个数的最大值"></a>定义：用于求可重复性贡献问题的解。（即重复计算结果不变）对于一个一维数组，采用分治的方法，用一个二维数组储存每个区间内的最大最小值。<code>f[a][b]</code>表示从a开始2的b次方个数的最大值</h3><p>状态转移方程：f ( i , j ) &#x3D; m a x ( f ( i , j − 1 ) ,   f ( i + 2^(j − 1) , j − 1 ) )  </p>
 <span id="more"></span>  
 
@@ -595,6 +578,23 @@ for (int j = 1; j &lt;= 20; ++j)//枚举倍数
 <li>触发器<br>很抽象。<br>同步置位:上升沿来临才赋值<br>异步：异步置位与复位是与时钟无关的。把它们列入always块的事件控制括号内就能触发always块的执行。<br><img src="/image.png" alt="Alt text"><figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"><span class="comment">//边沿JK触发器。同步</span></span><br><span class="line"><span class="keyword">module</span> jk_trigger(clk, j, k, q);</span><br><span class="line"> </span><br><span class="line"><span class="keyword">input</span> clk, j, k;</span><br><span class="line"><span class="keyword">output</span> q;</span><br><span class="line"><span class="keyword">reg</span> q;</span><br><span class="line"><span class="keyword">wire</span> qb;</span><br><span class="line"><span class="keyword">always</span>@(<span class="keyword">posedge</span> clk)       <span class="comment">//时钟上升沿到来时，判断jk的值</span></span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">	<span class="keyword">case</span>(&#123;j,k&#125;)</span><br><span class="line">	<span class="number">2&#x27;b00</span>: q &lt;= q;       <span class="comment">//如果&#123;j,k&#125;=00，则触发器处于保持状态</span></span><br><span class="line">	<span class="number">2&#x27;b01</span>: q &lt;= <span class="number">1&#x27;b0</span>;    <span class="comment">//如果&#123;j,k&#125;=01，则触发器置1</span></span><br><span class="line">	<span class="number">2&#x27;b10</span>: q &lt;= <span class="number">1&#x27;b1</span>;    <span class="comment">//同理10，清零</span></span><br><span class="line">	<span class="number">2&#x27;b11</span>: q &lt;= ~q;      <span class="comment">//11,翻转</span></span><br><span class="line">	<span class="keyword">default</span>: q &lt;= q;</span><br><span class="line">	<span class="keyword">endcase</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">assign</span> qb = ~q;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">endmodule</span></span><br></pre></td></tr></table></figure>
 D画波形的题：锁存器在有效时与输入D保持一致。触发器在有效边沿来临时与来临前的D值保持一致。</li>
 </ol>
+]]></content>
+  </entry>
+  <entry>
+    <title>关于ST表</title>
+    <url>/2024/03/29/st/</url>
+    <content><![CDATA[<h3 id="定义：用于求可重复性贡献问题的解。（即重复计算结果不变）对于一个一维数组，采用分治的方法，用一个二维数组储存每个区间内的最大最小值。f-a-b-表示从a开始2的b次方个数的最大值"><a href="#定义：用于求可重复性贡献问题的解。（即重复计算结果不变）对于一个一维数组，采用分治的方法，用一个二维数组储存每个区间内的最大最小值。f-a-b-表示从a开始2的b次方个数的最大值" class="headerlink" title="定义：用于求可重复性贡献问题的解。（即重复计算结果不变）对于一个一维数组，采用分治的方法，用一个二维数组储存每个区间内的最大最小值。f[a][b]表示从a开始2的b次方个数的最大值"></a>定义：用于求可重复性贡献问题的解。（即重复计算结果不变）对于一个一维数组，采用分治的方法，用一个二维数组储存每个区间内的最大最小值。<code>f[a][b]</code>表示从a开始2的b次方个数的最大值</h3><p>状态转移方程：f ( i , j ) &#x3D; m a x ( f ( i , j − 1 ) ,   f ( i + 2^(j − 1) , j − 1 ) )  </p>
+<span id="more"></span>  
+
+<p>将原区间分成两个大小相等子区间（因为长度是2的j次方，所以不存在不能等分的情况）<br>代码如下</p>
+<pre><code>int f[MAXN][21]; // 第二维的大小根据数据范围决定，不小于log(MAXN)
+    for (int i = 1; i &lt;= n; ++i)
+           f[i][0] = read(); //读入数据
+for (int j = 1; j &lt;= 20; ++j)//枚举倍数
+    for (int i = 1; i + (1 &lt;&lt; j) - 1 &lt;= n; ++i)//枚举起点,i到i+2^j-1刚好2^j个数
+        f[i][j] = max(f[i][j - 1], f[i + (1 &lt;&lt; (j- 1))][j- 1]);
+</code></pre>
+<p>内部存储像这样 <img src="/../someimage/02.jpg" alt="picture"><br>对于询问(l,r)，寻找两个分别以l开头和以s结尾的区间，两区间的最大值即总最大值。我们需要使第一个子区间的右端点尽可能的接近r​，那么不妨直接令l + 2^s − 1 &#x3D; r即s&#x3D;lg[ r-l+1]向下取整。则区间[l,r]被分为：f[ l ][ l + 2^s - 1]和f[r-( 2^s -1)][ r ]  <strong>从l开始2^s个，从r往前2^s个</strong><br>对log进行预处理：<code>lg[i]=lg[i/2]+1;</code>,<code>lg[0]=-1;</code><strong>千万别忘！</strong>  </p>
 ]]></content>
   </entry>
   <entry>
@@ -684,17 +684,6 @@ else &#123;
 ]]></content>
   </entry>
   <entry>
-    <title>前端开发报错处理方法集中</title>
-    <url>/2024/03/30/%E5%89%8D%E7%AB%AF%E6%8A%A5%E9%94%99/</url>
-    <content><![CDATA[<h3 id="Vue-warn-Error-in-v-on-handler-Promise-x2F-async-“TypeError-this-fetch-is-not-a-function”"><a href="#Vue-warn-Error-in-v-on-handler-Promise-x2F-async-“TypeError-this-fetch-is-not-a-function”" class="headerlink" title="[Vue warn]: Error in v-on handler (Promise&#x2F;async): “TypeError: this.fetch is not a function”"></a>[Vue warn]: Error in v-on handler (Promise&#x2F;async): “TypeError: this.fetch is not a function”</h3><p>这是我在引用vue_json_excel包时报的错。解决方法：</p>
-<pre><code>    fetch () &#123;
-        return () =&gt; &#123;&#125;
-    &#125;
-</code></pre>
-<p>不过改完之后还是下载不了转为excel表格的数据。后来发现我data（）的位置搁错了，我又建了一个data1函数，应该就搁在data里<br><img src="/../someimage/image-26.png" alt="Alt text"></p>
-]]></content>
-  </entry>
-  <entry>
     <title>电脑下侧任务栏不显示</title>
     <url>/2023/10/09/%E4%B8%8B%E8%BE%B9%E6%A0%8F/</url>
     <content><![CDATA[<ol>
@@ -703,6 +692,17 @@ else &#123;
 <li>右键选择“重新启动”  </li>
 <li>下边栏就回来了！！</li>
 </ol>
+]]></content>
+  </entry>
+  <entry>
+    <title>前端开发报错处理方法集中</title>
+    <url>/2024/03/30/%E5%89%8D%E7%AB%AF%E6%8A%A5%E9%94%99/</url>
+    <content><![CDATA[<h3 id="Vue-warn-Error-in-v-on-handler-Promise-x2F-async-“TypeError-this-fetch-is-not-a-function”"><a href="#Vue-warn-Error-in-v-on-handler-Promise-x2F-async-“TypeError-this-fetch-is-not-a-function”" class="headerlink" title="[Vue warn]: Error in v-on handler (Promise&#x2F;async): “TypeError: this.fetch is not a function”"></a>[Vue warn]: Error in v-on handler (Promise&#x2F;async): “TypeError: this.fetch is not a function”</h3><p>这是我在引用vue_json_excel包时报的错。解决方法：</p>
+<pre><code>    fetch () &#123;
+        return () =&gt; &#123;&#125;
+    &#125;
+</code></pre>
+<p>不过改完之后还是下载不了转为excel表格的数据。后来发现我data（）的位置搁错了，我又建了一个data1函数，应该就搁在data里<br><img src="/../someimage/image-26.png" alt="Alt text"></p>
 ]]></content>
   </entry>
   <entry>
@@ -717,87 +717,6 @@ else &#123;
 <p>floyd求两点之间是否有通路（正常解法也行，可简化为这个，传递闭包思想）</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt;= m;i ++) &#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span> , &amp;x , &amp;y);</span><br><span class="line">    f[x][y] = <span class="number">1</span>;<span class="comment">//建的是有向图。后面判断要用f[i][j]|f[j][i]</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> k = <span class="number">1</span>;k &lt;= n;k ++)</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt;= n;i ++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>;j &lt;= n;j ++)</span><br><span class="line">            f[i][j] |= (f[i][k] &amp; f[k][j]);<span class="comment">//重点</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>对于每个点，只要这个点和其他n-1个点的关系都确定了，就能确定他在拓扑排序中的唯一排名。</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>批处理</title>
-    <url>/2023/11/19/%E6%89%B9%E5%A4%84%E7%90%86/</url>
-    <content><![CDATA[<p>批处理：利用系统内部命令<br>命令行创建：<br><img src="/../someimage/image-15.png" alt="Alt text"></p>
-<h3 id="一些命令行操作"><a href="#一些命令行操作" class="headerlink" title="一些命令行操作"></a>一些命令行操作</h3><p>创建文件 echo .&gt;a.txt<br>查看文件 type a.txt</p>
-<span id="more"></span>  
-<p>清屏 cls<br>目录 dir<br>set &#x2F;a 1+2 执行算术运算<br><img src="/../someimage/image-17.png" alt="Alt text"><br>记事本创建:<br>将记事本后缀改为bat,双击运行</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><ol>
-<li>基本语法<br><img src="/../someimage/image-16.png" alt="Alt text"><br>第一句关闭盘符输出<br>重定向：<br>echo hello world &gt;a.txt(定向到a，如没有则新建)<br>重定向符号 &gt;(覆盖) &gt;&gt;(追加) &lt; &lt;&lt;</li>
-<li>执行算术运算<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">@echo off</span><br><span class="line">set /a var=1+2;</span><br><span class="line">echo %var%  //代表var是一个变量</span><br></pre></td></tr></table></figure></li>
-<li>运算符<br>&amp;&amp; || |（管道运算符，链接命令和子命令dir | find “.txt”）</li>
-</ol>
-]]></content>
-  </entry>
-  <entry>
-    <title>网安导论复习</title>
-    <url>/2023/12/18/%E7%BD%91%E5%AE%89%E5%AF%BC%E8%AE%BA/</url>
-    <content><![CDATA[<p>第1章绪论</p>
-<ol>
-<li>什么是网络空间？网络空间安全的核心内涵是什么？<br>–人们赖以生存的信息环境，是所有信息系统的集合。<br>–信息安全。</li>
-<li>信息的安全属性。<br>–可用性（availability）、可控性 (controllability)、完整性 (integrity)、保密性 (confidentiality)、不可否认性 (non-repudiation)。</li>
-<li>信息安全概念演变的三个阶段。<br>–通信安全-&gt;计算机安全和信息系统安全-&gt;信息安全保障</li>
-<li>如何理解《信息保障技术框架》中的PDRR模型。<br>–整个信息和信息系统的保护和防御：保护，检测，相应和恢复能力</li>
-<li>什么是信息安全保障？信息安全保障的三要素是什么？<br>–保护和防御信息及信息系统，确保其可用性，完整性，保密性，可控性，不可否认性等等。这包括在信息系统中融入保护，检测，相应功能，并提供信息系统恢复功能。<br>–人，技术，管理</li>
-<li>我国27号文的总体要求。<br>–我国信息安全保障工作的总体要求是，坚持积极防御，综合防范的方针，全面提高信息安全防护能力，重点保障<strong>基础信息网络</strong>和<strong>重要信息系统</strong>的安全。</li>
-<li>脆弱性及信息系统的脆弱性主要体现在哪些方面？<br>–硬件设施的脆弱性，软件的脆弱性，网络通信协议的脆弱性，管理的脆弱性。</li>
-<li>什么是威胁？威胁的分类。<br>–是指导致“信息系统受到损害”这种不期望事件发生的潜在原因。</li>
-<li>什么是攻击？理解《信息保障技术框架》定义的5类攻击。<br>–导致“信息系统受到损害”的行为<br>–主动，被动，临近，内部人员，分发</li>
-<li>什么是信息安全风险？衡量风险的指标有多少？<br>–指由于信息系统存在的脆弱性，人为或者自然的威胁导致<strong>信息安全事件（攻击）发生的可能性</strong>及其<strong>造成的影响</strong>。<br>–两个指标</li>
-</ol>
-<p>第2章 计算系统、网络系统和信息系统</p>
-<ol>
-<li>冯·诺依曼原理（硬件的组成部件，指令和数据的表示等）<br>–硬件由运算器，控制器，存储器，输入设备和输出设备构成<br>–指令和数据用二进制表示</li>
-<li>理解网络系统的构成。<br>–网络边缘：连在网络上的各类主机和host<br>–网络核心：分组交换设备和通信链路构成的网状网络。</li>
-<li>什么是网络协议？其三要素是什么？<br>–为进行网络中的数据交换而建立的规则，标准或约定。通信双方需要共同遵守，互相理解。<br>–规定传输数据的<strong>格式</strong>（如何讲）<br>–规定所要完成的<strong>功能</strong><br>–规定各种操作的<strong>顺序</strong></li>
-<li>OSI和TCP&#x2F;IP参考模型的层次结构图各是什么？了解各层的主要功能。<br>–<img src="/image-23.png" alt="Alt text"><br><img src="/image-24.png" alt="Alt text"></li>
-</ol>
-<p>第3章 密码学基础</p>
-<ol>
-<li>什么是密码技术？<br>–将正常的，可识别的信息转变成无法识别的信息。</li>
-<li>密码学的分类。<br>–密码编码学，密码分析学</li>
-<li>掌握密码学的基本概念<br>–明文，密文……</li>
-<li>从双方加密通信的过程理解密码学的目的。</li>
-<li>了解密码学发展各个阶段（古典密码、近代密码和现代密码）的基本特点、核心手段和标志性事件。<br>–古典密码学：代换，置换<br>–近代密码：数据安全开始基于密钥<br>–现代密码：对称，不对称密钥，RSA</li>
-<li>了解密码体制的不同分类；<br>–对称密码体制，非对称，混合<br>–分组密码，流密码</li>
-<li>理解常见的密码破译攻击。了解常见的密码分析方法。<br>–唯密文攻击，已知明文攻击，选择明文攻击，选择密文攻击。<br>–分析方法：穷举攻击，统计分析攻击，解密变换攻击</li>
-<li>理解密码体制的安全性，掌握实用密码体制需要满足的基本条件和<strong>准则</strong>。<br>–破译的代价超出信息本身的价值<br>–破译的实践超出信息的有效期</li>
-<li>理解公钥加密和私钥签名。<br>–前者用公钥加密私钥解密，后者繁殖</li>
-</ol>
-<h2 id="第4章-系统安全基础1-理解网络空间的系统安全所包含的两层含义。2-了解基于安全芯片（如TPM）的可信计算思想。–以硬件安全保证计算机安全3-了解访问控制技术，知道访问控制实施框架的原型，理解访问矩阵"><a href="#第4章-系统安全基础1-理解网络空间的系统安全所包含的两层含义。2-了解基于安全芯片（如TPM）的可信计算思想。–以硬件安全保证计算机安全3-了解访问控制技术，知道访问控制实施框架的原型，理解访问矩阵" class="headerlink" title="第4章 系统安全基础1. 理解网络空间的系统安全所包含的两层含义。2. 了解基于安全芯片（如TPM）的可信计算思想。–以硬件安全保证计算机安全3. 了解访问控制技术，知道访问控制实施框架的原型，理解访问矩阵"></a>第4章 系统安全基础<br>1. 理解网络空间的系统安全所包含的两层含义。<br>2. 了解基于安全芯片（如TPM）的可信计算思想。<br>–以硬件安全保证计算机安全<br>3. 了解访问控制技术，知道访问控制实施框架的原型，理解访问矩阵</h2><ol start="4">
-<li>身份认证与访问控制技术的区别和联系<br>–鉴别用户身份，后者控制对一个信息系统及其资源的所有访问。只允许经过授权的访问。</li>
-<li>什么是安全审计？<br>–对用户使用何种信息资源，使用的时间，以及如何使用进行记录与监控。</li>
-<li>了解操作系统安全技术对确保数据库系统安全的作用<br>–前者保护了后者</li>
-<li>知道数据库系统的关键安全技术由谁提供，理解并发控制技术的产生动机和经典基于封锁并发控制技术的基本原理。<br>–操作系统？<br>–多个用户同时使用<br>–事务T在对某个数据对象操作之前，先向系统申请对其加锁</li>
-<li>了解恶意代码的常见危害；了解代码分析技术的分类。<br>–攻击系统，肆意占用资源，危害数据文件，泄露，攻击应用程序。<br>–静态分析（看），动态分析（干）</li>
-<li>了解主机漏洞扫描技术的基本原理。<br>–在本地运行检测系统漏洞的程序</li>
-<li>理解常见的备份策略和恢复策略。<br>–全备份，增量备份，差分备份。全部恢复，个别文件恢复，重定向文件恢复。</li>
-</ol>
-<p>第5章 网络安全基础</p>
-<ol>
-<li>了解OSI(开放系统互连)安全体系结构定义的5种安全服务。<br>–鉴别，访问控制，数据保密，数据完整性，抗抵赖服务</li>
-<li>了解OSI安全体系结构定义的8种安全机制。<br>–<em>加密，数字签名</em>，访问控制，数据完整性，鉴别交换，<em>通信业务填充，路由选择控制，公证</em></li>
-<li>理解防火墙的作用和功能，了解防火墙的分类，理解三类防火墙技术（包过滤、状态检测和代理服务）的基本原理。<br>–作用：边界保护，功能：访问控制，内容控制，日志功能，自身安全和可用性。</li>
-<li>了解为什么要有入侵检测技术？了解常见的入侵检测技术，了解入侵检测系统的关键性能参数 。<br>–弥补其他安全产品或措施的缺陷<br>–异常检测技术（正常行为描述库），误用检测技术（异常……）<br>–误报，漏报</li>
-<li>什么是VPN，VPN的优点和常见分类。<br>–在公用网络上，按照与专用网络相同的安全策略和管理规则建立的私有网络连接<br>–费用低，隧道的拓扑结构<br>–远程访问的vpn（个人-公司），站点到站点的（公司分支-公司）</li>
-<li>了解IPsec的组成，了解AH、ESP的协议数据单元，理解IPsec建立SA的目的。<br>–两个安全协议：AH认证头协议，ESP封装安全载荷协。SA定义了通信双方<strong>保护一定数据流量的策略</strong><br>–一个密钥管理协议IKE</li>
-<li>了解网络安全等级保护制度的作用对象和定级要素。理解网络安全等级保护的工作机制和步骤。<br>–包括基础网络设施，信息系统，以及数字资源等<br>–公民，法人和其他组织的合法权益。社会秩序和公共利益。国家安全。<br>–定级-&gt;备案-&gt;建设整改-&gt;等级测评-&gt;监督检查（都要）</li>
-<li>了解一种新兴网络的基本概念和安全技术需求。<br>–物联网，感知层（攻击硬件），应用层（隐私保护），网络层，平台层。<br>–工业互联网，网络攻击入口更多。</li>
-</ol>
-<p>第6章 内容安全基础</p>
-<ol>
-<li>什么是信息内容安全？<br>–是研究利用计算机从包含海量信息并且迅速变化的网络中对特定安全主题相关信息进行自动获取，识别和分析的技术</li>
-<li>了解常见的网络信息内容安全威胁。<br>–网络违法犯罪案件（利用煽动群众）<br>–网络违法信息<br>–网络不良信息</li>
-</ol>
-<p>第7章 网络空间安全法律法规</p>
-<ol>
-<li>了解《网络安全法》、《密码法》、《数据安全法》和《个人信息保护法》出台的先后顺序。<br>–就是这个序</li>
-<li>对上述法律有最基本的了解：<br>① 《中华人民共和国国家安全法》明确提出了“网络空间主权”，表明了网络空间安全的重要性。《网络安全法》是2015年7月1日颁布施行的《国家安全法》在网络空间上的具体化。<br>② 《密码法》旨在规范密码应用和管理。<br>③ 《数据安全法》旨在规范数据处理活动，保障数据安全，促进数据开发利用。<br>④ 《中华人民共和国个人信息保护法》是为了保护个人信息权益，规范个人信息处理活动。</li>
-</ol>
 ]]></content>
   </entry>
   <entry>
@@ -875,6 +794,20 @@ int main()
 ]]></content>
   </entry>
   <entry>
+    <title>批处理</title>
+    <url>/2023/11/19/%E6%89%B9%E5%A4%84%E7%90%86/</url>
+    <content><![CDATA[<p>批处理：利用系统内部命令<br>命令行创建：<br><img src="/../someimage/image-15.png" alt="Alt text"></p>
+<h3 id="一些命令行操作"><a href="#一些命令行操作" class="headerlink" title="一些命令行操作"></a>一些命令行操作</h3><p>创建文件 echo .&gt;a.txt<br>查看文件 type a.txt</p>
+<span id="more"></span>  
+<p>清屏 cls<br>目录 dir<br>set &#x2F;a 1+2 执行算术运算<br><img src="/../someimage/image-17.png" alt="Alt text"><br>记事本创建:<br>将记事本后缀改为bat,双击运行</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><ol>
+<li>基本语法<br><img src="/../someimage/image-16.png" alt="Alt text"><br>第一句关闭盘符输出<br>重定向：<br>echo hello world &gt;a.txt(定向到a，如没有则新建)<br>重定向符号 &gt;(覆盖) &gt;&gt;(追加) &lt; &lt;&lt;</li>
+<li>执行算术运算<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">@echo off</span><br><span class="line">set /a var=1+2;</span><br><span class="line">echo %var%  //代表var是一个变量</span><br></pre></td></tr></table></figure></li>
+<li>运算符<br>&amp;&amp; || |（管道运算符，链接命令和子命令dir | find “.txt”）</li>
+</ol>
+]]></content>
+  </entry>
+  <entry>
     <title></title>
     <url>/2024/01/11/%E7%A6%BB%E6%95%A3/</url>
     <content><![CDATA[<p>二部图：<br>简单来说，如果图中点可以被分为两组，并且使得所有边都跨越组的边界<br>哈斯图：<br>上界：（界外）盖住全范围的x及盖住x的<br>上确界：x<br>下界<br>下确界<br>极大元：不被盖住<br>最大元：盖住所有<br>极小元：不盖住任意<br>最小元：万物原点<br>矩阵的传递性：m*m是m的子集<br>图长度为x的路径数量：A^x所有元素和，回路数：主对角线元素和</p>
@@ -897,5 +830,72 @@ int main()
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">LL <span class="title">binarypow</span><span class="params">(LL a,LL b,LL m)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(b==<span class="number">0</span>)<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(b&amp;<span class="number">1</span>)<span class="keyword">return</span> <span class="built_in">binarypow</span>(a,b<span class="number">-1</span>,m)*a;<span class="comment">//奇数分开一个a</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> <span class="built_in">binarypow</span>(a,b/<span class="number">2</span>,m)*<span class="built_in">binarypow</span>(a,b/<span class="number">2</span>+<span class="number">1</span>,m);<span class="comment">//偶数，对半砍</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>取模：</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">LL <span class="title">binarypow</span><span class="params">(LL a,LL b,LL m)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(b==<span class="number">0</span>)<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(b&amp;<span class="number">1</span>)<span class="keyword">return</span> <span class="built_in">binarypow</span>(a,b<span class="number">-1</span>,m)*a%m;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> <span class="built_in">binarypow</span>(a,b/<span class="number">2</span>,m)*<span class="built_in">binarypow</span>(a,b/<span class="number">2</span>+<span class="number">1</span>,m)%m;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+  </entry>
+  <entry>
+    <title>网安导论复习</title>
+    <url>/2023/12/18/%E7%BD%91%E5%AE%89%E5%AF%BC%E8%AE%BA/</url>
+    <content><![CDATA[<p>第1章绪论</p>
+<ol>
+<li>什么是网络空间？网络空间安全的核心内涵是什么？<br>–人们赖以生存的信息环境，是所有信息系统的集合。<br>–信息安全。</li>
+<li>信息的安全属性。<br>–可用性（availability）、可控性 (controllability)、完整性 (integrity)、保密性 (confidentiality)、不可否认性 (non-repudiation)。</li>
+<li>信息安全概念演变的三个阶段。<br>–通信安全-&gt;计算机安全和信息系统安全-&gt;信息安全保障</li>
+<li>如何理解《信息保障技术框架》中的PDRR模型。<br>–整个信息和信息系统的保护和防御：保护，检测，相应和恢复能力</li>
+<li>什么是信息安全保障？信息安全保障的三要素是什么？<br>–保护和防御信息及信息系统，确保其可用性，完整性，保密性，可控性，不可否认性等等。这包括在信息系统中融入保护，检测，相应功能，并提供信息系统恢复功能。<br>–人，技术，管理</li>
+<li>我国27号文的总体要求。<br>–我国信息安全保障工作的总体要求是，坚持积极防御，综合防范的方针，全面提高信息安全防护能力，重点保障<strong>基础信息网络</strong>和<strong>重要信息系统</strong>的安全。</li>
+<li>脆弱性及信息系统的脆弱性主要体现在哪些方面？<br>–硬件设施的脆弱性，软件的脆弱性，网络通信协议的脆弱性，管理的脆弱性。</li>
+<li>什么是威胁？威胁的分类。<br>–是指导致“信息系统受到损害”这种不期望事件发生的潜在原因。</li>
+<li>什么是攻击？理解《信息保障技术框架》定义的5类攻击。<br>–导致“信息系统受到损害”的行为<br>–主动，被动，临近，内部人员，分发</li>
+<li>什么是信息安全风险？衡量风险的指标有多少？<br>–指由于信息系统存在的脆弱性，人为或者自然的威胁导致<strong>信息安全事件（攻击）发生的可能性</strong>及其<strong>造成的影响</strong>。<br>–两个指标</li>
+</ol>
+<p>第2章 计算系统、网络系统和信息系统</p>
+<ol>
+<li>冯·诺依曼原理（硬件的组成部件，指令和数据的表示等）<br>–硬件由运算器，控制器，存储器，输入设备和输出设备构成<br>–指令和数据用二进制表示</li>
+<li>理解网络系统的构成。<br>–网络边缘：连在网络上的各类主机和host<br>–网络核心：分组交换设备和通信链路构成的网状网络。</li>
+<li>什么是网络协议？其三要素是什么？<br>–为进行网络中的数据交换而建立的规则，标准或约定。通信双方需要共同遵守，互相理解。<br>–规定传输数据的<strong>格式</strong>（如何讲）<br>–规定所要完成的<strong>功能</strong><br>–规定各种操作的<strong>顺序</strong></li>
+<li>OSI和TCP&#x2F;IP参考模型的层次结构图各是什么？了解各层的主要功能。<br>–<img src="/image-23.png" alt="Alt text"><br><img src="/image-24.png" alt="Alt text"></li>
+</ol>
+<p>第3章 密码学基础</p>
+<ol>
+<li>什么是密码技术？<br>–将正常的，可识别的信息转变成无法识别的信息。</li>
+<li>密码学的分类。<br>–密码编码学，密码分析学</li>
+<li>掌握密码学的基本概念<br>–明文，密文……</li>
+<li>从双方加密通信的过程理解密码学的目的。</li>
+<li>了解密码学发展各个阶段（古典密码、近代密码和现代密码）的基本特点、核心手段和标志性事件。<br>–古典密码学：代换，置换<br>–近代密码：数据安全开始基于密钥<br>–现代密码：对称，不对称密钥，RSA</li>
+<li>了解密码体制的不同分类；<br>–对称密码体制，非对称，混合<br>–分组密码，流密码</li>
+<li>理解常见的密码破译攻击。了解常见的密码分析方法。<br>–唯密文攻击，已知明文攻击，选择明文攻击，选择密文攻击。<br>–分析方法：穷举攻击，统计分析攻击，解密变换攻击</li>
+<li>理解密码体制的安全性，掌握实用密码体制需要满足的基本条件和<strong>准则</strong>。<br>–破译的代价超出信息本身的价值<br>–破译的实践超出信息的有效期</li>
+<li>理解公钥加密和私钥签名。<br>–前者用公钥加密私钥解密，后者繁殖</li>
+</ol>
+<h2 id="第4章-系统安全基础1-理解网络空间的系统安全所包含的两层含义。2-了解基于安全芯片（如TPM）的可信计算思想。–以硬件安全保证计算机安全3-了解访问控制技术，知道访问控制实施框架的原型，理解访问矩阵"><a href="#第4章-系统安全基础1-理解网络空间的系统安全所包含的两层含义。2-了解基于安全芯片（如TPM）的可信计算思想。–以硬件安全保证计算机安全3-了解访问控制技术，知道访问控制实施框架的原型，理解访问矩阵" class="headerlink" title="第4章 系统安全基础1. 理解网络空间的系统安全所包含的两层含义。2. 了解基于安全芯片（如TPM）的可信计算思想。–以硬件安全保证计算机安全3. 了解访问控制技术，知道访问控制实施框架的原型，理解访问矩阵"></a>第4章 系统安全基础<br>1. 理解网络空间的系统安全所包含的两层含义。<br>2. 了解基于安全芯片（如TPM）的可信计算思想。<br>–以硬件安全保证计算机安全<br>3. 了解访问控制技术，知道访问控制实施框架的原型，理解访问矩阵</h2><ol start="4">
+<li>身份认证与访问控制技术的区别和联系<br>–鉴别用户身份，后者控制对一个信息系统及其资源的所有访问。只允许经过授权的访问。</li>
+<li>什么是安全审计？<br>–对用户使用何种信息资源，使用的时间，以及如何使用进行记录与监控。</li>
+<li>了解操作系统安全技术对确保数据库系统安全的作用<br>–前者保护了后者</li>
+<li>知道数据库系统的关键安全技术由谁提供，理解并发控制技术的产生动机和经典基于封锁并发控制技术的基本原理。<br>–操作系统？<br>–多个用户同时使用<br>–事务T在对某个数据对象操作之前，先向系统申请对其加锁</li>
+<li>了解恶意代码的常见危害；了解代码分析技术的分类。<br>–攻击系统，肆意占用资源，危害数据文件，泄露，攻击应用程序。<br>–静态分析（看），动态分析（干）</li>
+<li>了解主机漏洞扫描技术的基本原理。<br>–在本地运行检测系统漏洞的程序</li>
+<li>理解常见的备份策略和恢复策略。<br>–全备份，增量备份，差分备份。全部恢复，个别文件恢复，重定向文件恢复。</li>
+</ol>
+<p>第5章 网络安全基础</p>
+<ol>
+<li>了解OSI(开放系统互连)安全体系结构定义的5种安全服务。<br>–鉴别，访问控制，数据保密，数据完整性，抗抵赖服务</li>
+<li>了解OSI安全体系结构定义的8种安全机制。<br>–<em>加密，数字签名</em>，访问控制，数据完整性，鉴别交换，<em>通信业务填充，路由选择控制，公证</em></li>
+<li>理解防火墙的作用和功能，了解防火墙的分类，理解三类防火墙技术（包过滤、状态检测和代理服务）的基本原理。<br>–作用：边界保护，功能：访问控制，内容控制，日志功能，自身安全和可用性。</li>
+<li>了解为什么要有入侵检测技术？了解常见的入侵检测技术，了解入侵检测系统的关键性能参数 。<br>–弥补其他安全产品或措施的缺陷<br>–异常检测技术（正常行为描述库），误用检测技术（异常……）<br>–误报，漏报</li>
+<li>什么是VPN，VPN的优点和常见分类。<br>–在公用网络上，按照与专用网络相同的安全策略和管理规则建立的私有网络连接<br>–费用低，隧道的拓扑结构<br>–远程访问的vpn（个人-公司），站点到站点的（公司分支-公司）</li>
+<li>了解IPsec的组成，了解AH、ESP的协议数据单元，理解IPsec建立SA的目的。<br>–两个安全协议：AH认证头协议，ESP封装安全载荷协。SA定义了通信双方<strong>保护一定数据流量的策略</strong><br>–一个密钥管理协议IKE</li>
+<li>了解网络安全等级保护制度的作用对象和定级要素。理解网络安全等级保护的工作机制和步骤。<br>–包括基础网络设施，信息系统，以及数字资源等<br>–公民，法人和其他组织的合法权益。社会秩序和公共利益。国家安全。<br>–定级-&gt;备案-&gt;建设整改-&gt;等级测评-&gt;监督检查（都要）</li>
+<li>了解一种新兴网络的基本概念和安全技术需求。<br>–物联网，感知层（攻击硬件），应用层（隐私保护），网络层，平台层。<br>–工业互联网，网络攻击入口更多。</li>
+</ol>
+<p>第6章 内容安全基础</p>
+<ol>
+<li>什么是信息内容安全？<br>–是研究利用计算机从包含海量信息并且迅速变化的网络中对特定安全主题相关信息进行自动获取，识别和分析的技术</li>
+<li>了解常见的网络信息内容安全威胁。<br>–网络违法犯罪案件（利用煽动群众）<br>–网络违法信息<br>–网络不良信息</li>
+</ol>
+<p>第7章 网络空间安全法律法规</p>
+<ol>
+<li>了解《网络安全法》、《密码法》、《数据安全法》和《个人信息保护法》出台的先后顺序。<br>–就是这个序</li>
+<li>对上述法律有最基本的了解：<br>① 《中华人民共和国国家安全法》明确提出了“网络空间主权”，表明了网络空间安全的重要性。《网络安全法》是2015年7月1日颁布施行的《国家安全法》在网络空间上的具体化。<br>② 《密码法》旨在规范密码应用和管理。<br>③ 《数据安全法》旨在规范数据处理活动，保障数据安全，促进数据开发利用。<br>④ 《中华人民共和国个人信息保护法》是为了保护个人信息权益，规范个人信息处理活动。</li>
+</ol>
+]]></content>
   </entry>
 </search>
