@@ -30,7 +30,7 @@
 <meta property="og:description" content="关于eduoj部署操作总览：网站地址：https:&#x2F;&#x2F;github.com&#x2F;EduOJ操作步骤：1.将网站中的frontend，backend，judgeServer拉取到虚拟机EduOJ文件夹下。（虚拟机内需要有的环境：docker，go（后端），nodejs，yarn（前端））">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-03-24T15:46:18.395Z">
-<meta property="article:modified_time" content="2024-05-04T13:10:45.947Z">
+<meta property="article:modified_time" content="2024-06-02T10:17:35.191Z">
 <meta property="article:author" content="起岸希">
 <meta name="twitter:card" content="summary">
 
@@ -235,7 +235,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-05-04 21:10:45" itemprop="dateModified" datetime="2024-05-04T21:10:45+08:00">2024-05-04</time>
+                <time title="修改时间：2024-06-02 18:17:35" itemprop="dateModified" datetime="2024-06-02T18:17:35+08:00">2024-06-02</time>
               </span>
 
           
@@ -307,8 +307,11 @@ yarn
 cp src/config/config.example.js src/config/config.js
 </code></pre>
 <p>3.注册用户并给超级管理员权限</p>
-<pre><code>$ ./backend permission
-gr &lt;username&gt; admin
+<pre><code>#在backend目录下创建可执行文件
+go build -o eduoj-backend .
+#将backend中的config.yml文件复制到最外层eduoj文件夹中
+#在最外层目录中输入命令
+./backend/eduoj-backend permission gr &lt;username&gt; admin
 </code></pre>
 <p>4.修改评测机配置文件</p>
 <pre><code>#在评测机仓库执行
@@ -445,7 +448,7 @@ path:
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-count">28</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
